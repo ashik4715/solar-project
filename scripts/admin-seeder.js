@@ -11,13 +11,29 @@ require("dotenv").config();
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  name: String,
   role: { type: String, enum: ["admin", "customer"], default: "customer" },
   phone: String,
   lastLogin: Date,
   createdAt: { type: Date, default: Date.now },
 });
 
+// Define Customer schema inline for testing
+const customerSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  phone: String,
+  segment: {
+    type: String,
+    enum: ["residential", "commercial", "industrial"],
+    default: "residential",
+  },
+  isActive: { type: Boolean, default: true },
+  createdAt: { type: Date, default: Date.now },
+});
+
 const User = mongoose.model("User", userSchema);
+const Customer = mongoose.model("Customer", customerSchema);
 
 async function seedAdmins() {
   try {
@@ -71,6 +87,7 @@ async function seedAdmins() {
     const customerPassword = await bcryptjs.hash("customer123!", customerSalt);
 
     const customer = new User({
+      name: "Test Customer",
       email: "customer@solarstore.com",
       password: customerPassword,
       role: "customer",
@@ -78,8 +95,25 @@ async function seedAdmins() {
     });
 
     await customer.save();
+
+    // Also create a Customer record for the test customer
+    const customerRecord = new Customer({
+      name: "Test Customer",
+      email: "customer@solarstore.com",
+      phone: "9876543213",
+      segment: "residential",
+      isActive: true,
+    });
+
+    try {
+      await customerRecord.save();
+      console.log("✓ Created customer record: customer@solarstore.com");
+    } catch (e) {
+      console.warn("⚠️  Customer record may already exist");
+    }
+
     console.log(
-      "✓ Created test customer: customer@solarstore.com (password: Customer123!)",
+      "✓ Created test customer user: customer@solarstore.com (password: customer123!)",
     );
 
     console.log("\n📋 Admin Users Created Successfully!");

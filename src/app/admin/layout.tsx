@@ -36,7 +36,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       return;
     }
 
-    // Check if user is authenticated
+    // Check if user is authenticated and is admin
     const checkAuth = async () => {
       try {
         const response = await fetch("/api/auth/me");
@@ -45,8 +45,22 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           return;
         }
         const data = await response.json();
-        setCurrentUser(data.data.user);
+        const user = data.data?.user || data.data;
+
+        if (!user) {
+          router.push("/admin/login");
+          return;
+        }
+
+        // Check if user is admin
+        if (user.role !== "admin") {
+          router.push("/"); // Redirect non-admin users to home
+          return;
+        }
+
+        setCurrentUser(user);
       } catch (error) {
+        console.error("Auth error:", error);
         router.push("/admin/login");
       } finally {
         setLoading(false);
@@ -68,10 +82,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     return children;
   }
 
-  if (!currentUser || currentUser.role !== "admin") {
+  // If we reach here and no user, show loading (shouldn't happen due to redirect)
+  if (!currentUser) {
     return (
       <div className="section">
-        <p className="has-text-danger">Access Denied</p>
+        <p className="has-text-centered">Verifying access...</p>
       </div>
     );
   }

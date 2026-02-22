@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { AppFooter } from "@/components/AppFooter";
 import "bulma/css/bulma.css";
 
 interface Product {
@@ -50,12 +51,20 @@ export default function ProductsPage() {
 
         if (productsRes.ok) {
           const data = await productsRes.json();
-          setProducts(data.data || []);
+          // API returns { data: { products: [...], pagination: {...} } }
+          setProducts(
+            Array.isArray(data.data)
+              ? data.data
+              : Array.isArray(data.data?.products)
+                ? data.data.products
+                : [],
+          );
         }
 
         if (categoriesRes.ok) {
           const data = await categoriesRes.json();
-          setCategories(data.data || []);
+          // API returns { data: [...] }
+          setCategories(Array.isArray(data.data) ? data.data : []);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -555,6 +564,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
+      <AppFooter isDarkMode={isDarkMode} />
     </div>
   );
 }

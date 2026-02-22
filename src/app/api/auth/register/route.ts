@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
+import Customer from "@/models/Customer";
 import { hashPassword } from "@/utils/helpers";
 import { APIResponse } from "@/utils/response";
 
@@ -70,6 +71,21 @@ export async function POST(request: NextRequest) {
     });
 
     await user.save();
+
+    // Also create a Customer record
+    try {
+      const customer = new Customer({
+        name,
+        email: email.toLowerCase(),
+        phone: phone || "",
+        segment: "residential",
+        isActive: true,
+      });
+      await customer.save();
+    } catch (customerError) {
+      // Customer creation error is not critical, log but continue
+      console.warn("Warning: Customer record creation failed:", customerError);
+    }
 
     return NextResponse.json(
       APIResponse.success(
