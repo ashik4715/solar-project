@@ -11,23 +11,12 @@ interface DashboardStats {
 }
 
 export default function AdminDashboard() {
-  const [stats, setStats] = useState<DashboardStats>({
-    totalProducts: 0,
-    totalCustomers: 0,
-    totalOrders: 0,
-    totalRevenue: 0,
+  const [stats] = useState<DashboardStats>({
+    totalProducts: 12,
+    totalCustomers: 45,
+    totalOrders: 23,
+    totalRevenue: 8750000,
   });
-
-  useEffect(() => {
-    // In a real app, fetch these stats from API
-    // For now, we'll show placeholder values
-    setStats({
-      totalProducts: 12,
-      totalCustomers: 45,
-      totalOrders: 23,
-      totalRevenue: 8750000,
-    });
-  }, []);
 
   return (
     <div>

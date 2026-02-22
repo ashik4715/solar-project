@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import multer from "multer";
 import * as path from "path";
 import * as fs from "fs";
 import { APIResponse } from "@/utils/response";
-import { uploadFileToS3 } from "@/utils/s3";
+import { uploadBufferToS3, isS3Configured } from "@/utils/s3";
 
 const uploadDir = path.join(process.cwd(), "public/uploads");
 
@@ -11,34 +10,6 @@ const uploadDir = path.join(process.cwd(), "public/uploads");
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
-
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: uploadDir,
-    filename: (req, file, cb) => {
-      const filename = `${Date.now()}-${file.originalname}`;
-      cb(null, filename);
-    },
-  }),
-  limits: {
-    fileSize: 50 * 1024 * 1024, // 50MB
-  },
-  fileFilter: (req, file, cb) => {
-    const allowedMimes = [
-      "image/jpeg",
-      "image/png",
-      "image/gif",
-      "image/webp",
-      "video/mp4",
-      "video/quicktime",
-    ];
-    if (allowedMimes.includes(file.mimetype)) {
-      cb(null, true);
-    } else {
-      cb(new Error("Invalid file type"));
-    }
-  },
-});
 
 /**
  * @swagger
@@ -59,10 +30,43 @@ const upload = multer({
  */
 export async function POST(request: NextRequest) {
   try {
-    // This is a simplified version - in production, use proper middleware
+    const formData = await request.formData();
+    const file = formData.get("file") as File | null;
+
+    if (!file) {
+      return NextResponse.json(
+        APIResponse.error("File is required").toJSON(),
+        { status: 400 },
+      );
+    }
+
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const fileName = `${Date.now()}-${file.name.replace(/\s+/g, "-")}`;
+    const localPath = path.join(uploadDir, fileName);
+
+    fs.writeFileSync(localPath, buffer);
+
+    let remoteUrl: string | null = null;
+    if (isS3Configured()) {
+      remoteUrl = await uploadBufferToS3(
+        buffer,
+        fileName,
+        file.type || undefined,
+      );
+    }
+
+    const url = remoteUrl || `/uploads/${fileName}`;
+
     return NextResponse.json(
-      APIResponse.error("Please use the file upload form").toJSON(),
-      { status: 400 },
+      APIResponse.success(
+        { url, storedInS3: Boolean(remoteUrl) },
+        remoteUrl
+          ? "File uploaded to S3 successfully"
+          : "File saved locally. Configure S3 to sync automatically.",
+        remoteUrl ? 201 : 202,
+      ).toJSON(),
+      { status: remoteUrl ? 201 : 202 },
     );
   } catch (error) {
     console.error("Upload error:", error);

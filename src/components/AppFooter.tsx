@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function AppFooter({ isDarkMode }: { isDarkMode: boolean }) {
   const bgColor = isDarkMode ? "#1a1a1a" : "#f5f5f5";
   const textColor = isDarkMode ? "#e0e0e0" : "#333";
@@ -30,36 +32,36 @@ export function AppFooter({ isDarkMode }: { isDarkMode: boolean }) {
             </h5>
             <ul style={{ listStyle: "none", padding: 0 }}>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/products"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Products
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/quotes"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Quotes
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/after-sales"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Support
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -77,36 +79,36 @@ export function AppFooter({ isDarkMode }: { isDarkMode: boolean }) {
             </h5>
             <ul style={{ listStyle: "none", padding: 0 }}>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/login"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Login
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/register"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Register
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/user-settings"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Settings
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/admin/login"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Admin
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -147,10 +147,10 @@ export default function HomePage() {
             <div className="navbar-item">
               <Link
                 href="/register"
-                className="button"
+                className="button is-light has-text-weight-semibold"
                 style={{
                   backgroundColor: "#e8f5e9",
-                  color: "#2d5016",
+                  color: isDarkMode ? "#183013" : "#2d5016",
                   marginRight: "15px",
                   fontWeight: "bold",
                 }}
@@ -177,10 +177,10 @@ export default function HomePage() {
             <div className="navbar-item">
               <Link
                 href="/admin/login"
-                className="button is-outlined"
+                className="button is-outlined is-light"
                 style={{
-                  borderColor: "#fff",
-                  color: "#fff",
+                  borderColor: "#e8f5e9",
+                  color: "#e8f5e9",
                   marginLeft: "10px",
                 }}
               >

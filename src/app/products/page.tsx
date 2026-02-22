@@ -139,12 +139,20 @@ export default function ProductsPage() {
               </Link>
             </div>
             <div className="navbar-item">
-              <Link href="/register" style={{ color: "#fff" }}>
+              <Link
+                href="/register"
+                className="button is-light is-small has-text-weight-semibold"
+                style={{ color: isDarkMode ? "#183013" : "#2d5016" }}
+              >
                 Register
               </Link>
             </div>
             <div className="navbar-item">
-              <Link href="/admin/login" style={{ color: "#fff" }}>
+              <Link
+                href="/admin/login"
+                className="button is-outlined is-light is-small"
+                style={{ color: "#e8f5e9", borderColor: "#e8f5e9" }}
+              >
                 Admin
               </Link>
             </div>

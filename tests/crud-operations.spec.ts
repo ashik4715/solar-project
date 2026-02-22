@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 const ADMIN_EMAIL = "admin@solarstore.com";
-const ADMIN_PASSWORD = "ChangeMe123!";
+const ADMIN_PASSWORD = "admin123!";
+const SKIP_ADMIN_AUTH = !process.env.MONGODB_URI;
 
 async function loginAsAdmin(page: any) {
   await page.goto("/admin");
@@ -12,6 +13,10 @@ async function loginAsAdmin(page: any) {
 }
 
 test.describe("CRUD Operations Tests", () => {
+  test.skip(
+    SKIP_ADMIN_AUTH,
+    "CRUD UI tests are skipped when database is not configured.",
+  );
   test("should create a new category", async ({ page }) => {
     await loginAsAdmin(page);
 

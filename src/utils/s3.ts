@@ -8,27 +8,49 @@ const s3Client = new AWS.S3({
   region: process.env.AWS_REGION,
 });
 
+export function isS3Configured(): boolean {
+  return Boolean(
+    process.env.AWS_S3_BUCKET &&
+    process.env.AWS_ACCESS_KEY_ID &&
+    process.env.AWS_SECRET_ACCESS_KEY &&
+    process.env.AWS_REGION,
+  );
+}
+
+export async function uploadBufferToS3(
+  buffer: Buffer,
+  fileName: string,
+  contentType?: string,
+): Promise<string | null> {
+  try {
+    if (!isS3Configured()) {
+      console.warn("AWS S3 not fully configured, skipping upload.");
+      return null;
+    }
+
+    const params = {
+      Bucket: process.env.AWS_S3_BUCKET!,
+      Key: `uploads/${fileName}`,
+      Body: buffer,
+      ContentType: contentType || getContentType(fileName),
+      ACL: "public-read",
+    };
+
+    const result = await s3Client.upload(params).promise();
+    return result.Location;
+  } catch (error) {
+    console.error("S3 upload error:", error);
+    return null;
+  }
+}
+
 export async function uploadFileToS3(
   filePath: string,
   fileName: string,
 ): Promise<string | null> {
   try {
-    if (!process.env.AWS_S3_BUCKET) {
-      console.warn("AWS_S3_BUCKET not configured, skipping S3 upload");
-      return null;
-    }
-
     const fileContent = fs.readFileSync(filePath);
-
-    const params = {
-      Bucket: process.env.AWS_S3_BUCKET,
-      Key: `uploads/${fileName}`,
-      Body: fileContent,
-      ContentType: getContentType(fileName),
-    };
-
-    const result = await s3Client.upload(params).promise();
-    return result.Location;
+    return uploadBufferToS3(fileContent, fileName);
   } catch (error) {
     console.error("S3 upload error:", error);
     return null;

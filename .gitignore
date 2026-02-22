@@ -10,6 +10,10 @@ node_modules/
 # Testing
 /coverage/
 /.nyc_output/
+/playwright-report/
+/test-results/
+/test-results.json
+/test-results/.last-run.json
 
 # Misc
 .DS_Store

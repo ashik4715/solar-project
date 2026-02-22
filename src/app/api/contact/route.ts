@@ -34,33 +34,45 @@ export async function POST(request: NextRequest) {
       status: "new",
     });
 
-    // Send confirmation email to customer
-    await sendEmail({
-      to: email,
-      subject: "We received your message",
-      html: `
-        <h2>Thank you for contacting us!</h2>
-        <p>Dear ${name},</p>
-        <p>We have received your message and will get back to you as soon as possible.</p>
-        <p>Best regards,<br>Solar Store Team</p>
-      `,
-    });
+    const emailConfigured =
+      process.env.SMTP_HOST &&
+      process.env.SMTP_USER &&
+      process.env.SMTP_PASS &&
+      process.env.SMTP_FROM_EMAIL;
 
-    // Send notification to admin
-    if (process.env.SMTP_FROM_EMAIL) {
+    if (emailConfigured) {
+      const adminRecipient =
+        process.env.ADMIN_EMAIL || process.env.SMTP_FROM_EMAIL || "";
+      // Send confirmation email to customer (best-effort)
       await sendEmail({
-        to: process.env.ADMIN_EMAIL || process.env.SMTP_FROM_EMAIL,
-        subject: `New Contact Submission: ${submissionType}`,
+        to: email,
+        subject: "We received your message",
         html: `
-          <h2>New Contact Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-          <p><strong>Type:</strong> ${submissionType}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, "<br>")}</p>
+          <h2>Thank you for contacting us!</h2>
+          <p>Dear ${name},</p>
+          <p>We have received your message and will get back to you as soon as possible.</p>
+          <p>Best regards,<br>Solar Store Team</p>
         `,
       });
+
+      // Send notification to admin
+      await sendEmail({
+        to: adminRecipient,
+        subject: `New Contact Submission: ${submissionType}`,
+        html: `
+            <h2>New Contact Submission</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+            <p><strong>Type:</strong> ${submissionType}</p>
+            <p><strong>Message:</strong></p>
+            <p>${message.replace(/\n/g, "<br>")}</p>
+          `,
+      });
+    } else {
+      console.warn(
+        "[contact] SMTP not configured; skipping email notifications.",
+      );
     }
 
     return NextResponse.json(

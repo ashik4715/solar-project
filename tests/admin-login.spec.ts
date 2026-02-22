@@ -2,11 +2,16 @@ import { test, expect } from "@playwright/test";
 
 // Test data
 const ADMIN_EMAIL = "admin@solarstore.com";
-const ADMIN_PASSWORD = "ChangeMe123!";
+const ADMIN_PASSWORD = "admin123!";
 const INVALID_EMAIL = "invalid@test.com";
 const INVALID_PASSWORD = "WrongPassword123!";
+const SKIP_ADMIN_AUTH = !process.env.MONGODB_URI;
 
 test.describe("Admin Login Tests", () => {
+  test.skip(
+    SKIP_ADMIN_AUTH,
+    "Admin auth tests are skipped when database is not configured.",
+  );
   test.beforeEach(async ({ page }) => {
     await page.goto("/admin");
   });

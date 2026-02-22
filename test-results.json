@@ -80,7 +80,7 @@
         {
           "title": "Admin Access Control Tests",
           "file": "admin-access-control.spec.ts",
-          "line": 6,
+          "line": 7,
           "column": 6,
           "specs": [
             {
@@ -99,20 +99,14 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8288,
+                      "duration": 5232,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:55:33.046Z",
+                      "startTime": "2026-02-22T23:47:02.049Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-d0eda--not-access-admin-dashboard-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -120,7 +114,7 @@
               ],
               "id": "d31d0f2492dafe6da94a-f191447585828a7cb4a8",
               "file": "admin-access-control.spec.ts",
-              "line": 7,
+              "line": 8,
               "column": 7
             },
             {
@@ -139,20 +133,14 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8992,
+                      "duration": 5512,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:55:47.916Z",
+                      "startTime": "2026-02-22T23:47:08.344Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-17f89-ld-not-access-products-page-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -160,7 +148,7 @@
               ],
               "id": "d31d0f2492dafe6da94a-88f679ce5ce04b9e3f7e",
               "file": "admin-access-control.spec.ts",
-              "line": 19,
+              "line": 20,
               "column": 7
             },
             {
@@ -179,20 +167,14 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7388,
+                      "duration": 5350,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:55:57.426Z",
+                      "startTime": "2026-02-22T23:47:13.882Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-2161a--not-access-categories-page-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -200,7 +182,7 @@
               ],
               "id": "d31d0f2492dafe6da94a-eafacfd9fc01b0db23aa",
               "file": "admin-access-control.spec.ts",
-              "line": 29,
+              "line": 30,
               "column": 7
             },
             {
@@ -210,37 +192,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "line": 41,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2395,
+                      "status": "skipped",
+                      "duration": 300,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:05.130Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:47:19.254Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-aeeef-min-should-access-dashboard-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "line": 41,
+                            "column": 10
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d31d0f2492dafe6da94a-afdb890867fe23e18723",
               "file": "admin-access-control.spec.ts",
-              "line": 39,
+              "line": 40,
               "column": 7
             },
             {
@@ -250,37 +246,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "line": 61,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1961,
+                      "status": "skipped",
+                      "duration": 473,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:07.939Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:47:19.578Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-89db9-n-should-view-products-page-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "line": 61,
+                            "column": 10
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d31d0f2492dafe6da94a-009db68982816e7ae8b6",
               "file": "admin-access-control.spec.ts",
-              "line": 55,
+              "line": 60,
               "column": 7
             },
             {
@@ -290,37 +300,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "line": 94,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1503,
+                      "status": "skipped",
+                      "duration": 627,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:10.230Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:47:20.188Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-266bb-should-view-categories-page-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "line": 94,
+                            "column": 10
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d31d0f2492dafe6da94a-b310a01c0d1905bb53be",
               "file": "admin-access-control.spec.ts",
-              "line": 84,
+              "line": 93,
               "column": 7
             },
             {
@@ -330,37 +354,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "line": 127,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1360,
+                      "status": "skipped",
+                      "duration": 344,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:12.034Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:47:20.932Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-3b2f6--should-view-customers-page-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "line": 127,
+                            "column": 10
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d31d0f2492dafe6da94a-d74a12f8837ea87afd00",
               "file": "admin-access-control.spec.ts",
-              "line": 113,
+              "line": 126,
               "column": 7
             },
             {
@@ -370,37 +408,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "line": 160,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1702,
+                      "status": "skipped",
+                      "duration": 200,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:13.674Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:47:21.339Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-49fef-min-should-view-quotes-page-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "line": 160,
+                            "column": 10
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d31d0f2492dafe6da94a-c665a873bb9afe8cda78",
               "file": "admin-access-control.spec.ts",
-              "line": 142,
+              "line": 159,
               "column": 7
             },
             {
@@ -410,37 +462,51 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "line": 191,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2128,
+                      "status": "skipped",
+                      "duration": 310,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:15.685Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:47:21.577Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-access-control-Admin-e586f-ist-across-page-navigations-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "line": 191,
+                            "column": 10
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "d31d0f2492dafe6da94a-87453e979bf2d9e66634",
               "file": "admin-access-control.spec.ts",
-              "line": 169,
+              "line": 190,
               "column": 7
             }
           ]
@@ -462,7 +528,7 @@
           "specs": [
             {
               "title": "should load admin login page",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -475,24 +541,53 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1168,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 5471,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Solar|Admin/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Solar|Admin/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"\"\u001b[22m\n\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts:15:24",
+                        "location": {
+                          "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                          "column": 24,
+                          "line": 15
+                        },
+                        "snippet": "  13 |\n  14 |   test(\"should load admin login page\", async ({ page }) => {\n> 15 |     await expect(page).toHaveTitle(/Solar|Admin/);\n     |                        ^\n  16 |     await expect(page.locator(\"form\")).toBeVisible();\n  17 |   });\n  18 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "column": 24,
+                            "line": 15
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Solar|Admin/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"\"\u001b[22m\n\n\n  13 |\n  14 |   test(\"should load admin login page\", async ({ page }) => {\n> 15 |     await expect(page).toHaveTitle(/Solar|Admin/);\n     |                        ^\n  16 |     await expect(page.locator(\"form\")).toBeVisible();\n  17 |   });\n  18 |\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts:15:24"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:18.127Z",
+                      "startTime": "2026-02-22T23:47:21.931Z",
                       "annotations": [],
                       "attachments": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Tests-should-load-admin-login-page-chromium/trace.zip"
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Tests-should-load-admin-login-page-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Tests-should-load-admin-login-page-chromium/error-context.md"
                         }
-                      ]
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "column": 24,
+                        "line": 15
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "481c7578028bb96ee688-87cd95842a8f48061f4d",
@@ -502,7 +597,7 @@
             },
             {
               "title": "should show error on invalid email/password",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -513,26 +608,47 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 1,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2660,
-                      "errors": [],
+                      "status": "timedOut",
+                      "duration": 30090,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "column": 16,
+                            "line": 20
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n  18 |\n  19 |   test(\"should load admin login page\", async ({ page }) => {\n> 20 |     await expect(page).toHaveTitle(/Solar|Admin/);\n     |                ^\n  21 |     await expect(page.locator(\"form\")).toBeVisible();\n  22 |   });\n  23 |\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts:20:16"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:19.591Z",
+                      "startTime": "2026-02-22T23:47:30.485Z",
                       "annotations": [],
                       "attachments": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-21e17-r-on-invalid-email-password-chromium/trace.zip"
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-21e17-r-on-invalid-email-password-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-21e17-r-on-invalid-email-password-chromium/error-context.md"
                         }
                       ]
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "481c7578028bb96ee688-d15912a600de12409e9b",
@@ -547,32 +663,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1663,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:22.566Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:48:03.664Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-bcffc-ly-with-correct-credentials-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-2b329a8b5817dcbf9871",
@@ -587,32 +717,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1980,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:24.517Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-8b968-cess-with-empty-credentials-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-e84041f0861c466b9fb9",
@@ -627,32 +771,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1924,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:26.789Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-4b45b-ubmission-missing-password--chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-caf5d9dbe6543d50c7f4",
@@ -667,32 +825,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2312,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:29.009Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-cfcba-e-case-sensitivity-in-email-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-7c17b7278c90b0ecceb0",
@@ -707,32 +879,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3083,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:31.610Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-7bf6a-force-with-invalid-attempts-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-e553104a5c72e2513e57",
@@ -747,32 +933,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2810,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:35.132Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-9fe52-tion-attempt-in-email-field-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-ac0c8420804c088fff68",
@@ -787,32 +987,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3212,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:38.394Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Tests-should-logout-properly-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-cb4732e4a9e259143df3",
@@ -839,7 +1053,7 @@
           "specs": [
             {
               "title": "POST /api/auth/login - valid credentials",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -850,50 +1064,20 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 236,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts:18:31",
-                        "location": {
-                          "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                          "column": 31,
-                          "line": 18
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 16 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m     expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mconst\u001b[39m data \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m     expect(data)\u001b[33m.\u001b[39mtoHaveProperty(\u001b[32m\"statusCode\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                            "column": 31,
-                            "line": 18
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n\n\u001b[0m \u001b[90m 16 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m     expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mconst\u001b[39m data \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m     expect(data)\u001b[33m.\u001b[39mtoHaveProperty(\u001b[32m\"statusCode\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts:18:31\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 52,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:42.024Z",
+                      "startTime": "2026-02-22T23:48:03.672Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-18822-h-login---valid-credentials-chromium/trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                        "column": 31,
-                        "line": 18
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "1283ac53084b38fceb2d-782b105bf20df917809b",
@@ -914,23 +1098,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 123,
+                      "duration": 29,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:43.618Z",
+                      "startTime": "2026-02-22T23:48:03.737Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-45eca-login---invalid-credentials-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -938,7 +1116,7 @@
               ],
               "id": "1283ac53084b38fceb2d-a212ac0f300cad5bb78e",
               "file": "api-endpoints.spec.ts",
-              "line": 23,
+              "line": 25,
               "column": 7
             },
             {
@@ -954,23 +1132,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 825,
+                      "duration": 21,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:43.773Z",
+                      "startTime": "2026-02-22T23:48:03.776Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-03d68-products---no-auth-required-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -978,7 +1150,7 @@
               ],
               "id": "1283ac53084b38fceb2d-dc5f89b90d869f6e15e1",
               "file": "api-endpoints.spec.ts",
-              "line": 34,
+              "line": 36,
               "column": 7
             },
             {
@@ -994,23 +1166,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 295,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:44.617Z",
+                      "startTime": "2026-02-22T23:48:03.807Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-436b5-categories---requires-admin-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1018,7 +1184,7 @@
               ],
               "id": "1283ac53084b38fceb2d-668d9bcb7feffd36c80a",
               "file": "api-endpoints.spec.ts",
-              "line": 43,
+              "line": 45,
               "column": 7
             },
             {
@@ -1034,23 +1200,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 226,
+                      "duration": 31,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:44.929Z",
+                      "startTime": "2026-02-22T23:48:03.847Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-507ae-i-customers---requires-auth-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1058,7 +1218,7 @@
               ],
               "id": "1283ac53084b38fceb2d-a0437c9ce8cbf220b81f",
               "file": "api-endpoints.spec.ts",
-              "line": 55,
+              "line": 57,
               "column": 7
             },
             {
@@ -1074,23 +1234,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 198,
+                      "duration": 18,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:45.175Z",
+                      "startTime": "2026-02-22T23:48:03.887Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-0cac5-hould-handle-quote-creation-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1098,76 +1252,12 @@
               ],
               "id": "1283ac53084b38fceb2d-d9b064242617af4ade79",
               "file": "api-endpoints.spec.ts",
-              "line": 61,
+              "line": 63,
               "column": 7
             },
             {
               "title": "POST /api/contact - submit contact form",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 4012,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m201\u001b[39m\nReceived array: \u001b[31m[200, 400, 500]\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m201\u001b[39m\nReceived array: \u001b[31m[200, 400, 500]\u001b[39m\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts:85:29",
-                        "location": {
-                          "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                          "column": 29,
-                          "line": 85
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 83 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 84 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 85 |\u001b[39m     expect([\u001b[35m200\u001b[39m\u001b[33m,\u001b[39m \u001b[35m400\u001b[39m\u001b[33m,\u001b[39m \u001b[35m500\u001b[39m])\u001b[33m.\u001b[39mtoContain(response\u001b[33m.\u001b[39mstatus())\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 86 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m\n \u001b[90m 88 |\u001b[39m   test(\u001b[32m\"GET /api/docs - API documentation accessible\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                            "column": 29,
-                            "line": 85
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m201\u001b[39m\nReceived array: \u001b[31m[200, 400, 500]\u001b[39m\n\n\u001b[0m \u001b[90m 83 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 84 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 85 |\u001b[39m     expect([\u001b[35m200\u001b[39m\u001b[33m,\u001b[39m \u001b[35m400\u001b[39m\u001b[33m,\u001b[39m \u001b[35m500\u001b[39m])\u001b[33m.\u001b[39mtoContain(response\u001b[33m.\u001b[39mstatus())\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 86 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 87 |\u001b[39m\n \u001b[90m 88 |\u001b[39m   test(\u001b[32m\"GET /api/docs - API documentation accessible\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts:85:29\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-02-22T19:56:45.385Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-ad9f9-ntact---submit-contact-form-chromium/trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                        "column": 29,
-                        "line": 85
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "1283ac53084b38fceb2d-a3ec000d3010dca07425",
-              "file": "api-endpoints.spec.ts",
-              "line": 75,
-              "column": 7
-            },
-            {
-              "title": "GET /api/docs - API documentation accessible",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1180,53 +1270,57 @@
                     {
                       "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 403,
-                      "error": {
-                        "message": "TypeError: Cannot read properties of undefined (reading 'or')",
-                        "stack": "TypeError: Cannot read properties of undefined (reading 'or')\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts:93:38",
-                        "location": {
-                          "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                          "column": 38,
-                          "line": 93
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 91 |\u001b[39m     expect([\u001b[35m200\u001b[39m])\u001b[33m.\u001b[39mtoContain(response\u001b[33m.\u001b[39mstatus())\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m     \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mtext()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m     expect(text)\u001b[33m.\u001b[39mtoContain(\u001b[32m\"swagger\"\u001b[39m)\u001b[33m.\u001b[39mor\u001b[33m.\u001b[39mtoContain(\u001b[32m\"Swagger\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m\n \u001b[90m 96 |\u001b[39m   test(\u001b[32m\"GET /api/swagger.json - OpenAPI schema\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                            "column": 38,
-                            "line": 93
-                          },
-                          "message": "TypeError: Cannot read properties of undefined (reading 'or')\n\n\u001b[0m \u001b[90m 91 |\u001b[39m     expect([\u001b[35m200\u001b[39m])\u001b[33m.\u001b[39mtoContain(response\u001b[33m.\u001b[39mstatus())\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m     \u001b[36mconst\u001b[39m text \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mtext()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m     expect(text)\u001b[33m.\u001b[39mtoContain(\u001b[32m\"swagger\"\u001b[39m)\u001b[33m.\u001b[39mor\u001b[33m.\u001b[39mtoContain(\u001b[32m\"Swagger\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m\n \u001b[90m 96 |\u001b[39m   test(\u001b[32m\"GET /api/swagger.json - OpenAPI schema\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts:93:38\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 28,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:50.610Z",
+                      "startTime": "2026-02-22T23:48:03.915Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-7ef47-PI-documentation-accessible-chromium/trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                        "column": 38,
-                        "line": 93
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
+                }
+              ],
+              "id": "1283ac53084b38fceb2d-a3ec000d3010dca07425",
+              "file": "api-endpoints.spec.ts",
+              "line": 77,
+              "column": 7
+            },
+            {
+              "title": "GET /api/docs - API documentation accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-02-22T23:48:03.957Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "1283ac53084b38fceb2d-6bb5830d4dbe39e7a5f2",
               "file": "api-endpoints.spec.ts",
-              "line": 88,
+              "line": 90,
               "column": 7
             },
             {
@@ -1242,23 +1336,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1895,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:52.627Z",
+                      "startTime": "2026-02-22T23:48:03.990Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-911cd-agger-json---OpenAPI-schema-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1266,7 +1354,7 @@
               ],
               "id": "1283ac53084b38fceb2d-f96ed8c61cb5a0e58316",
               "file": "api-endpoints.spec.ts",
-              "line": 96,
+              "line": 100,
               "column": 7
             },
             {
@@ -1282,23 +1370,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1129,
+                      "duration": 19,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:54.584Z",
+                      "startTime": "2026-02-22T23:48:04.018Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-e0ca5-load---file-upload-handling-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1306,7 +1388,7 @@
               ],
               "id": "1283ac53084b38fceb2d-63311c8b7687c94c9c7e",
               "file": "api-endpoints.spec.ts",
-              "line": 110,
+              "line": 114,
               "column": 7
             },
             {
@@ -1322,23 +1404,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1247,
+                      "duration": 36,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:55.735Z",
+                      "startTime": "2026-02-22T23:48:04.050Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-407b2-s-should-have-proper-format-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1346,7 +1422,7 @@
               ],
               "id": "1283ac53084b38fceb2d-a0017edbfe62bdc6d6eb",
               "file": "api-endpoints.spec.ts",
-              "line": 119,
+              "line": 123,
               "column": 7
             },
             {
@@ -1362,23 +1438,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 36,
+                      "duration": 38,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:57.009Z",
+                      "startTime": "2026-02-22T23:48:04.102Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-8ca06--me---check-current-session-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1386,7 +1456,7 @@
               ],
               "id": "1283ac53084b38fceb2d-9110df4ccaae0ee9f017",
               "file": "api-endpoints.spec.ts",
-              "line": 129,
+              "line": 133,
               "column": 7
             },
             {
@@ -1402,23 +1472,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 563,
+                      "duration": 243,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:57.060Z",
+                      "startTime": "2026-02-22T23:48:04.161Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-252ec--handle-concurrent-requests-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1426,7 +1490,7 @@
               ],
               "id": "1283ac53084b38fceb2d-644d8c084867fbefcc54",
               "file": "api-endpoints.spec.ts",
-              "line": 136,
+              "line": 140,
               "column": 7
             },
             {
@@ -1442,23 +1506,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 176,
+                      "duration": 30,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:57.638Z",
+                      "startTime": "2026-02-22T23:48:04.425Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/api-endpoints-API-Endpoint-15507-se-headers-should-be-secure-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1466,7 +1524,7 @@
               ],
               "id": "1283ac53084b38fceb2d-b2c1456bbaa5c7272e88",
               "file": "api-endpoints.spec.ts",
-              "line": 149,
+              "line": 153,
               "column": 7
             }
           ]
@@ -1488,7 +1546,7 @@
           "specs": [
             {
               "title": "should create a new category",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1499,26 +1557,47 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 4131,
-                      "errors": [],
+                      "status": "timedOut",
+                      "duration": 30058,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "column": 14,
+                            "line": 8
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n   6 | async function loginAsAdmin(page: any) {\n   7 |   await page.goto(\"/admin\");\n>  8 |   await page.fill('input[type=\"email\"]', ADMIN_EMAIL);\n     |              ^\n   9 |   await page.fill('input[type=\"password\"]', ADMIN_PASSWORD);\n  10 |   await page.click('button[type=\"submit\"]');\n  11 |   await page.waitForURL(/dashboard|admin/, { timeout: 10000 }).catch(() => {});\n    at loginAsAdmin (/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:8:14)\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:16:5"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:56:57.848Z",
+                      "startTime": "2026-02-22T23:48:04.476Z",
                       "annotations": [],
                       "attachments": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-0e365-hould-create-a-new-category-chromium/trace.zip"
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-0e365-hould-create-a-new-category-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-0e365-hould-create-a-new-category-chromium/error-context.md"
                         }
                       ]
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-02491c98d6b9829bc5ed",
@@ -1528,7 +1607,7 @@
             },
             {
               "title": "should read categories list",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1541,24 +1620,45 @@
                     {
                       "workerIndex": 3,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2899,
-                      "errors": [],
+                      "status": "timedOut",
+                      "duration": 30088,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "column": 14,
+                            "line": 8
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n   6 | async function loginAsAdmin(page: any) {\n   7 |   await page.goto(\"/admin\");\n>  8 |   await page.fill('input[type=\"email\"]', ADMIN_EMAIL);\n     |              ^\n   9 |   await page.fill('input[type=\"password\"]', ADMIN_PASSWORD);\n  10 |   await page.click('button[type=\"submit\"]');\n  11 |   await page.waitForURL(/dashboard|admin/, { timeout: 10000 }).catch(() => {});\n    at loginAsAdmin (/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:8:14)\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:61:5"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:03.304Z",
+                      "startTime": "2026-02-22T23:48:36.538Z",
                       "annotations": [],
                       "attachments": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-856e7-should-read-categories-list-chromium/trace.zip"
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-856e7-should-read-categories-list-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-856e7-should-read-categories-list-chromium/error-context.md"
                         }
                       ]
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-27b646656c81f64c2b35",
@@ -1568,7 +1668,7 @@
             },
             {
               "title": "should create a new product",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1579,26 +1679,47 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 4,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3025,
-                      "errors": [],
+                      "status": "timedOut",
+                      "duration": 30059,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "column": 14,
+                            "line": 8
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n   6 |\n   7 | async function loginAsAdmin(page: any) {\n>  8 |   await page.goto(\"/admin\");\n     |              ^\n   9 |   await page.fill('input[type=\"email\"]', ADMIN_EMAIL);\n  10 |   await page.fill('input[type=\"password\"]', ADMIN_PASSWORD);\n  11 |   await page.click('button[type=\"submit\"]');\n    at loginAsAdmin (/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:8:14)\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:75:5"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:06.535Z",
+                      "startTime": "2026-02-22T23:49:08.298Z",
                       "annotations": [],
                       "attachments": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-af097-should-create-a-new-product-chromium/trace.zip"
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-af097-should-create-a-new-product-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-af097-should-create-a-new-product-chromium/error-context.md"
                         }
                       ]
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-9d294cd7aa7a84f1c69e",
@@ -1608,7 +1729,7 @@
             },
             {
               "title": "should read products list",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1619,26 +1740,47 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2662,
-                      "errors": [],
+                      "status": "timedOut",
+                      "duration": 30108,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "column": 14,
+                            "line": 8
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n   6 |\n   7 | async function loginAsAdmin(page: any) {\n>  8 |   await page.goto(\"/admin\");\n     |              ^\n   9 |   await page.fill('input[type=\"email\"]', ADMIN_EMAIL);\n  10 |   await page.fill('input[type=\"password\"]', ADMIN_PASSWORD);\n  11 |   await page.click('button[type=\"submit\"]');\n    at loginAsAdmin (/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:8:14)\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:118:5"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:09.834Z",
+                      "startTime": "2026-02-22T23:49:39.812Z",
                       "annotations": [],
                       "attachments": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-b4a2a-s-should-read-products-list-chromium/trace.zip"
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-b4a2a-s-should-read-products-list-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-b4a2a-s-should-read-products-list-chromium/error-context.md"
                         }
                       ]
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-5ed240229cbb4815099d",
@@ -1653,32 +1795,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "CRUD UI tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 3799,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:13.110Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:50:13.905Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Operations-Tests-should-list-customers-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "CRUD UI tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-0031857adf46c0167db5",
@@ -1693,32 +1849,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "CRUD UI tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2052,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:17.197Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:50:13.906Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-e693e-API-error-on-invalid-create-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "CRUD UI tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-ad38601984fb60dce42a",
@@ -1733,32 +1903,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "CRUD UI tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2686,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:19.527Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:50:13.907Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-d3612-ategory-creation-gracefully-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "CRUD UI tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-8a8aa1b2f23e41303f66",
@@ -1773,32 +1957,46 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "CRUD UI tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 8892,
+                      "status": "skipped",
+                      "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:22.780Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:50:13.907Z",
+                      "annotations": [
                         {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-7474a-ld-validate-required-fields-chromium/trace.zip"
+                          "type": "skip",
+                          "description": "CRUD UI tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "expected"
+                  "status": "skipped"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-d4df9f1bfab92016319b",
@@ -1836,23 +2034,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3817,
+                      "duration": 661,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:32.146Z",
+                      "startTime": "2026-02-22T23:50:13.921Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-2feee-omer-should-access-homepage-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1876,23 +2068,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3518,
+                      "duration": 137,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:36.638Z",
+                      "startTime": "2026-02-22T23:50:15.482Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-156d5-stomer-should-view-products-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1916,23 +2102,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1928,
+                      "duration": 164,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:40.539Z",
+                      "startTime": "2026-02-22T23:50:15.632Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-a7596-r-should-access-quotes-page-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1956,23 +2136,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1518,
+                      "duration": 372,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:42.951Z",
+                      "startTime": "2026-02-22T23:50:15.811Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-94031-omer-should-fill-quote-form-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -1996,23 +2170,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1987,
+                      "duration": 261,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:44.937Z",
+                      "startTime": "2026-02-22T23:50:16.200Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-4c051-d-view-after-sales-services-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -2036,23 +2204,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1354,
+                      "duration": 596,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:47.271Z",
+                      "startTime": "2026-02-22T23:50:16.476Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-fefde-it-contact-form-on-homepage-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -2076,23 +2238,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 6415,
+                      "duration": 5297,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:48.908Z",
+                      "startTime": "2026-02-22T23:50:17.092Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-8368d-access-admin-panel-directly-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -2116,23 +2272,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1549,
+                      "duration": 802,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:55.650Z",
+                      "startTime": "2026-02-22T23:50:22.419Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-d53ec-uld-see-404-on-invalid-page-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -2156,23 +2306,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1140,
+                      "duration": 567,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:57.455Z",
+                      "startTime": "2026-02-22T23:50:23.257Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-66e32-mer-contact-form-validation-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -2196,23 +2340,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2183,
+                      "duration": 915,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:57:58.871Z",
+                      "startTime": "2026-02-22T23:50:23.856Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-9593d-le-network-error-gracefully-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -2236,23 +2374,17 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1856,
+                      "duration": 783,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T19:58:01.348Z",
+                      "startTime": "2026-02-22T23:50:24.825Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/customer-flow-Customer-Use-7c5bd-responsive-design-on-mobile-chromium/trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
@@ -2270,11 +2402,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-22T19:55:30.366Z",
-    "duration": 153233.09,
-    "expected": 48,
-    "skipped": 0,
-    "unexpected": 3,
+    "startTime": "2026-02-22T23:47:00.071Z",
+    "duration": 205780.926,
+    "expected": 28,
+    "skipped": 17,
+    "unexpected": 6,
     "flaky": 0
   }
 }

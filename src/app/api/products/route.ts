@@ -118,6 +118,7 @@ export async function POST(request: NextRequest) {
       images,
       videos,
       specifications,
+      stock,
     } = body;
 
     // Validate required fields
@@ -134,11 +135,12 @@ export async function POST(request: NextRequest) {
       description,
       category,
       price,
-      salePrice: salePrice || price,
+      salePrice: typeof salePrice === "number" ? salePrice : price,
       sku,
       images: images || [],
       videos: videos || [],
       specifications: specifications || {},
+      stock: typeof stock === "number" ? stock : 0,
     });
 
     return NextResponse.json(

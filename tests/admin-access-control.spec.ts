@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 const ADMIN_EMAIL = "admin@solarstore.com";
-const ADMIN_PASSWORD = "ChangeMe123!";
+const ADMIN_PASSWORD = "admin123!";
+const SKIP_ADMIN_AUTH = !process.env.MONGODB_URI;
 
 test.describe("Admin Access Control Tests", () => {
   test("unauthenticated user should not access admin dashboard", async ({
@@ -37,6 +38,10 @@ test.describe("Admin Access Control Tests", () => {
   });
 
   test("authenticated admin should access dashboard", async ({ page }) => {
+    test.skip(
+      SKIP_ADMIN_AUTH,
+      "Admin auth tests are skipped when database is not configured.",
+    );
     // Login
     await page.goto("/admin");
     await page.fill('input[type="email"]', ADMIN_EMAIL);
@@ -53,6 +58,10 @@ test.describe("Admin Access Control Tests", () => {
   });
 
   test("admin should view products page", async ({ page }) => {
+    test.skip(
+      SKIP_ADMIN_AUTH,
+      "Admin auth tests are skipped when database is not configured.",
+    );
     // Login first
     await page.goto("/admin");
     await page.fill('input[type="email"]', ADMIN_EMAIL);
@@ -82,6 +91,10 @@ test.describe("Admin Access Control Tests", () => {
   });
 
   test("admin should view categories page", async ({ page }) => {
+    test.skip(
+      SKIP_ADMIN_AUTH,
+      "Admin auth tests are skipped when database is not configured.",
+    );
     // Login first
     await page.goto("/admin");
     await page.fill('input[type="email"]', ADMIN_EMAIL);
@@ -111,6 +124,10 @@ test.describe("Admin Access Control Tests", () => {
   });
 
   test("admin should view customers page", async ({ page }) => {
+    test.skip(
+      SKIP_ADMIN_AUTH,
+      "Admin auth tests are skipped when database is not configured.",
+    );
     // Login first
     await page.goto("/admin");
     await page.fill('input[type="email"]', ADMIN_EMAIL);
@@ -140,6 +157,10 @@ test.describe("Admin Access Control Tests", () => {
   });
 
   test("admin should view quotes page", async ({ page }) => {
+    test.skip(
+      SKIP_ADMIN_AUTH,
+      "Admin auth tests are skipped when database is not configured.",
+    );
     // Login first
     await page.goto("/admin");
     await page.fill('input[type="email"]', ADMIN_EMAIL);
@@ -167,6 +188,10 @@ test.describe("Admin Access Control Tests", () => {
   });
 
   test("session should persist across page navigations", async ({ page }) => {
+    test.skip(
+      SKIP_ADMIN_AUTH,
+      "Admin auth tests are skipped when database is not configured.",
+    );
     // Login
     await page.goto("/admin");
     await page.fill('input[type="email"]', ADMIN_EMAIL);
