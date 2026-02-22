@@ -38,19 +38,13 @@ async function seedAdmins() {
     const adminUsers = [
       {
         email: "admin@solarstore.com",
-        password: "ChangeMe123!",
+        password: "admin123!",
         role: "admin",
         phone: "9876543210",
       },
       {
-        email: "admin2@solarstore.com",
-        password: "AdminPassword123!",
-        role: "admin",
-        phone: "9876543211",
-      },
-      {
         email: "superadmin@solarstore.com",
-        password: "SuperAdmin123!",
+        password: "superAdmin123!",
         role: "admin",
         phone: "9876543212",
       },
@@ -74,7 +68,7 @@ async function seedAdmins() {
 
     // Create test customer
     const customerSalt = await bcryptjs.genSalt(10);
-    const customerPassword = await bcryptjs.hash("Customer123!", customerSalt);
+    const customerPassword = await bcryptjs.hash("customer123!", customerSalt);
 
     const customer = new User({
       email: "customer@solarstore.com",
@@ -91,10 +85,14 @@ async function seedAdmins() {
     console.log("\n📋 Admin Users Created Successfully!");
     console.log("Test Credentials:");
     console.log("  Email: admin@solarstore.com");
-    console.log("  Password: ChangeMe123!");
+    console.log("  Password: admin123!");
+    console.log("\n📋 Super Admin Users Created Successfully!");
+    console.log("Test Credentials:");
+    console.log("  Email: superadmin@solarstore.com");
+    console.log("  Password: superAdmin123!");
     console.log("  Role: Admin (Full Access)");
     console.log("\n  Email: customer@solarstore.com");
-    console.log("  Password: Customer123!");
+    console.log("  Password: customer123!");
     console.log("  Role: Customer (Limited Access)");
 
     await mongoose.disconnect();

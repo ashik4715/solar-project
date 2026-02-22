@@ -5,6 +5,7 @@
 ### Step 1: Configure MongoDB (2 min)
 
 **Option A: Local MongoDB**
+
 ```bash
 # macOS
 brew install mongodb-community
@@ -15,6 +16,7 @@ docker run -d -p 27017:27017 --name mongodb mongo
 ```
 
 **Option B: MongoDB Atlas (Cloud)**
+
 1. Go to https://www.mongodb.com/cloud/atlas
 2. Create free account
 3. Create a cluster
@@ -22,6 +24,7 @@ docker run -d -p 27017:27017 --name mongodb mongo
 5. Copy string to `.env`
 
 **Step 2: Update .env File**
+
 ```bash
 # Edit .env - find MONGODB_URI line and update it:
 
@@ -33,6 +36,7 @@ MONGODB_URI=mongodb+srv://username:password@cluster-name.mongodb.net/solar-store
 ```
 
 ### Step 2: Create Test Users (1 min)
+
 ```bash
 npm run db:admin-seeder
 
@@ -42,6 +46,7 @@ npm run db:admin-seeder
 ```
 
 ### Step 3: Start Development Server (1 min)
+
 ```bash
 npm run dev
 
@@ -51,7 +56,9 @@ npm run dev
 ```
 
 ### Step 4: Run Tests (1 min)
+
 **In a new terminal**:
+
 ```bash
 npm test
 
@@ -69,6 +76,7 @@ npm run test:ui
 ### Complete Setup (Full Instructions)
 
 #### A. Prerequisites Check
+
 ```bash
 # Check Node.js version
 node --version
@@ -87,6 +95,7 @@ mongosh --version
 ```
 
 #### B. Install Dependencies
+
 ```bash
 cd /Users/mdashikurrahman/Downloads/wegro/solar-store
 
@@ -104,6 +113,7 @@ npx playwright --version
 #### C. Database Configuration
 
 **Edit `.env` file:**
+
 ```bash
 # Open in editor
 nano .env
@@ -114,21 +124,25 @@ code .env
 Find the `MONGODB_URI` line and replace completely:
 
 **For Local MongoDB:**
+
 ```
 MONGODB_URI=mongodb://localhost:27017/solar-store
 ```
 
 **For MongoDB Atlas:**
+
 ```
 MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/solar-store?retryWrites=true&w=majority
 ```
 
 Example with real values:
+
 ```
 MONGODB_URI=mongodb+srv://john_user:SecurePass123!@myapp-cluster.mongodb.net/solar-store-db?retryWrites=true&w=majority
 ```
 
 **Save and verify:**
+
 ```bash
 # Check it's correct
 cat .env | grep MONGODB_URI
@@ -139,6 +153,7 @@ cat .env | grep MONGODB_URI
 #### D. Create Test Database
 
 **Option 1: Run Seeder (Recommended)**
+
 ```bash
 # This creates admin users automatically
 npm run db:admin-seeder
@@ -153,7 +168,8 @@ npm run db:admin-seeder
 # ✓ Database seeding completed
 ```
 
-**Option 2: Run Full Seed (Alternative)
+\*\*Option 2: Run Full Seed (Alternative)
+
 ```bash
 # This creates sample products, categories, etc.
 npm run db:seed
@@ -165,6 +181,7 @@ npm run db:admin-seeder
 #### E. Verify Everything Works
 
 **Check MongoDB Connection:**
+
 ```bash
 # Test with a simple query
 npm run dev
@@ -186,6 +203,7 @@ npm run dev
 ### Development Testing
 
 #### Mode 1: Interactive UI (Recommended for Development)
+
 ```bash
 npm run test:ui
 
@@ -197,6 +215,7 @@ npm run test:ui
 ```
 
 #### Mode 2: Headed (See Browser)
+
 ```bash
 npm run test:headed
 
@@ -208,6 +227,7 @@ npm run test:headed
 ```
 
 #### Mode 3: Headed + Debug
+
 ```bash
 npm run test:debug
 
@@ -219,6 +239,7 @@ npm run test:debug
 ### Production Testing (CI/CD)
 
 #### Mode 4: Background (Silent)
+
 ```bash
 npm test
 
@@ -229,6 +250,7 @@ npm test
 ```
 
 #### Mode 5: With Build Checks
+
 ```bash
 npm run check
 
@@ -242,6 +264,7 @@ npm run check
 ## Understanding Test Results
 
 ### Success Output
+
 ```
 ✓ admin-login.spec.ts (10 tests)
 ✓ admin-access-control.spec.ts (8 tests)
@@ -253,6 +276,7 @@ Summary: 49 passed (2-3 min)
 ```
 
 ### Failure Output
+
 ```
 ✗ admin-login.spec.ts (1 failed)
   - Admin Login Page Load (TIMEOUT)
@@ -262,6 +286,7 @@ Summary: 49 passed (2-3 min)
 ```
 
 **What to do:**
+
 1. Read the error message
 2. Check TESTING.md for the specific test
 3. Check ISSUES.md for known problems
@@ -269,6 +294,7 @@ Summary: 49 passed (2-3 min)
 5. Check browser console for errors
 
 ### View Detailed Report
+
 ```bash
 # After tests complete:
 npx playwright show-report
@@ -285,6 +311,7 @@ npx playwright show-report
 ## Troubleshooting
 
 ### "Tests Timeout"
+
 ```bash
 # Problem: Taking too long to connect
 # Solution 1: Make sure dev server is running
@@ -304,6 +331,7 @@ npm run dev
 ```
 
 ### "Cannot Connect to http://localhost:3000"
+
 ```bash
 # Check if server is running
 curl http://localhost:3000
@@ -316,6 +344,7 @@ npm run dev
 ```
 
 ### "MONGODB_URI not found" or "Authentication failed"
+
 ```bash
 # Check .env file
 cat .env | grep MONGODB_URI
@@ -332,6 +361,7 @@ npm run db:admin-seeder
 ```
 
 ### "Test Times Out on Login Page"
+
 ```bash
 # Problem: Form elements not found
 # Check what's actually on page:
@@ -346,6 +376,7 @@ npm run dev
 ```
 
 ### "Session Lost Between Page Navigations"
+
 ```bash
 # Problem: Session cookie not persisting
 # See ISSUES.md Issue #2
@@ -381,6 +412,7 @@ npx playwright test --list
 ## Continuous Integration (CI)
 
 ### GitHub Actions Example
+
 ```yaml
 # .github/workflows/test.yml
 name: Tests
@@ -403,7 +435,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
       - run: npm ci
       - run: npm run db:admin-seeder
@@ -420,15 +452,16 @@ jobs:
 
 ## Performance Notes
 
-| Operation | Time |
-|-----------|------|
-| Test setup | ~10 seconds |
-| Single test | 2-5 seconds |
-| All tests (49) | 2-3 minutes |
-| HTML Report generation | ~30 seconds |
-| **Total** | **~3 minutes** |
+| Operation              | Time           |
+| ---------------------- | -------------- |
+| Test setup             | ~10 seconds    |
+| Single test            | 2-5 seconds    |
+| All tests (49)         | 2-3 minutes    |
+| HTML Report generation | ~30 seconds    |
+| **Total**              | **~3 minutes** |
 
 **Tips to Speed Up:**
+
 ```bash
 # Run specific suite only
 npx playwright test tests/admin-login.spec.ts
@@ -447,24 +480,27 @@ npx playwright test --workers=2
 ### Adding New Tests
 
 1. **Create test file:**
+
 ```bash
 # Create new file in tests/
 touch tests/my-feature.spec.ts
 ```
 
 2. **Write test:**
-```typescript
-import { test, expect } from '@playwright/test';
 
-test.describe('My Feature', () => {
-  test('should do something', async ({ page }) => {
-    await page.goto('/');
+```typescript
+import { test, expect } from "@playwright/test";
+
+test.describe("My Feature", () => {
+  test("should do something", async ({ page }) => {
+    await page.goto("/");
     // ... your test
   });
 });
 ```
 
 3. **Run to verify:**
+
 ```bash
 npx playwright test tests/my-feature.spec.ts
 ```

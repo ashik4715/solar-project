@@ -7,11 +7,6 @@ const BASE_URL = "http://localhost:3000";
 test.describe("API Endpoints Tests", () => {
   let sessionCookie: string | null = null;
 
-  test.beforeAll(async () => {
-    // Get session cookie from login
-    const context = await test.request;
-  });
-
   test("POST /api/auth/login - valid credentials", async ({ request }) => {
     const response = await request.post(`${BASE_URL}/api/auth/login`, {
       data: {
@@ -105,7 +100,10 @@ test.describe("API Endpoints Tests", () => {
 
     if (response.status() === 200) {
       const data = await response.json();
-      expect(data).toHaveProperty("openapi").or.toHaveProperty("swagger");
+      // Check if either openapi or swagger property exists
+      const hasOpenAPI =
+        data.hasOwnProperty("openapi") || data.hasOwnProperty("swagger");
+      expect(hasOpenAPI).toBe(true);
     }
   });
 
