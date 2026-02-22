@@ -3,6 +3,7 @@
 ## Quick Start
 
 ### 1. Setup Test Environment
+
 ```bash
 # Install seed data with admin users
 npm run db:admin-seeder
@@ -12,6 +13,7 @@ npm run dev
 ```
 
 ### 2. Run Tests
+
 ```bash
 # Run all tests with browser
 npm run test:headed
@@ -34,6 +36,7 @@ npx playwright test tests/admin-login.spec.ts
 ### ✅ Implemented Tests
 
 #### 1. Admin Login Tests (`tests/admin-login.spec.ts`)
+
 - **Valid login**: Tests successful authentication with correct email/password
 - **Invalid credentials**: Tests rejection of wrong password
 - **Empty credentials**: Validates form submission with no data
@@ -44,16 +47,19 @@ npx playwright test tests/admin-login.spec.ts
 - **Brute force**: Tests multiple invalid attempts
 
 **Credentials**:
+
 - Email: `admin@solarstore.com`
 - Password: `ChangeMe123!`
 
 #### 2. Admin Access Control Tests (`tests/admin-access-control.spec.ts`)
+
 - **Unauthenticated access**: Tests redirect to login for protected pages
 - **Protected routes**: `/admin/dashboard`, `/admin/products`, `/admin/categories`, `/admin/customers`, `/admin/quotes`
 - **Session persistence**: Tests cookie-based session across navigations
 - **Role-based navigation**: Tests access to admin-specific pages
 
 #### 3. CRUD Operations Tests (`tests/crud-operations.spec.ts`)
+
 - **Create category**: Tests category creation with validation
 - **Create product**: Tests product creation with name and price
 - **Read operations**: Tests listing of categories, products, customers
@@ -62,6 +68,7 @@ npx playwright test tests/admin-login.spec.ts
 - **Error handling**: Tests graceful error display
 
 #### 4. API Endpoints Tests (`tests/api-endpoints.spec.ts`)
+
 - **Auth endpoints**: POST `/api/auth/login`, GET `/api/auth/me`
 - **Product endpoints**: GET `/api/products`, POST `/api/products`
 - **Category endpoints**: GET `/api/categories`, POST `/api/categories`
@@ -75,6 +82,7 @@ npx playwright test tests/admin-login.spec.ts
 - **Response headers**: Tests proper Content-Type headers
 
 #### 5. Customer User Flow Tests (`tests/customer-flow.spec.ts`)
+
 - **Homepage access**: Tests public page access
 - **Product browsing**: Tests `/products` page
 - **Quote form**: Tests quote request form submission
@@ -88,11 +96,13 @@ npx playwright test tests/admin-login.spec.ts
 ## Known Issues & Workarounds
 
 ### 🐛 Issue #1: Swagger UI Layout Breaks
+
 **Status**: NEEDS FIX  
 **Problem**: Swagger documentation at `/api/docs` may have layout issues or not load properly  
-**Root Cause**: Swagger UI CDN dependency or styling conflicts  
+**Root Cause**: Swagger UI CDN dependency or styling conflicts
 
 **Workaround**:
+
 ```bash
 # Check if Swagger endpoint returns HTML
 curl http://localhost:3000/api/docs
@@ -102,6 +112,7 @@ npm run dev
 ```
 
 **Fix Needed**:
+
 - [ ] Review `/src/app/api/docs/route.ts` for proper HTML structure
 - [ ] Verify Swagger UI CDN links are accessible
 - [ ] Check for CSS conflicts with Bulma framework
@@ -110,10 +121,12 @@ npm run dev
 ---
 
 ### 🐛 Issue #2: MongoDB Connection in Tests
+
 **Status**: CONFIGURATION REQUIRED  
-**Problem**: Tests may fail if MongoDB is not configured  
+**Problem**: Tests may fail if MongoDB is not configured
 
 **Solution**:
+
 ```bash
 # Make sure .env has valid MONGODB_URI
 echo "MONGODB_URI=mongodb://localhost:27017/solar-store-test" >> .env.local
@@ -125,15 +138,18 @@ echo "MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/solar-store-test" 
 ---
 
 ### 🐛 Issue #3: Session Authentication in Browser Tests
+
 **Status**: WORKING  
-**Current State**: Session-based auth works with cookies  
+**Current State**: Session-based auth works with cookies
 
 **Note**: Unlike JWT, sessions require:
+
 - `httpOnly` cookies enabled
 - Session store configured (currently in-memory)
 - Database connection for production
 
 **For Production Test**:
+
 ```bash
 # Use connect-mongo for session persistence
 npm install connect-mongo --save
@@ -144,24 +160,26 @@ Then update `/src/lib/mongodb.ts` to integrate MongoStore.
 ---
 
 ### 🐛 Issue #4: API Tests May Need Authentication
+
 **Status**: PARTIAL IMPLEMENTATION  
-**Problem**: Some API routes expect authentication but tests don't send session cookies  
+**Problem**: Some API routes expect authentication but tests don't send session cookies
 
 **Fix Needed**:
+
 ```javascript
 // Update tests/api-endpoints.spec.ts to include:
-test('API with session authentication', async ({ request }) => {
+test("API with session authentication", async ({ request }) => {
   // First login to get session cookie
-  const loginResponse = await request.post('/api/auth/login', {
-    data: { email: 'admin@solarstore.com', password: 'ChangeMe123!' }
+  const loginResponse = await request.post("/api/auth/login", {
+    data: { email: "admin@solarstore.com", password: "ChangeMe123!" },
   });
-  
+
   // Get cookies from response
-  const cookies = loginResponse.headers()['set-cookie'];
-  
+  const cookies = loginResponse.headers()["set-cookie"];
+
   // Use cookies in subsequent requests
-  const response = await request.get('/api/customers', {
-    headers: { 'Cookie': cookies }
+  const response = await request.get("/api/customers", {
+    headers: { Cookie: cookies },
   });
 });
 ```
@@ -169,19 +187,21 @@ test('API with session authentication', async ({ request }) => {
 ---
 
 ### 🐛 Issue #5: File Upload Testing
+
 **Status**: NOT FULLY TESTED  
-**Problem**: POST `/api/upload` endpoint needs proper form-data handling  
+**Problem**: POST `/api/upload` endpoint needs proper form-data handling
 
 **Fix Needed**:
+
 ```javascript
-test('POST /api/upload - file upload', async ({ request }) => {
+test("POST /api/upload - file upload", async ({ request }) => {
   const formData = new FormData();
   // Add file from tests/fixtures/sample.jpg
-  
-  const response = await request.post('/api/upload', {
-    multipart: formData
+
+  const response = await request.post("/api/upload", {
+    multipart: formData,
   });
-  
+
   expect(response.status()).toBe(200);
 });
 ```
@@ -189,10 +209,12 @@ test('POST /api/upload - file upload', async ({ request }) => {
 ---
 
 ### 🐛 Issue #6: Admin Seeder Not Running in Tests
+
 **Status**: MANUAL STEP REQUIRED  
-**Problem**: Tests expect admin users but seeder must run manually first  
+**Problem**: Tests expect admin users but seeder must run manually first
 
 **Fix**:
+
 ```bash
 # Before running tests, always execute:
 npm run db:admin-seeder
@@ -207,29 +229,33 @@ webServer: {
 ---
 
 ### 🐛 Issue #7: Customer CRUD Operations Not Visible
-**Status**: DESIGN ISSUE  
-**Problem**: Tests for customer CRUD might not find form elements  
 
-**Reason**: Forms may be generated dynamically or hidden behind modals  
+**Status**: DESIGN ISSUE  
+**Problem**: Tests for customer CRUD might not find form elements
+
+**Reason**: Forms may be generated dynamically or hidden behind modals
 
 **Workaround**: Use `page.locator()` with flexible selectors:
+
 ```javascript
 // Instead of exact selectors
 const input = page.locator('input[name="productName"]');
 
 // Use flexible queries
-const input = page.locator('input').filter({ hasText: /name/i });
+const input = page.locator("input").filter({ hasText: /name/i });
 ```
 
 ---
 
 ### 🐛 Issue #8: Swagger JSON Format
+
 **Status**: NEEDS VERIFICATION  
-**Problem**: `/api/swagger.json` might return malformed or missing schema  
+**Problem**: `/api/swagger.json` might return malformed or missing schema
 
 **Check**:
+
 ```bash
-curl http://localhost:3000/api/swagger.json | jq . 
+curl http://localhost:3000/api/swagger.json | jq .
 
 # Should return valid JSON with:
 # - openapi or swagger version
@@ -244,6 +270,7 @@ curl http://localhost:3000/api/swagger.json | jq .
 ## Test Execution Flow
 
 ### 1. Pre-Test Setup (REQUIRED)
+
 ```bash
 # Setup database with admin users
 npm run db:admin-seeder
@@ -253,12 +280,14 @@ npm run db:seed
 ```
 
 ### 2. Start Development Server
+
 ```bash
 npm run dev
 # Waits for http://localhost:3000 to be ready
 ```
 
 ### 3. Run Test Suites
+
 ```bash
 # Sequential execution
 npm test
@@ -273,6 +302,7 @@ npm test
 ```
 
 ### 4. Review Results
+
 ```bash
 # HTML Report
 npx playwright show-report
@@ -284,6 +314,7 @@ cat test-results.json
 ## Running Tests in CI/CD
 
 ### GitHub Actions Example
+
 ```yaml
 name: Tests
 on: [push, pull_request]
@@ -294,7 +325,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
       - run: npm ci
       - run: npm run db:admin-seeder
       - run: npm test
@@ -308,6 +339,7 @@ jobs:
 ## Troubleshooting
 
 ### Tests Timeout
+
 ```bash
 # Increase Playwright timeout
 export PLAYWRIGHT_TEST_TIMEOUT=30000
@@ -315,6 +347,7 @@ npm test
 ```
 
 ### Cannot Connect to Server
+
 ```bash
 # Check if port 3000 is in use
 lsof -i :3000
@@ -327,6 +360,7 @@ npm run dev
 ```
 
 ### MongoDB Connection Error
+
 ```bash
 # Verify MONGODB_URI in .env
 cat .env | grep MONGODB_URI
@@ -336,6 +370,7 @@ mongosh "mongodb+srv://..."
 ```
 
 ### Session Cookie Not Set
+
 ```bash
 # Check if SESSION_SECRET is configured
 cat .env | grep SESSION_SECRET
@@ -365,6 +400,7 @@ echo "SESSION_SECRET=$(openssl rand -base64 32)" >> .env
 ## Build Check Integration
 
 The `npm run check` command now includes:
+
 ```bash
 npm run lint        # ESLint validation
 npm run build       # Production build
@@ -372,7 +408,9 @@ npm run test        # Playwright tests ← NEW
 ```
 
 ### Pre-Push Hook
+
 The Husky `pre-push` hook runs:
+
 ```bash
 npm run check
 # All tests must pass before pushing to git
@@ -381,6 +419,7 @@ npm run check
 ## Test Environment Variables
 
 Recommended `.env` for testing:
+
 ```
 MONGODB_URI=mongodb://localhost:27017/solar-store-test
 NEXTAUTH_SECRET=test-secret-key-for-development-only
