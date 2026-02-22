@@ -10,6 +10,8 @@
     "lint": "next lint",
     "db:seed": "node scripts/seed.js",
     "db:admin-seeder": "node scripts/admin-seeder.js",
+    "db:products-seeder": "node scripts/seed-products.js",
+    "db:seed-all": "npm run db:admin-seeder && npm run db:products-seeder",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",
