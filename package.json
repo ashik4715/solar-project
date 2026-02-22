@@ -1,0 +1,53 @@
+{
+  "name": "solar-store",
+  "version": "1.0.0",
+  "description": "Solar energy e-commerce platform with admin dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:seed": "node scripts/seed.js",
+    "check": "npm run lint && npm run build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "aws-sdk": "^2.1548.0",
+    "axios": "^1.6.5",
+    "bcryptjs": "^2.4.3",
+    "bulma": "^0.9.4",
+    "connect-mongo": "^5.1.0",
+    "express-session": "^1.17.3",
+    "mongoose": "^8.0.3",
+    "multer": "^1.4.5-lts.1",
+    "next": "^14.1.0",
+    "next-auth": "^4.24.11",
+    "nodemailer": "^7.0.13",
+    "pdfkit": "^0.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "stripe": "^14.7.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "twilio": "^4.10.1",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/express-session": "^1.17.11",
+    "@types/multer": "^1.4.11",
+    "@types/nodemailer": "^7.0.11",
+    "@types/pdfkit": "^0.12.10",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "husky": "^9.1.7",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.1"
+  }
+}
