@@ -178,7 +178,7 @@ export default function LoginPage() {
 
                 <div className="has-text-centered">
                   <p className="is-size-7" style={{ marginBottom: "15px" }}>
-                    Don't have an account?{" "}
+                    Don&apos;t have an account?{" "}
                     <Link
                       href="/register"
                       style={{ color: "#2d5016", fontWeight: "bold" }}
@@ -197,7 +197,7 @@ export default function LoginPage() {
                       fontSize: "14px",
                     }}
                   >
-                    ← Back to Home
+                    &larr; Back to Home
                   </Link>
                 </div>
               </div>

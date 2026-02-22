@@ -275,7 +275,7 @@ export default function RegisterPage() {
                         fontSize: "14px",
                       }}
                     >
-                      ← Back to Home
+                      &larr; Back to Home
                     </Link>
                   </div>
                 </form>

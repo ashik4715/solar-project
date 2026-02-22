@@ -189,7 +189,7 @@ export default function AdminLoginPage() {
                     href="/"
                     style={{ color: "#2d5016", textDecoration: "underline" }}
                   >
-                    ← Back to Home
+                    &larr; Back to Home
                   </Link>
                 </div>
               </div>

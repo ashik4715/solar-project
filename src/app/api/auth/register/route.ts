@@ -72,13 +72,16 @@ export async function POST(request: NextRequest) {
     await user.save();
 
     return NextResponse.json(
-      APIResponse.success("User registered successfully", {
-        user: {
-          id: user._id,
-          email: user.email,
-          name: user.name,
+      APIResponse.success(
+        {
+          user: {
+            id: user._id,
+            email: user.email,
+            name: user.name,
+          },
         },
-      }).toJSON(),
+        "User registered successfully",
+      ).toJSON(),
       { status: 201 },
     );
   } catch (error: any) {

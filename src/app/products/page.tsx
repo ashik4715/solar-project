@@ -381,6 +381,7 @@ export default function ProductsPage() {
                           }}
                         >
                           {product.images && product.images.length > 0 ? (
+                            // eslint-disable-next-line @next/next/no-img-element
                             <img
                               src={product.images[0]}
                               alt={product.name}
