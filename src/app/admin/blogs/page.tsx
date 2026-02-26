@@ -29,6 +29,16 @@ export default function BlogsPage() {
     media: [],
   });
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [tinymceKey, setTinymceKey] = useState<string>("no-api-key");
+
+  useEffect(() => {
+    fetch("/api/settings")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.data?.tinymceApiKey) setTinymceKey(data.data.tinymceApiKey);
+      })
+      .catch(() => {});
+  }, []);
 
   const loadPosts = async () => {
     setLoading(true);
@@ -147,21 +157,21 @@ export default function BlogsPage() {
                 />
               </div>
               <div className="field">
-                <label className="checkbox">
-                  <input
-                    type="checkbox"
-                    checked={form.isPublished}
-                    onChange={(e) =>
-                      setForm({ ...form, isPublished: e.target.checked })
-                    }
-                  />{" "}
-                  Published
-                </label>
+                <label className="label">Status</label>
+                <button
+                  type="button"
+                  className={`button is-small ${form.isPublished ? "is-success" : "is-light"}`}
+                  onClick={() =>
+                    setForm((prev) => ({ ...prev, isPublished: !prev.isPublished }))
+                  }
+                >
+                  {form.isPublished ? "Published" : "Draft"}
+                </button>
               </div>
               <div className="field">
                 <label className="label">Content</label>
                 <Editor
-                  apiKey="no-api-key"
+                  apiKey={tinymceKey || "no-api-key"}
                   init={{
                     height: 240,
                     menubar: false,

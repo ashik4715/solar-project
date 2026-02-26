@@ -131,16 +131,19 @@ export default function FAQsPage() {
                   </div>
                 </div>
                 <div className="field">
-                  <label className="checkbox">
-                    <input
-                      type="checkbox"
-                      checked={form.isPublished}
-                      onChange={(e) =>
-                        setForm({ ...form, isPublished: e.target.checked })
-                      }
-                    />{" "}
-                    Published
-                  </label>
+                  <label className="label">Status</label>
+                  <button
+                    type="button"
+                    className={`button is-small ${form.isPublished ? "is-success" : "is-light"}`}
+                    onClick={() =>
+                      setForm((prev) => ({
+                        ...prev,
+                        isPublished: !prev.isPublished,
+                      }))
+                    }
+                  >
+                    {form.isPublished ? "Published" : "Draft"}
+                  </button>
                 </div>
                 <button className="button is-success" type="submit">
                   {editingId ? "Update" : "Create"}

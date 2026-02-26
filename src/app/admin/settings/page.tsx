@@ -15,6 +15,7 @@ interface Settings {
   stripeSecretKey?: string;
   bkashMerchantId?: string;
   paymentNotes?: string;
+  tinymceApiKey?: string;
   taxRate?: number;
   shippingRate?: number;
   notificationEmail?: string;
@@ -250,6 +251,17 @@ export default function SettingsPage() {
                 onChange={(e) =>
                   handleChange("paymentNotes", e.target.value)
                 }
+              />
+            </div>
+            <div className="field">
+              <label className="label">TinyMCE API Key</label>
+              <input
+                className="input"
+                value={settings.tinymceApiKey || ""}
+                onChange={(e) =>
+                  handleChange("tinymceApiKey", e.target.value)
+                }
+                placeholder="Enter your TinyMCE cloud API key"
               />
             </div>
           </div>

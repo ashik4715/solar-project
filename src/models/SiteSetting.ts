@@ -13,6 +13,7 @@ const siteSettingSchema = new mongoose.Schema(
     stripeSecretKey: String,
     bkashMerchantId: String,
     paymentNotes: String,
+    tinymceApiKey: String,
     taxRate: { type: Number, default: 0 },
     shippingRate: { type: Number, default: 0 },
     notificationEmail: String,

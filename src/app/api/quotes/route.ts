@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Quote from "@/models/Quote";
+import Customer from "@/models/Customer";
 import { generateQuoteNumber, calculateTax } from "@/utils/helpers";
 import { sendEmail, getQuoteEmailTemplate } from "@/utils/email";
 import { APIResponse } from "@/utils/response";
@@ -81,39 +82,31 @@ export async function POST(request: NextRequest) {
     await connectDB();
 
     const body = await request.json();
-    const { customerId, items } = body;
+    const { customerId, items, name, email, phone, address, systemSize } = body;
 
-    if (!customerId || !items || items.length === 0) {
-      return NextResponse.json(
-        APIResponse.error("Customer ID and items are required").toJSON(),
-        { status: 400 },
-      );
+    if ((!customerId && !email) || (!items || items.length === 0)) {
+      const defaultItems =
+        items && items.length > 0
+          ? items
+          : [
+              {
+                product: null,
+                quantity: 1,
+                price: 0,
+                description: "Custom quote",
+              },
+            ];
+      // Create lightweight customer if not provided
+      const cust = await Customer.create({
+        name: name || "Guest",
+        email: email || "unknown@example.com",
+        phone: phone || "",
+        address: address || "",
+      });
+      return createQuoteForCustomer(cust._id, defaultItems, { address, systemSize });
     }
 
-    // Calculate totals
-    let subtotal = 0;
-    items.forEach((item: any) => {
-      subtotal += item.price * item.quantity;
-    });
-
-    const tax = calculateTax(subtotal);
-    const totalAmount = subtotal + tax;
-
-    const quote = await Quote.create({
-      quoteNumber: generateQuoteNumber(),
-      customer: customerId,
-      items,
-      subtotal,
-      tax,
-      totalAmount,
-      status: "draft",
-      validUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
-    });
-
-    return NextResponse.json(
-      APIResponse.success(quote, "Quote created successfully", 201).toJSON(),
-      { status: 201 },
-    );
+    return createQuoteForCustomer(customerId, items, { address, systemSize });
   } catch (error) {
     console.error("Create quote error:", error);
     return NextResponse.json(
@@ -121,4 +114,32 @@ export async function POST(request: NextRequest) {
       { status: 500 },
     );
   }
+}
+
+async function createQuoteForCustomer(customerId: string, items: any[], extras: any) {
+  // Calculate totals
+  let subtotal = 0;
+  items.forEach((item: any) => {
+    subtotal += (item.price || 0) * (item.quantity || 1);
+  });
+
+  const tax = calculateTax(subtotal);
+  const totalAmount = subtotal + tax;
+
+  const quote = await Quote.create({
+    quoteNumber: generateQuoteNumber(),
+    customer: customerId,
+    items,
+    subtotal,
+    tax,
+    totalAmount,
+    status: "draft",
+    validUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
+    notes: extras?.address || extras?.systemSize || "",
+  });
+
+  return NextResponse.json(
+    APIResponse.success(quote, "Quote created successfully", 201).toJSON(),
+    { status: 201 },
+  );
 }
