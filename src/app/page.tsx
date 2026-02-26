@@ -1,15 +1,23 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { AppFooter } from "@/components/AppFooter";
 import "bulma/css/bulma.css";
 import "./globals.css";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
+  return (
+    <Suspense fallback={<div style={{ padding: 24 }}>Loading...</div>}>
+      <HomePageContent />
+    </Suspense>
+  );
+}
+
+function HomePageContent() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");

@@ -86,6 +86,15 @@ export default function ProductsPage() {
   const textColor = isDarkMode ? "#e0e0e0" : "#333";
   const cardBg = isDarkMode ? "#2d2d2d" : "#f9f9f9";
   const borderColor = isDarkMode ? "#444" : "#e0e0e0";
+  const filteredProducts = searchTerm
+    ? products.filter((product) => {
+        const term = searchTerm.toLowerCase();
+        return (
+          product.name.toLowerCase().includes(term) ||
+          product.description?.toLowerCase().includes(term)
+        );
+      })
+    : products;
 
   return (
     <div
