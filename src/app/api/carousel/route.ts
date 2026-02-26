@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
   const session = request.cookies.get("session")?.value;
   if (!session) return NextResponse.json(APIResponse.unauthorized().toJSON(), { status: 401 });
   const role = JSON.parse(Buffer.from(session, "base64").toString()).role;
-  if (!can(role, "carousel", "create")) {
+  if (!(await can(role, "carousel", "create"))) {
     return NextResponse.json(APIResponse.forbidden().toJSON(), { status: 403 });
   }
 

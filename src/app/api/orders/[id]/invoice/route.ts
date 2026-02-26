@@ -22,14 +22,16 @@ export async function POST(
       status: 401,
     });
   const role = JSON.parse(Buffer.from(session, "base64").toString()).role;
-  if (!can(role, "orders", "update")) {
+  if (!(await can(role, "orders", "update"))) {
     return NextResponse.json(APIResponse.forbidden().toJSON(), {
       status: 403,
     });
   }
 
   await connectDB();
-  const order = await Order.findById(id).populate("customer");
+  const order = await Order.findById(id)
+    .populate("customer")
+    .populate("items.product");
   if (!order) {
     return NextResponse.json(APIResponse.notFound().toJSON(), { status: 404 });
   }

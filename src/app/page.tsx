@@ -186,13 +186,13 @@ function HomePageContent() {
               </Link>
             </div>
             <div className="navbar-item">
-              <button
+              <Link
+                href="/?openQuote=1"
                 className="button is-light is-small"
-                onClick={openQuote}
                 style={{ marginRight: "15px" }}
               >
                 💬 Quotes
-              </button>
+              </Link>
             </div>
             <div className="navbar-item">
               <Link

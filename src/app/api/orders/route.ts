@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
       status: 401,
     });
   const role = JSON.parse(Buffer.from(session, "base64").toString()).role;
-  if (!can(role, "orders", "create")) {
+  if (!(await can(role, "orders", "create"))) {
     return NextResponse.json(APIResponse.forbidden().toJSON(), { status: 403 });
   }
 

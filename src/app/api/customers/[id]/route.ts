@@ -4,13 +4,12 @@ import Customer from "@/models/Customer";
 import { APIResponse } from "@/utils/response";
 import { can } from "@/utils/permissions";
 
-async function requireAdmin(request: NextRequest) {
+async function requireAuth(request: NextRequest) {
   const session = request.cookies.get("session")?.value;
   if (!session) return { ok: false, status: 401 };
   try {
     const sessionData = JSON.parse(Buffer.from(session, "base64").toString());
-    if (sessionData.role !== "admin") return { ok: false, status: 403 };
-    return { ok: true };
+    return { ok: true, role: sessionData.role };
   } catch (_e) {
     return { ok: false, status: 401 };
   }
@@ -22,20 +21,17 @@ export async function PATCH(
 ) {
   try {
     const { id } = await params;
-    const auth = await requireAdmin(request);
+    const auth = await requireAuth(request);
     if (!auth.ok) {
       const res =
-        auth.status === 403
-          ? APIResponse.forbidden()
-          : APIResponse.unauthorized();
+        auth.status === 401
+          ? APIResponse.unauthorized()
+          : APIResponse.forbidden();
       return NextResponse.json(res.toJSON(), { status: auth.status });
     }
 
     await connectDB();
-    const role = JSON.parse(
-      Buffer.from(request.cookies.get("session")!.value, "base64").toString(),
-    ).role;
-    if (!can(role, "customers", "update")) {
+    if (!(await can(auth.role, "customers", "update"))) {
       return NextResponse.json(APIResponse.forbidden().toJSON(), {
         status: 403,
       });
@@ -72,20 +68,17 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params;
-    const auth = await requireAdmin(request);
+    const auth = await requireAuth(request);
     if (!auth.ok) {
       const res =
-        auth.status === 403
-          ? APIResponse.forbidden()
-          : APIResponse.unauthorized();
+        auth.status === 401
+          ? APIResponse.unauthorized()
+          : APIResponse.forbidden();
       return NextResponse.json(res.toJSON(), { status: auth.status });
     }
 
     await connectDB();
-    const role = JSON.parse(
-      Buffer.from(request.cookies.get("session")!.value, "base64").toString(),
-    ).role;
-    if (!can(role, "customers", "delete")) {
+    if (!(await can(auth.role, "customers", "delete"))) {
       return NextResponse.json(APIResponse.forbidden().toJSON(), {
         status: 403,
       });

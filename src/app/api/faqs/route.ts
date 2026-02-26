@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
   const session = request.cookies.get("session")?.value;
   if (!session) return NextResponse.json(APIResponse.unauthorized().toJSON(), { status: 401 });
   const role = JSON.parse(Buffer.from(session, "base64").toString()).role;
-  if (!can(role, "faqs", "create")) {
+  if (!(await can(role, "faqs", "create"))) {
     return NextResponse.json(APIResponse.forbidden().toJSON(), { status: 403 });
   }
 

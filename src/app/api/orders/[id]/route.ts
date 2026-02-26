@@ -10,7 +10,7 @@ async function authorize(request: NextRequest, action: "update" | "delete") {
   if (!session) return { ok: false, status: 401 };
   const role = JSON.parse(Buffer.from(session, "base64").toString()).role;
   const allowed = action === "update" ? "update" : "delete";
-  if (!can(role, "orders", allowed)) return { ok: false, status: 403 };
+  if (!(await can(role, "orders", allowed))) return { ok: false, status: 403 };
   return { ok: true };
 }
 

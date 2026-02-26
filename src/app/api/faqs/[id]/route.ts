@@ -8,7 +8,9 @@ async function authorize(request: NextRequest, action: "update" | "delete") {
   const session = request.cookies.get("session")?.value;
   if (!session) return { ok: false, status: 401 };
   const role = JSON.parse(Buffer.from(session, "base64").toString()).role;
-  if (!can(role, "faqs", action === "update" ? "update" : "delete")) {
+  if (
+    !(await can(role, "faqs", action === "update" ? "update" : "delete"))
+  ) {
     return { ok: false, status: 403 };
   }
   return { ok: true };

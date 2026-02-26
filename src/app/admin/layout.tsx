@@ -52,12 +52,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           return;
         }
 
-        // Check if user is admin
-        if (user.role !== "admin") {
-          router.push("/"); // Redirect non-admin users to home
-          return;
-        }
-
         setCurrentUser(user);
       } catch (error) {
         console.error("Auth error:", error);
@@ -202,6 +196,16 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <li>
             <Link href="/admin/orders" style={{ color: textColor }}>
               🛒 Orders
+            </Link>
+          </li>
+          <li>
+            <Link href="/admin/users" style={{ color: textColor }}>
+              👤 Users
+            </Link>
+          </li>
+          <li>
+            <Link href="/admin/roles" style={{ color: textColor }}>
+              🔑 Roles
             </Link>
           </li>
         </ul>

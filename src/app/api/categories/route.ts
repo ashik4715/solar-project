@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    if (!can(sessionData.role, "categories", "create")) {
+    if (!(await can(sessionData.role, "categories", "create"))) {
       return NextResponse.json(APIResponse.forbidden().toJSON(), {
         status: 403,
       });

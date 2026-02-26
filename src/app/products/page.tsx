@@ -208,34 +208,6 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      {/* Hero Section */}
-      <section
-        className="hero"
-        style={{
-          backgroundColor: "#2d5016",
-          color: "#fff",
-          padding: "40px 20px",
-        }}
-      >
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <h1
-              className="title"
-              style={{ color: "#fff", fontSize: "48px", marginBottom: "20px" }}
-            >
-              🌞 Solar Energy Products
-            </h1>
-            <p
-              className="subtitle"
-              style={{ color: "#e8f5e9", fontSize: "18px" }}
-            >
-              Premium solar panels and energy solutions for your home or
-              business
-            </p>
-          </div>
-        </div>
-      </section>
-
       <div
         className="container"
         style={{ paddingTop: "30px", paddingBottom: "30px" }}

@@ -22,18 +22,53 @@ export default function FAQsPage() {
   }, []);
 
   return (
-    <div className="section">
-      <div className="container" style={{ maxWidth: "900px" }}>
-        <nav className="breadcrumb" aria-label="breadcrumbs">
-          <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li className="is-active">
-              <a aria-current="page">FAQs</a>
-            </li>
-          </ul>
-        </nav>
+    <div>
+      <nav
+        className="navbar has-shadow"
+        style={{ backgroundColor: "#2d5016", color: "#fff" }}
+      >
+        <div className="navbar-brand">
+          <Link
+            href="/"
+            className="navbar-item"
+            style={{ fontWeight: "bold", fontSize: "20px", color: "#fff" }}
+          >
+            ☀️ Solar Store
+          </Link>
+        </div>
+        <div className="navbar-menu">
+          <div className="navbar-end">
+            <Link href="/products" className="navbar-item" style={{ color: "#fff" }}>
+              Products
+            </Link>
+            <Link href="/after-sales" className="navbar-item" style={{ color: "#fff" }}>
+              Support
+            </Link>
+            <Link
+              href="/?openQuote=1"
+              className="navbar-item button is-light is-small"
+              style={{ margin: "8px" }}
+            >
+              💬 Get a Quote
+            </Link>
+            <Link href="/login" className="navbar-item" style={{ color: "#fff" }}>
+              Login
+            </Link>
+          </div>
+        </div>
+      </nav>
+      <div className="section">
+        <div className="container" style={{ maxWidth: "900px" }}>
+          <nav className="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li className="is-active">
+                <a aria-current="page">FAQs</a>
+              </li>
+            </ul>
+          </nav>
         <h1 className="title">Frequently Asked Questions</h1>
         {faqs.length === 0 ? (
           <p className="has-text-grey">We’re preparing FAQs. Check back soon!</p>
@@ -54,6 +89,7 @@ export default function FAQsPage() {
             ))}
           </div>
         )}
+        </div>
       </div>
     </div>
   );

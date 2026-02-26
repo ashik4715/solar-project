@@ -13,6 +13,9 @@ interface FAQ {
 
 export default function FAQsPage() {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
+  const [categories, setCategories] = useState<{ _id: string; name: string }[]>(
+    [],
+  );
   const [form, setForm] = useState<FAQ>({
     question: "",
     answer: "",
@@ -30,6 +33,10 @@ export default function FAQsPage() {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchFaqs();
+    fetch("/api/categories")
+      .then((r) => r.json())
+      .then((data) => setCategories(data.data || []))
+      .catch(() => {});
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -97,13 +104,21 @@ export default function FAQsPage() {
                 </div>
                 <div className="field">
                   <label className="label">Category</label>
-                  <input
-                    className="input"
-                    value={form.category || ""}
-                    onChange={(e) =>
-                      setForm({ ...form, category: e.target.value })
-                    }
-                  />
+                  <div className="select is-fullwidth">
+                    <select
+                      value={form.category || ""}
+                      onChange={(e) =>
+                        setForm({ ...form, category: e.target.value })
+                      }
+                    >
+                      <option value="">General</option>
+                      {categories.map((cat) => (
+                        <option key={cat._id} value={cat.name}>
+                          {cat.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
                 <div className="field">
                   <label className="checkbox">
