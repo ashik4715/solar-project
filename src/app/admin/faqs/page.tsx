@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import "bulma/css/bulma.css";
 
 interface FAQ {
@@ -49,11 +50,12 @@ export default function FAQsPage() {
       body: JSON.stringify(form),
     });
     if (!res.ok) {
-      alert("Save failed");
+      Swal.fire("Save failed", "Could not save FAQ", "error");
       return;
     }
     setForm({ question: "", answer: "", category: "", isPublished: true });
     setEditingId(null);
+    Swal.fire("Saved", "FAQ saved", "success");
     fetchFaqs();
   };
 
@@ -64,8 +66,14 @@ export default function FAQsPage() {
 
   const handleDelete = async (id?: string) => {
     if (!id) return;
-    if (!confirm("Delete FAQ?")) return;
+    const ok = await Swal.fire({
+      title: "Delete FAQ?",
+      icon: "warning",
+      showCancelButton: true,
+    });
+    if (!ok.isConfirmed) return;
     await fetch(`/api/faqs/${id}`, { method: "DELETE" });
+    Swal.fire("Deleted", "FAQ removed", "success");
     fetchFaqs();
   };
 

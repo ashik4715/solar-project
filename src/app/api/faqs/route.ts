@@ -4,9 +4,20 @@ import FAQ from "@/models/FAQ";
 import { APIResponse } from "@/utils/response";
 import { can } from "@/utils/permissions";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   await connectDB();
-  const faqs = await FAQ.find({}).sort({ createdAt: -1 });
+  const session = request.cookies.get("session")?.value;
+  let includeDrafts = false;
+  if (session) {
+    try {
+      const role = JSON.parse(Buffer.from(session, "base64").toString()).role;
+      includeDrafts = role === "admin" || role === "manager";
+    } catch {
+      /* ignore */
+    }
+  }
+  const filter = includeDrafts ? {} : { isPublished: true };
+  const faqs = await FAQ.find(filter).sort({ createdAt: -1 });
   return NextResponse.json(
     APIResponse.success(faqs, "FAQs fetched").toJSON(),
   );
@@ -25,6 +36,7 @@ export async function POST(request: NextRequest) {
   const faq = await FAQ.create({
     ...body,
     category: body.category || "general",
+    isPublished: body.isPublished ?? true,
   });
   return NextResponse.json(
     APIResponse.success(faq, "FAQ created", 201).toJSON(),

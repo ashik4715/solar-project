@@ -199,6 +199,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             </Link>
           </li>
           <li>
+            <Link href="/admin/blogs" style={{ color: textColor }}>
+              📰 Blogs
+            </Link>
+          </li>
+          <li>
             <Link href="/admin/users" style={{ color: textColor }}>
               👤 Users
             </Link>
@@ -214,6 +219,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           Settings
         </p>
         <ul className="menu-list">
+          <li>
+            <Link href="/admin/user-settings" style={{ color: textColor }}>
+              👤 User Settings
+            </Link>
+          </li>
           <li>
             <Link href="/admin/settings" style={{ color: textColor }}>
               ⚙️ Site Settings

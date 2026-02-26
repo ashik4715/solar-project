@@ -15,6 +15,10 @@ const faqSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    isPublished: {
+      type: Boolean,
+      default: true,
+    },
     displayOrder: {
       type: Number,
       default: 0,

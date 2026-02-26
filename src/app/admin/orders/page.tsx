@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useCallback } from "react";
+import Swal from "sweetalert2";
 import "bulma/css/bulma.css";
 
 interface Order {
@@ -106,7 +107,7 @@ export default function OrdersPage() {
         window.open(url, "_blank");
       }
     } else {
-      alert(data.message || "Invoice generation failed");
+      Swal.fire("Failed", data.message || "Invoice generation failed", "error");
     }
   };
 
@@ -136,7 +137,7 @@ export default function OrdersPage() {
 
   const createOrder = async () => {
     if (!newOrder.customerId) {
-      alert("Select a customer");
+      Swal.fire("Missing customer", "Select a customer", "warning");
       return;
     }
     const payloadItems = newOrder.items
@@ -148,7 +149,7 @@ export default function OrdersPage() {
           it.price || products.find((p) => p._id === it.productId)?.price || 0,
       }));
     if (payloadItems.length === 0) {
-      alert("Add at least one item");
+      Swal.fire("Add items", "Add at least one item", "warning");
       return;
     }
 
@@ -165,7 +166,7 @@ export default function OrdersPage() {
     });
     if (!res.ok) {
       const data = await res.json().catch(() => ({}));
-      alert(data.message || "Failed to create order");
+      Swal.fire("Failed", data.message || "Failed to create order", "error");
       return;
     }
     setNewOrder({
@@ -175,6 +176,7 @@ export default function OrdersPage() {
       orderStatus: "pending",
       notes: "",
     });
+    Swal.fire("Created", "Order saved", "success");
     fetchOrders();
   };
 

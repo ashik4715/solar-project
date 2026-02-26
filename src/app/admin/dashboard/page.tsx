@@ -15,7 +15,7 @@ export default function AdminDashboard() {
     totalProducts: 12,
     totalCustomers: 45,
     totalOrders: 23,
-    totalRevenue: 8750000,
+    totalRevenue: 875000,
   });
 
   return (
@@ -77,11 +77,26 @@ export default function AdminDashboard() {
         </div>
         <div className="card-content">
           <ul style={{ lineHeight: 1.5 }}>
-            <li>🎛️ Roles & Users: Create custom roles with per-module create/read/update/delete access; assign roles to users.</li>
-            <li>🛒 Orders: Create mock orders, update status, generate/download PDF invoices (uploads to S3 when configured).</li>
-            <li>❓ FAQs: Manage questions with categories; published FAQs surface on the public FAQs page.</li>
-            <li>🖼️ Media: Carousel images/videos with optional audio; sync to S3 if keys are set.</li>
-            <li>⚙️ Settings: Site branding, contact info, payment keys (Stripe/PayPal/Bkash), logo & favicon upload.</li>
+            <li>
+              🎛️ Roles & Users: Create custom roles with per-module
+              create/read/update/delete access; assign roles to users.
+            </li>
+            <li>
+              🛒 Orders: Create mock orders, update status, generate/download
+              PDF invoices (uploads to S3 when configured).
+            </li>
+            <li>
+              ❓ FAQs: Manage questions with categories; published FAQs surface
+              on the public FAQs page.
+            </li>
+            <li>
+              🖼️ Media: Carousel images/videos with optional audio; sync to S3
+              if keys are set.
+            </li>
+            <li>
+              ⚙️ Settings: Site branding, contact info, payment keys
+              (Stripe/PayPal/Bkash), logo & favicon upload.
+            </li>
           </ul>
         </div>
       </div>

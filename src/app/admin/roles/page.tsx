@@ -20,6 +20,7 @@ const MODULES: { key: string; label: string }[] = [
   { key: "customers", label: "Customers" },
   { key: "carousel", label: "Media" },
   { key: "quotes", label: "Quotes" },
+  { key: "blogs", label: "Blogs" },
   { key: "settings", label: "Settings" },
   { key: "roles", label: "Roles" },
   { key: "users", label: "Users" },
