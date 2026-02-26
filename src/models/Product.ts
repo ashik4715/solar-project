@@ -67,3 +67,6 @@ const productSchema = new mongoose.Schema(
 
 export default mongoose.models.Product ||
   mongoose.model("Product", productSchema);
+
+// Text index for search
+productSchema.index({ name: "text", description: "text", slug: "text" });

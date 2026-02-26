@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Category from "@/models/Category";
 import { APIResponse } from "@/utils/response";
+import { can } from "@/utils/permissions";
 
 /**
  * @swagger
@@ -58,7 +59,7 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    if (sessionData.role !== "admin") {
+    if (!can(sessionData.role, "categories", "create")) {
       return NextResponse.json(APIResponse.forbidden().toJSON(), {
         status: 403,
       });

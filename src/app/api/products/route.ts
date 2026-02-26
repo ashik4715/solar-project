@@ -3,6 +3,7 @@ import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
 import Category from "@/models/Category";
 import { APIResponse } from "@/utils/response";
+import { can } from "@/utils/permissions";
 
 /**
  * @swagger
@@ -37,15 +38,25 @@ export async function GET(request: NextRequest) {
 
     const { searchParams } = new URL(request.url);
     const category = searchParams.get("category");
+    const search = searchParams.get("q");
     const skip = parseInt(searchParams.get("skip") || "0");
     const limit = parseInt(searchParams.get("limit") || "10");
 
     const filter: any = { isActive: true };
     if (category) {
-      const categoryDoc = await Category.findOne({ slug: category });
+      const categoryDoc =
+        (await Category.findOne({ slug: category })) ||
+        (await Category.findById(category).catch(() => null));
       if (categoryDoc) {
         filter.category = categoryDoc._id;
       }
+    }
+    if (search) {
+      filter.$or = [
+        { name: { $regex: search, $options: "i" } },
+        { description: { $regex: search, $options: "i" } },
+        { slug: { $regex: search, $options: "i" } },
+      ];
     }
 
     const products = await Product.find(filter)
@@ -98,7 +109,7 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    if (sessionData.role !== "admin") {
+    if (!can(sessionData.role, "products", "create")) {
       return NextResponse.json(APIResponse.forbidden().toJSON(), {
         status: 403,
       });

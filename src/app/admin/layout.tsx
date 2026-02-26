@@ -221,6 +221,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             </Link>
           </li>
           <li>
+            <Link href="/admin/media" style={{ color: textColor }}>
+              🖼️ Carousel Media
+            </Link>
+          </li>
+          <li>
             <Link href="/admin/faqs" style={{ color: textColor }}>
               ❓ FAQs
             </Link>

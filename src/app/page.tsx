@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AppFooter } from "@/components/AppFooter";
 import "bulma/css/bulma.css";
 import "./globals.css";
+import { useSearchParams, useRouter } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +15,20 @@ export default function HomePage() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [quoteForm, setQuoteForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    systemSize: "",
+    address: "",
+  });
+  const [slides, setSlides] = useState<
+    { _id: string; title?: string; subtitle?: string; mediaUrl: string; mediaType: string; hasAudio?: boolean; ctaText?: string; ctaHref?: string }[]
+  >([]);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
   useEffect(() => {
     // Load theme preference
@@ -23,10 +38,65 @@ export default function HomePage() {
     }
   }, []);
 
+  useEffect(() => {
+    if (searchParams?.get("openQuote")) {
+      setShowQuoteModal(true);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    const loadSlides = async () => {
+      try {
+        const res = await fetch("/api/carousel");
+        const data = await res.json();
+        if (Array.isArray(data.data)) setSlides(data.data);
+      } catch (e) {
+        console.warn("carousel fetch failed", e);
+      }
+    };
+    loadSlides();
+  }, []);
+
+  useEffect(() => {
+    if (slides.length <= 1) return;
+    const id = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [slides.length]);
+
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
     setIsDarkMode(newTheme);
     localStorage.setItem("theme", newTheme ? "dark" : "light");
+  };
+
+  const openQuote = () => setShowQuoteModal(true);
+  const closeQuote = () => {
+    setShowQuoteModal(false);
+    const params = new URLSearchParams(window.location.search);
+    params.delete("openQuote");
+    router.replace(`/?${params.toString()}`);
+  };
+
+  const submitQuote = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    await fetch("/api/quotes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(quoteForm),
+    }).catch(() => {});
+    setLoading(false);
+    alert("Quote submitted! We'll reach out soon.");
+    setQuoteForm({
+      name: "",
+      email: "",
+      phone: "",
+      systemSize: "",
+      address: "",
+    });
+    closeQuote();
   };
 
   const handleContactSubmit = async (e: React.FormEvent) => {
@@ -108,16 +178,13 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="navbar-item">
-              <Link
-                href="/quotes"
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  marginRight: "15px",
-                }}
+              <button
+                className="button is-light is-small"
+                onClick={openQuote}
+                style={{ marginRight: "15px" }}
               >
                 💬 Quotes
-              </Link>
+              </button>
             </div>
             <div className="navbar-item">
               <Link
@@ -191,68 +258,163 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section
-        className="hero is-large"
-        style={{
-          backgroundImage: isDarkMode
-            ? "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))"
-            : "linear-gradient(rgba(45,80,22,0.3), rgba(45,80,22,0.3))",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundColor: "#2d5016",
-          minHeight: "600px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <div className="hero-body" style={{ textAlign: "center" }}>
-          <div className="container">
-            <h1
-              className="title"
-              style={{
-                color: "#fff",
-                fontSize: "56px",
-                fontWeight: "bold",
-                marginBottom: "20px",
-              }}
-            >
-              🌞 Premium Residential Solar Solutions
-            </h1>
-            <p
-              className="subtitle"
-              style={{
-                color: "#e8f5e9",
-                fontSize: "20px",
-                marginBottom: "30px",
-              }}
-            >
-              Go Green, Save Green - Easy, Efficient, and Affordable Solar
-              Energy for Your Home
-            </p>
+      {/* Hero / Carousel */}
+      <section className="hero is-large" style={{ position: "relative", overflow: "hidden" }}>
+        {slides.length > 0 ? (
+          <div style={{ height: "600px" }}>
+            {slides.map((slide, idx) => (
+              <div
+                key={slide._id}
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  opacity: activeSlide === idx ? 1 : 0,
+                  transition: "opacity 0.6s ease",
+                  backgroundColor: "#0d2a0f",
+                  backgroundImage:
+                    slide.mediaType === "image"
+                      ? `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(${slide.mediaUrl})`
+                      : undefined,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#fff",
+                  padding: "40px",
+                }}
+              >
+                <div className="container has-text-centered">
+                  <span className="tag is-success is-light" style={{ marginBottom: "10px" }}>
+                    Renewable energy for everyone
+                  </span>
+                  <h1 className="title" style={{ color: "#fff", fontSize: "56px", marginBottom: "20px" }}>
+                    {slide.title || "Power your home with clean solar energy"}
+                  </h1>
+                  <p className="subtitle" style={{ color: "#e8f5e9", fontSize: "20px" }}>
+                    {slide.subtitle ||
+                      "Premium solar panels, expert installation, and reliable maintenance services tailored to your needs."}
+                  </p>
+                  <div
+                    style={{
+                      marginTop: "30px",
+                      display: "flex",
+                      gap: "12px",
+                      justifyContent: "center",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <Link className="button is-light is-large" href={slide.ctaHref || "/products"}>
+                      {slide.ctaText || "Explore Products"}
+                    </Link>
+                    <button className="button is-success is-large" onClick={openQuote}>
+                      Get a Quote
+                    </button>
+                  </div>
+                  {slide.mediaType === "video" ? (
+                    <video
+                      src={slide.mediaUrl}
+                      autoPlay
+                      muted={!slide.hasAudio}
+                      controls={slide.hasAudio}
+                      loop
+                      style={{
+                        marginTop: "20px",
+                        maxHeight: "320px",
+                        maxWidth: "100%",
+                        borderRadius: "12px",
+                        boxShadow: "0 15px 40px rgba(0,0,0,0.35)",
+                      }}
+                    />
+                  ) : null}
+                </div>
+              </div>
+            ))}
             <div
               style={{
+                position: "absolute",
+                bottom: 20,
+                left: "50%",
+                transform: "translateX(-50%)",
                 display: "flex",
-                gap: "15px",
-                justifyContent: "center",
-                flexWrap: "wrap",
+                gap: "8px",
               }}
             >
-              <Link href="/products">
+              {slides.map((_, i) => (
                 <button
-                  className="button is-large"
+                  key={i}
+                  aria-label={`slide-${i}`}
+                  onClick={() => setActiveSlide(i)}
                   style={{
-                    backgroundColor: "#4CAF50",
-                    color: "#fff",
-                    fontWeight: "bold",
-                    fontSize: "18px",
+                    width: 12,
+                    height: 12,
+                    borderRadius: "50%",
+                    border: "none",
+                    background: activeSlide === i ? "#fff" : "rgba(255,255,255,0.5)",
+                    cursor: "pointer",
                   }}
-                >
-                  🛍️ Shop Now
-                </button>
-              </Link>
-              <Link href="/quotes">
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div
+            className="hero-body"
+            style={{
+              textAlign: "center",
+              backgroundImage: isDarkMode
+                ? "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))"
+                : "linear-gradient(rgba(45,80,22,0.3), rgba(45,80,22,0.3))",
+              backgroundColor: "#2d5016",
+              minHeight: "600px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div className="container">
+              <h1
+                className="title"
+                style={{
+                  color: "#fff",
+                  fontSize: "56px",
+                  fontWeight: "bold",
+                  marginBottom: "20px",
+                }}
+              >
+                🌞 Premium Residential Solar Solutions
+              </h1>
+              <p
+                className="subtitle"
+                style={{
+                  color: "#e8f5e9",
+                  fontSize: "20px",
+                  marginBottom: "30px",
+                }}
+              >
+                Go Green, Save Green - Easy, Efficient, and Affordable Solar Energy for Your Home
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "15px",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Link href="/products">
+                  <button
+                    className="button is-large"
+                    style={{
+                      backgroundColor: "#4CAF50",
+                      color: "#fff",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                    }}
+                  >
+                    🛍️ Shop Now
+                  </button>
+                </Link>
                 <button
                   className="button is-large is-outlined"
                   style={{
@@ -261,13 +423,29 @@ export default function HomePage() {
                     fontWeight: "bold",
                     fontSize: "18px",
                   }}
+                  onClick={openQuote}
                 >
-                  📋 Get Free Quote
+                  💬 Get Quote
                 </button>
-              </Link>
+                <button
+                  className="button is-large is-light"
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                  }}
+                  onClick={() =>
+                    window.scrollTo({
+                      top: 1000,
+                      behavior: "smooth",
+                    })
+                  }
+                >
+                  📞 Contact Us
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
 
       {/* What We Offer */}
@@ -678,6 +856,78 @@ export default function HomePage() {
 
       {/* Footer */}
       <AppFooter isDarkMode={isDarkMode} />
+
+      {/* Quote Modal */}
+      <div className={`modal ${showQuoteModal ? "is-active" : ""}`}>
+        <div className="modal-background" onClick={closeQuote}></div>
+        <div className="modal-card" style={{ width: "640px" }}>
+          <header className="modal-card-head">
+            <p className="modal-card-title">Request a Quote</p>
+            <button className="delete" aria-label="close" onClick={closeQuote}></button>
+          </header>
+          <section className="modal-card-body">
+            <form onSubmit={submitQuote}>
+              <div className="field">
+                <label className="label">Full Name</label>
+                <input
+                  className="input"
+                  value={quoteForm.name}
+                  onChange={(e) => setQuoteForm({ ...quoteForm, name: e.target.value })}
+                  required
+                />
+              </div>
+              <div className="field is-horizontal">
+                <div className="field-body">
+                  <div className="field">
+                    <label className="label">Email</label>
+                    <input
+                      className="input"
+                      type="email"
+                      value={quoteForm.email}
+                      onChange={(e) => setQuoteForm({ ...quoteForm, email: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className="field">
+                    <label className="label">Phone</label>
+                    <input
+                      className="input"
+                      value={quoteForm.phone}
+                      onChange={(e) => setQuoteForm({ ...quoteForm, phone: e.target.value })}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">System Size (kW)</label>
+                <div className="select is-fullwidth">
+                  <select
+                    value={quoteForm.systemSize}
+                    onChange={(e) => setQuoteForm({ ...quoteForm, systemSize: e.target.value })}
+                  >
+                    <option value="">Select size</option>
+                    <option value="6.6">6.6 kW</option>
+                    <option value="10">10 kW</option>
+                    <option value="13.3">13.3 kW</option>
+                    <option value="20">20 kW</option>
+                  </select>
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">Address</label>
+                <input
+                  className="input"
+                  value={quoteForm.address}
+                  onChange={(e) => setQuoteForm({ ...quoteForm, address: e.target.value })}
+                />
+              </div>
+              <button className={`button is-success ${loading ? "is-loading" : ""}`} type="submit">
+                Submit Quote
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
     </div>
   );
 }

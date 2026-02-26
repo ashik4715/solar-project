@@ -43,15 +43,16 @@ export default function ProductsPage() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
-        const [productsRes, categoriesRes] = await Promise.all([
-          fetch("/api/products"),
-          fetch("/api/categories"),
-        ]);
+        const query = new URLSearchParams();
+        if (searchTerm) query.set("q", searchTerm);
+        if (selectedCategory) query.set("category", selectedCategory);
+        const productsRes = await fetch(`/api/products?${query.toString()}`);
+        const categoriesRes = await fetch("/api/categories");
 
         if (productsRes.ok) {
           const data = await productsRes.json();
-          // API returns { data: { products: [...], pagination: {...} } }
           setProducts(
             Array.isArray(data.data)
               ? data.data
@@ -63,7 +64,6 @@ export default function ProductsPage() {
 
         if (categoriesRes.ok) {
           const data = await categoriesRes.json();
-          // API returns { data: [...] }
           setCategories(Array.isArray(data.data) ? data.data : []);
         }
       } catch (error) {
@@ -74,16 +74,7 @@ export default function ProductsPage() {
     };
 
     fetchData();
-  }, []);
-
-  const filteredProducts = products.filter((product) => {
-    const matchesCategory =
-      !selectedCategory || product.category === selectedCategory;
-    const matchesSearch =
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  }, [searchTerm, selectedCategory]);
 
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
@@ -174,6 +165,39 @@ export default function ProductsPage() {
           </div>
         </div>
       </nav>
+
+      {/* Filters */}
+      <div className="container" style={{ padding: "20px 20px 0" }}>
+        <div className="box">
+          <div className="columns is-multiline">
+            <div className="column is-6">
+              <label className="label">Search products</label>
+              <input
+                className="input"
+                placeholder="Search by name or description"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <div className="column is-4">
+              <label className="label">Category</label>
+              <div className="select is-fullwidth">
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                >
+                  <option value="">All</option>
+                  {categories.map((cat) => (
+                    <option key={cat._id} value={cat.slug || cat._id}>
+                      {cat.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section

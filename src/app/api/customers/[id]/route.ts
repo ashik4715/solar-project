@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Customer from "@/models/Customer";
 import { APIResponse } from "@/utils/response";
+import { can } from "@/utils/permissions";
 
 async function requireAdmin(request: NextRequest) {
   const session = request.cookies.get("session")?.value;
@@ -31,6 +32,14 @@ export async function PATCH(
     }
 
     await connectDB();
+    const role = JSON.parse(
+      Buffer.from(request.cookies.get("session")!.value, "base64").toString(),
+    ).role;
+    if (!can(role, "customers", "update")) {
+      return NextResponse.json(APIResponse.forbidden().toJSON(), {
+        status: 403,
+      });
+    }
     const updates = await request.json();
     const customer = await Customer.findByIdAndUpdate(id, updates, {
       new: true,
@@ -73,6 +82,14 @@ export async function DELETE(
     }
 
     await connectDB();
+    const role = JSON.parse(
+      Buffer.from(request.cookies.get("session")!.value, "base64").toString(),
+    ).role;
+    if (!can(role, "customers", "delete")) {
+      return NextResponse.json(APIResponse.forbidden().toJSON(), {
+        status: 403,
+      });
+    }
     const deleted = await Customer.findByIdAndDelete(id);
 
     if (!deleted) {

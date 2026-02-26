@@ -99,12 +99,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5232,
+                      "duration": 10764,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:02.049Z",
+                      "startTime": "2026-02-22T23:54:55.842Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -133,12 +133,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5512,
+                      "duration": 6851,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:08.344Z",
+                      "startTime": "2026-02-22T23:55:07.712Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -167,12 +167,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5350,
+                      "duration": 6227,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:13.882Z",
+                      "startTime": "2026-02-22T23:55:14.576Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -211,12 +211,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 300,
+                      "duration": 108,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:19.254Z",
+                      "startTime": "2026-02-22T23:55:20.814Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -265,12 +265,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 473,
+                      "duration": 107,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:19.578Z",
+                      "startTime": "2026-02-22T23:55:20.932Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -319,12 +319,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 627,
+                      "duration": 93,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:20.188Z",
+                      "startTime": "2026-02-22T23:55:21.064Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -373,12 +373,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 344,
+                      "duration": 92,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:20.932Z",
+                      "startTime": "2026-02-22T23:55:21.165Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -427,12 +427,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 200,
+                      "duration": 93,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:21.339Z",
+                      "startTime": "2026-02-22T23:55:21.265Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -481,12 +481,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 310,
+                      "duration": 92,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:21.577Z",
+                      "startTime": "2026-02-22T23:55:21.366Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -523,137 +523,115 @@
         {
           "title": "Admin Login Tests",
           "file": "admin-login.spec.ts",
-          "line": 9,
+          "line": 10,
           "column": 6,
           "specs": [
             {
               "title": "should load admin login page",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 5471,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Solar|Admin/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Solar|Admin/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"\"\u001b[22m\n\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts:15:24",
-                        "location": {
-                          "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
-                          "column": 24,
-                          "line": 15
-                        },
-                        "snippet": "  13 |\n  14 |   test(\"should load admin login page\", async ({ page }) => {\n> 15 |     await expect(page).toHaveTitle(/Solar|Admin/);\n     |                        ^\n  16 |     await expect(page.locator(\"form\")).toBeVisible();\n  17 |   });\n  18 |"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
-                            "column": 24,
-                            "line": 15
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/Solar|Admin/\u001b[39m\nReceived string:  \u001b[31m\"\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveTitle\" with timeout 5000ms\u001b[22m\n\u001b[2m    8 × unexpected value \"\"\u001b[22m\n\n\n  13 |\n  14 |   test(\"should load admin login page\", async ({ page }) => {\n> 15 |     await expect(page).toHaveTitle(/Solar|Admin/);\n     |                        ^\n  16 |     await expect(page.locator(\"form\")).toBeVisible();\n  17 |   });\n  18 |\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts:15:24"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:21.931Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:55:21.468Z",
+                      "annotations": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Tests-should-load-admin-login-page-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Tests-should-load-admin-login-page-chromium/error-context.md"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
                       ],
-                      "errorLocation": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
-                        "column": 24,
-                        "line": 15
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-87cd95842a8f48061f4d",
               "file": "admin-login.spec.ts",
-              "line": 14,
+              "line": 19,
               "column": 7
             },
             {
               "title": "should show error on invalid email/password",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Admin auth tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30090,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
-                            "column": 16,
-                            "line": 20
-                          },
-                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n  18 |\n  19 |   test(\"should load admin login page\", async ({ page }) => {\n> 20 |     await expect(page).toHaveTitle(/Solar|Admin/);\n     |                ^\n  21 |     await expect(page.locator(\"form\")).toBeVisible();\n  22 |   });\n  23 |\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts:20:16"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:47:30.485Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:55:21.468Z",
+                      "annotations": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-21e17-r-on-invalid-email-password-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/admin-login-Admin-Login-Te-21e17-r-on-invalid-email-password-chromium/error-context.md"
+                          "type": "skip",
+                          "description": "Admin auth tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "line": 11,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "481c7578028bb96ee688-d15912a600de12409e9b",
               "file": "admin-login.spec.ts",
-              "line": 19,
+              "line": 24,
               "column": 7
             },
             {
@@ -679,15 +657,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.664Z",
+                      "startTime": "2026-02-22T23:55:21.469Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -707,7 +685,7 @@
               ],
               "id": "481c7578028bb96ee688-2b329a8b5817dcbf9871",
               "file": "admin-login.spec.ts",
-              "line": 34,
+              "line": 39,
               "column": 7
             },
             {
@@ -733,15 +711,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "startTime": "2026-02-22T23:55:21.469Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -761,7 +739,7 @@
               ],
               "id": "481c7578028bb96ee688-e84041f0861c466b9fb9",
               "file": "admin-login.spec.ts",
-              "line": 51,
+              "line": 56,
               "column": 7
             },
             {
@@ -787,15 +765,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "startTime": "2026-02-22T23:55:21.469Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -815,7 +793,7 @@
               ],
               "id": "481c7578028bb96ee688-caf5d9dbe6543d50c7f4",
               "file": "admin-login.spec.ts",
-              "line": 61,
+              "line": 66,
               "column": 7
             },
             {
@@ -841,15 +819,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "startTime": "2026-02-22T23:55:21.469Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -869,7 +847,7 @@
               ],
               "id": "481c7578028bb96ee688-7c17b7278c90b0ecceb0",
               "file": "admin-login.spec.ts",
-              "line": 73,
+              "line": 78,
               "column": 7
             },
             {
@@ -895,15 +873,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "startTime": "2026-02-22T23:55:21.469Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -923,7 +901,7 @@
               ],
               "id": "481c7578028bb96ee688-e553104a5c72e2513e57",
               "file": "admin-login.spec.ts",
-              "line": 87,
+              "line": 92,
               "column": 7
             },
             {
@@ -949,15 +927,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "startTime": "2026-02-22T23:55:21.469Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -977,7 +955,7 @@
               ],
               "id": "481c7578028bb96ee688-ac0c8420804c088fff68",
               "file": "admin-login.spec.ts",
-              "line": 101,
+              "line": 106,
               "column": 7
             },
             {
@@ -1003,15 +981,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.665Z",
+                      "startTime": "2026-02-22T23:55:21.469Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1031,7 +1009,7 @@
               ],
               "id": "481c7578028bb96ee688-cb4732e4a9e259143df3",
               "file": "admin-login.spec.ts",
-              "line": 116,
+              "line": 121,
               "column": 7
             }
           ]
@@ -1064,15 +1042,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 52,
+                      "duration": 3408,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.672Z",
+                      "startTime": "2026-02-22T23:55:21.475Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1098,15 +1076,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 29,
+                      "duration": 269,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.737Z",
+                      "startTime": "2026-02-22T23:55:24.893Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1132,15 +1110,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 21,
+                      "duration": 902,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.776Z",
+                      "startTime": "2026-02-22T23:55:25.170Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1166,15 +1144,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17,
+                      "duration": 293,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.807Z",
+                      "startTime": "2026-02-22T23:55:26.084Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1200,15 +1178,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 31,
+                      "duration": 391,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.847Z",
+                      "startTime": "2026-02-22T23:55:26.387Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1234,15 +1212,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 18,
+                      "duration": 324,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.887Z",
+                      "startTime": "2026-02-22T23:55:26.792Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1268,15 +1246,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 28,
+                      "duration": 4071,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.915Z",
+                      "startTime": "2026-02-22T23:55:27.126Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1302,15 +1280,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 23,
+                      "duration": 365,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.957Z",
+                      "startTime": "2026-02-22T23:55:31.206Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1336,15 +1314,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 17,
+                      "duration": 1680,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:03.990Z",
+                      "startTime": "2026-02-22T23:55:31.582Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1370,15 +1348,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 19,
+                      "duration": 4723,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:04.018Z",
+                      "startTime": "2026-02-22T23:55:33.282Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1404,15 +1382,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 36,
+                      "duration": 3560,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:04.050Z",
+                      "startTime": "2026-02-22T23:55:38.020Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1438,15 +1416,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 38,
+                      "duration": 548,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:04.102Z",
+                      "startTime": "2026-02-22T23:55:41.604Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1472,15 +1450,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 243,
+                      "duration": 937,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:04.161Z",
+                      "startTime": "2026-02-22T23:55:42.210Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1506,15 +1484,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 30,
+                      "duration": 212,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:04.425Z",
+                      "startTime": "2026-02-22T23:55:43.337Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1541,251 +1519,223 @@
         {
           "title": "CRUD Operations Tests",
           "file": "crud-operations.spec.ts",
-          "line": 14,
+          "line": 15,
           "column": 6,
           "specs": [
             {
               "title": "should create a new category",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "CRUD UI tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30058,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "column": 14,
-                            "line": 8
-                          },
-                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n   6 | async function loginAsAdmin(page: any) {\n   7 |   await page.goto(\"/admin\");\n>  8 |   await page.fill('input[type=\"email\"]', ADMIN_EMAIL);\n     |              ^\n   9 |   await page.fill('input[type=\"password\"]', ADMIN_PASSWORD);\n  10 |   await page.click('button[type=\"submit\"]');\n  11 |   await page.waitForURL(/dashboard|admin/, { timeout: 10000 }).catch(() => {});\n    at loginAsAdmin (/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:8:14)\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:16:5"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:04.476Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:55:43.625Z",
+                      "annotations": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-0e365-hould-create-a-new-category-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-0e365-hould-create-a-new-category-chromium/error-context.md"
+                          "type": "skip",
+                          "description": "CRUD UI tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-02491c98d6b9829bc5ed",
               "file": "crud-operations.spec.ts",
-              "line": 15,
+              "line": 20,
               "column": 7
             },
             {
               "title": "should read categories list",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "CRUD UI tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30088,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "column": 14,
-                            "line": 8
-                          },
-                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n   6 | async function loginAsAdmin(page: any) {\n   7 |   await page.goto(\"/admin\");\n>  8 |   await page.fill('input[type=\"email\"]', ADMIN_EMAIL);\n     |              ^\n   9 |   await page.fill('input[type=\"password\"]', ADMIN_PASSWORD);\n  10 |   await page.click('button[type=\"submit\"]');\n  11 |   await page.waitForURL(/dashboard|admin/, { timeout: 10000 }).catch(() => {});\n    at loginAsAdmin (/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:8:14)\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:61:5"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:48:36.538Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:55:43.626Z",
+                      "annotations": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-856e7-should-read-categories-list-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-856e7-should-read-categories-list-chromium/error-context.md"
+                          "type": "skip",
+                          "description": "CRUD UI tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-27b646656c81f64c2b35",
               "file": "crud-operations.spec.ts",
-              "line": 60,
+              "line": 65,
               "column": 7
             },
             {
               "title": "should create a new product",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "CRUD UI tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30059,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "column": 14,
-                            "line": 8
-                          },
-                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n   6 |\n   7 | async function loginAsAdmin(page: any) {\n>  8 |   await page.goto(\"/admin\");\n     |              ^\n   9 |   await page.fill('input[type=\"email\"]', ADMIN_EMAIL);\n  10 |   await page.fill('input[type=\"password\"]', ADMIN_PASSWORD);\n  11 |   await page.click('button[type=\"submit\"]');\n    at loginAsAdmin (/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:8:14)\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:75:5"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:49:08.298Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:55:43.626Z",
+                      "annotations": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-af097-should-create-a-new-product-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-af097-should-create-a-new-product-chromium/error-context.md"
+                          "type": "skip",
+                          "description": "CRUD UI tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-9d294cd7aa7a84f1c69e",
               "file": "crud-operations.spec.ts",
-              "line": 74,
+              "line": 79,
               "column": 7
             },
             {
               "title": "should read products list",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "CRUD UI tests are skipped when database is not configured.",
+                      "location": {
+                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
                   "projectId": "chromium",
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30108,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "column": 14,
-                            "line": 8
-                          },
-                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"]')\u001b[22m\n\n\n   6 |\n   7 | async function loginAsAdmin(page: any) {\n>  8 |   await page.goto(\"/admin\");\n     |              ^\n   9 |   await page.fill('input[type=\"email\"]', ADMIN_EMAIL);\n  10 |   await page.fill('input[type=\"password\"]', ADMIN_PASSWORD);\n  11 |   await page.click('button[type=\"submit\"]');\n    at loginAsAdmin (/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:8:14)\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts:118:5"
-                        }
-                      ],
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:49:39.812Z",
-                      "annotations": [],
-                      "attachments": [
+                      "startTime": "2026-02-22T23:55:43.626Z",
+                      "annotations": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-b4a2a-s-should-read-products-list-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results/crud-operations-CRUD-Opera-b4a2a-s-should-read-products-list-chromium/error-context.md"
+                          "type": "skip",
+                          "description": "CRUD UI tests are skipped when database is not configured.",
+                          "location": {
+                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
+                          }
                         }
-                      ]
+                      ],
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "skipped"
                 }
               ],
               "id": "2e91bbc03bf84fb7468e-5ed240229cbb4815099d",
               "file": "crud-operations.spec.ts",
-              "line": 117,
+              "line": 122,
               "column": 7
             },
             {
@@ -1811,15 +1761,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:13.905Z",
+                      "startTime": "2026-02-22T23:55:43.626Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1839,7 +1789,7 @@
               ],
               "id": "2e91bbc03bf84fb7468e-0031857adf46c0167db5",
               "file": "crud-operations.spec.ts",
-              "line": 129,
+              "line": 134,
               "column": 7
             },
             {
@@ -1865,15 +1815,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:13.906Z",
+                      "startTime": "2026-02-22T23:55:43.626Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1893,7 +1843,7 @@
               ],
               "id": "2e91bbc03bf84fb7468e-ad38601984fb60dce42a",
               "file": "crud-operations.spec.ts",
-              "line": 141,
+              "line": 146,
               "column": 7
             },
             {
@@ -1919,15 +1869,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:13.907Z",
+                      "startTime": "2026-02-22T23:55:43.626Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1947,7 +1897,7 @@
               ],
               "id": "2e91bbc03bf84fb7468e-8a8aa1b2f23e41303f66",
               "file": "crud-operations.spec.ts",
-              "line": 160,
+              "line": 165,
               "column": 7
             },
             {
@@ -1973,15 +1923,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 0,
+                      "workerIndex": -1,
+                      "parallelIndex": -1,
                       "status": "skipped",
                       "duration": 0,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:13.907Z",
+                      "startTime": "2026-02-22T23:55:43.626Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -2001,7 +1951,7 @@
               ],
               "id": "2e91bbc03bf84fb7468e-d4df9f1bfab92016319b",
               "file": "crud-operations.spec.ts",
-              "line": 199,
+              "line": 204,
               "column": 7
             }
           ]
@@ -2034,15 +1984,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 661,
+                      "duration": 6447,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:13.921Z",
+                      "startTime": "2026-02-22T23:55:43.638Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2068,15 +2018,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 137,
+                      "duration": 2767,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:15.482Z",
+                      "startTime": "2026-02-22T23:55:50.105Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2102,15 +2052,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 164,
+                      "duration": 3754,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:15.632Z",
+                      "startTime": "2026-02-22T23:55:52.900Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2136,15 +2086,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 372,
+                      "duration": 2159,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:15.811Z",
+                      "startTime": "2026-02-22T23:55:56.716Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2170,15 +2120,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 261,
+                      "duration": 3197,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:16.200Z",
+                      "startTime": "2026-02-22T23:55:58.921Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2204,15 +2154,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 596,
+                      "duration": 2056,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:16.476Z",
+                      "startTime": "2026-02-22T23:56:02.145Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2238,15 +2188,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5297,
+                      "duration": 6272,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:17.092Z",
+                      "startTime": "2026-02-22T23:56:04.215Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2272,15 +2222,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 802,
+                      "duration": 2824,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:22.419Z",
+                      "startTime": "2026-02-22T23:56:10.500Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2306,15 +2256,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 567,
+                      "duration": 1181,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:23.257Z",
+                      "startTime": "2026-02-22T23:56:13.335Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2340,15 +2290,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 915,
+                      "duration": 2776,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:23.856Z",
+                      "startTime": "2026-02-22T23:56:14.528Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2374,15 +2324,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 783,
+                      "duration": 2364,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-22T23:50:24.825Z",
+                      "startTime": "2026-02-22T23:56:17.316Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2402,11 +2352,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-22T23:47:00.071Z",
-    "duration": 205780.926,
+    "startTime": "2026-02-22T23:54:54.833Z",
+    "duration": 84972.473,
     "expected": 28,
-    "skipped": 17,
-    "unexpected": 6,
+    "skipped": 23,
+    "unexpected": 0,
     "flaky": 0
   }
 }

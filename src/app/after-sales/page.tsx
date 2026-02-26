@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { AppFooter } from "@/components/AppFooter";
 import "bulma/css/bulma.css";
 
 export default function AfterSalesPage() {
@@ -63,7 +64,7 @@ export default function AfterSalesPage() {
                     </p>
                     <p className="title is-5">{service.name}</p>
                     <p className="content">{service.description}</p>
-                    <Link href="/quotes">
+                    <Link href="/?openQuote=1">
                       <button
                         className="button is-success"
                         style={{ backgroundColor: "#4CAF50" }}
@@ -84,39 +85,37 @@ export default function AfterSalesPage() {
           <h2 className="title has-text-centered">
             Why Choose Our After-Sales Service?
           </h2>
-          <div className="columns">
-            <div className="column is-6">
-              <div className="content">
-                <h3>✓ Expert Technicians</h3>
-                <p>
-                  Our team of certified solar technicians ensures optimal system
-                  performance
-                </p>
+          <div className="columns is-multiline" style={{ marginTop: "20px" }}>
+            {[
+              {
+                title: "Expert Technicians",
+                desc: "Certified solar technicians keep your system at peak output.",
+              },
+              {
+                title: "Quick Response",
+                desc: "24-hour response SLA for urgent tickets.",
+              },
+              {
+                title: "Transparent Pricing",
+                desc: "Upfront quotes with zero hidden charges.",
+              },
+              {
+                title: "Warranty Coverage",
+                desc: "Repairs covered within warranty window, hassle-free claims.",
+              },
+            ].map((card) => (
+              <div className="column is-6" key={card.title}>
+                <div className="box">
+                  <h3 className="title is-5">✓ {card.title}</h3>
+                  <p>{card.desc}</p>
+                </div>
               </div>
-            </div>
-            <div className="column is-6">
-              <div className="content">
-                <h3>✓ Quick Response</h3>
-                <p>24-hour response time for urgent service requests</p>
-              </div>
-            </div>
-            <div className="column is-6">
-              <div className="content">
-                <h3>✓ Transparent Pricing</h3>
-                <p>
-                  No hidden charges. All services come with detailed quotation
-                </p>
-              </div>
-            </div>
-            <div className="column is-6">
-              <div className="content">
-                <h3>✓ Warranty Coverage</h3>
-                <p>All repairs covered under warranty period</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
+
+      <AppFooter isDarkMode={false} />
     </div>
   );
 }
