@@ -92,8 +92,19 @@ export default function OrdersPage() {
   const generateInvoice = async (id: string) => {
     const res = await fetch(`/api/orders/${id}/invoice`, { method: "POST" });
     const data = await res.json();
-    if (res.ok && data.data?.pdfUrl) {
-      window.open(data.data.pdfUrl, "_blank");
+    if (res.ok && (data.data?.pdfUrl || data.data?.pdfBase64)) {
+      if (data.data.pdfUrl) {
+        window.open(data.data.pdfUrl, "_blank");
+      } else if (data.data.pdfBase64) {
+        const blob = Uint8Array.from(
+          atob(data.data.pdfBase64),
+          (c) => c.charCodeAt(0),
+        );
+        const url = URL.createObjectURL(
+          new Blob([blob], { type: "application/pdf" }),
+        );
+        window.open(url, "_blank");
+      }
     } else {
       alert(data.message || "Invoice generation failed");
     }
@@ -134,9 +145,7 @@ export default function OrdersPage() {
         product: it.productId,
         quantity: Number(it.quantity) || 1,
         price:
-          it.price ||
-          products.find((p) => p._id === it.productId)?.price ||
-          0,
+          it.price || products.find((p) => p._id === it.productId)?.price || 0,
       }));
     if (payloadItems.length === 0) {
       alert("Add at least one item");
@@ -194,7 +203,10 @@ export default function OrdersPage() {
             <h3 className="subtitle">Create / Mock Order</h3>
           </div>
           <div className="level-right">
-            <button className="button is-light is-small" onClick={createMockOrder}>
+            <button
+              className="button is-light is-small"
+              onClick={createMockOrder}
+            >
               Auto-fill mock order
             </button>
           </div>
@@ -228,11 +240,16 @@ export default function OrdersPage() {
                   setNewOrder({ ...newOrder, orderStatus: e.target.value })
                 }
               >
-                {["pending", "confirmed", "processing", "shipped", "delivered", "cancelled"].map(
-                  (s) => (
-                    <option key={s}>{s}</option>
-                  ),
-                )}
+                {[
+                  "pending",
+                  "confirmed",
+                  "processing",
+                  "shipped",
+                  "delivered",
+                  "cancelled",
+                ].map((s) => (
+                  <option key={s}>{s}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -270,7 +287,7 @@ export default function OrdersPage() {
                   <option value="">Select product</option>
                   {products.map((p) => (
                     <option key={p._id} value={p._id}>
-                      {p.name} (₹{p.price})
+                      {p.name} (৳{p.price})
                     </option>
                   ))}
                 </select>
@@ -371,7 +388,7 @@ export default function OrdersPage() {
                 <tr key={order._id}>
                   <td>{order.orderNumber}</td>
                   <td>{order.customer?.name || "N/A"}</td>
-                  <td>₹{order.totalAmount?.toLocaleString()}</td>
+                  <td>৳{order.totalAmount?.toLocaleString()}</td>
                   <td>
                     <span className="tag is-info">{order.paymentStatus}</span>
                   </td>

@@ -4,15 +4,7 @@ const faqSchema = new mongoose.Schema(
   {
     category: {
       type: String,
-      enum: [
-        "products",
-        "installation",
-        "warranty",
-        "financial",
-        "technical",
-        "general",
-      ],
-      required: true,
+      default: "general",
       index: true,
     },
     question: {

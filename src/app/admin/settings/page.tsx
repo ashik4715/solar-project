@@ -27,6 +27,7 @@ export default function SettingsPage() {
     shippingRate: 0,
   });
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
   const fetchSettings = useCallback(async () => {
     const res = await fetch("/api/settings");
@@ -56,6 +57,25 @@ export default function SettingsPage() {
     alert("Settings saved");
   };
 
+  const handleUpload = async (
+    file: File | null,
+    target: "logoUrl" | "faviconUrl",
+  ) => {
+    if (!file) return;
+    setUploading(true);
+    const form = new FormData();
+    form.append("file", file);
+    const res = await fetch("/api/upload", { method: "POST", body: form });
+    setUploading(false);
+    if (!res.ok) {
+      alert("Upload failed");
+      return;
+    }
+    const data = await res.json();
+    const url = data.data?.url || data.data;
+    if (url) handleChange(target, url);
+  };
+
   return (
     <div>
       <h1 className="title">Site Configuration</h1>
@@ -77,6 +97,23 @@ export default function SettingsPage() {
                 value={settings.logoUrl || ""}
                 onChange={(e) => handleChange("logoUrl", e.target.value)}
               />
+              <div className="file is-small" style={{ marginTop: "8px" }}>
+                <label className="file-label">
+                  <input
+                    className="file-input"
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) =>
+                      handleUpload(e.target.files?.[0] || null, "logoUrl")
+                    }
+                  />
+                  <span className="file-cta">
+                    <span className="file-label">
+                      {uploading ? "Uploading..." : "Upload Logo"}
+                    </span>
+                  </span>
+                </label>
+              </div>
             </div>
             <div className="field">
               <label className="label">Favicon URL</label>
@@ -85,6 +122,23 @@ export default function SettingsPage() {
                 value={settings.faviconUrl || ""}
                 onChange={(e) => handleChange("faviconUrl", e.target.value)}
               />
+              <div className="file is-small" style={{ marginTop: "8px" }}>
+                <label className="file-label">
+                  <input
+                    className="file-input"
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) =>
+                      handleUpload(e.target.files?.[0] || null, "faviconUrl")
+                    }
+                  />
+                  <span className="file-cta">
+                    <span className="file-label">
+                      {uploading ? "Uploading..." : "Upload Favicon"}
+                    </span>
+                  </span>
+                </label>
+              </div>
             </div>
             <div className="field">
               <label className="label">Contact Email</label>

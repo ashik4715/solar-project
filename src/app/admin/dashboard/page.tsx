@@ -44,7 +44,7 @@ export default function AdminDashboard() {
           },
           {
             label: "Total Revenue",
-            value: `₹${stats.totalRevenue.toLocaleString()}`,
+            value: `৳${stats.totalRevenue.toLocaleString()}`,
             icon: "💰",
             color: "#f14668",
           },
@@ -68,6 +68,21 @@ export default function AdminDashboard() {
           <p className="has-text-grey-light">
             No activity yet. Start by adding products or customers.
           </p>
+        </div>
+      </div>
+
+      <div className="card" style={{ marginTop: "20px" }}>
+        <div className="card-header">
+          <p className="card-header-title">Admin Feature Guide</p>
+        </div>
+        <div className="card-content">
+          <ul style={{ lineHeight: 1.5 }}>
+            <li>🎛️ Roles & Users: Create custom roles with per-module create/read/update/delete access; assign roles to users.</li>
+            <li>🛒 Orders: Create mock orders, update status, generate/download PDF invoices (uploads to S3 when configured).</li>
+            <li>❓ FAQs: Manage questions with categories; published FAQs surface on the public FAQs page.</li>
+            <li>🖼️ Media: Carousel images/videos with optional audio; sync to S3 if keys are set.</li>
+            <li>⚙️ Settings: Site branding, contact info, payment keys (Stripe/PayPal/Bkash), logo & favicon upload.</li>
+          </ul>
         </div>
       </div>
     </div>

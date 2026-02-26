@@ -22,7 +22,10 @@ export async function POST(request: NextRequest) {
   }
 
   const body = await request.json();
-  const faq = await FAQ.create(body);
+  const faq = await FAQ.create({
+    ...body,
+    category: body.category || "general",
+  });
   return NextResponse.json(
     APIResponse.success(faq, "FAQ created", 201).toJSON(),
     { status: 201 },

@@ -496,7 +496,7 @@ export default function ProductsPage() {
                                     color: "#2d5016",
                                   }}
                                 >
-                                  ₹{product.salePrice.toLocaleString()}
+                                  ৳{product.salePrice.toLocaleString()}
                                 </span>
                                 <span
                                   style={{
@@ -505,7 +505,7 @@ export default function ProductsPage() {
                                     textDecoration: "line-through",
                                   }}
                                 >
-                                  ₹{product.price.toLocaleString()}
+                                  ৳{product.price.toLocaleString()}
                                 </span>
                               </>
                             ) : (
@@ -516,7 +516,7 @@ export default function ProductsPage() {
                                   color: "#2d5016",
                                 }}
                               >
-                                ₹{product.price.toLocaleString()}
+                                ৳{product.price.toLocaleString()}
                               </span>
                             )}
                           </div>

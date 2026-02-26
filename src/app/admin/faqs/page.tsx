@@ -104,20 +104,22 @@ export default function FAQsPage() {
                 </div>
                 <div className="field">
                   <label className="label">Category</label>
-                  <div className="select is-fullwidth">
-                    <select
+                  <div className="control has-icons-right">
+                    <input
+                      list="faq-categories"
+                      className="input"
                       value={form.category || ""}
                       onChange={(e) =>
-                        setForm({ ...form, category: e.target.value })
+                        setForm({ ...form, category: e.target.value || "general" })
                       }
-                    >
-                      <option value="">General</option>
+                      placeholder="Type to add or pick (default: general)"
+                    />
+                    <datalist id="faq-categories">
+                      <option value="general" />
                       {categories.map((cat) => (
-                        <option key={cat._id} value={cat.name}>
-                          {cat.name}
-                        </option>
+                        <option key={cat._id} value={cat.name} />
                       ))}
-                    </select>
+                    </datalist>
                   </div>
                 </div>
                 <div className="field">

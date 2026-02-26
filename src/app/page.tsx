@@ -32,7 +32,16 @@ function HomePageContent() {
     address: "",
   });
   const [slides, setSlides] = useState<
-    { _id: string; title?: string; subtitle?: string; mediaUrl: string; mediaType: string; hasAudio?: boolean; ctaText?: string; ctaHref?: string }[]
+    {
+      _id: string;
+      title?: string;
+      subtitle?: string;
+      mediaUrl: string;
+      mediaType: string;
+      hasAudio?: boolean;
+      ctaText?: string;
+      ctaHref?: string;
+    }[]
   >([]);
   const [activeSlide, setActiveSlide] = useState(0);
   const searchParams = useSearchParams();
@@ -267,7 +276,10 @@ function HomePageContent() {
       </nav>
 
       {/* Hero / Carousel */}
-      <section className="hero is-large" style={{ position: "relative", overflow: "hidden" }}>
+      <section
+        className="hero is-large"
+        style={{ position: "relative", overflow: "hidden" }}
+      >
         {slides.length > 0 ? (
           <div style={{ height: "600px" }}>
             {slides.map((slide, idx) => (
@@ -293,13 +305,26 @@ function HomePageContent() {
                 }}
               >
                 <div className="container has-text-centered">
-                  <span className="tag is-success is-light" style={{ marginBottom: "10px" }}>
+                  <span
+                    className="tag is-success is-light"
+                    style={{ marginBottom: "10px" }}
+                  >
                     Renewable energy for everyone
                   </span>
-                  <h1 className="title" style={{ color: "#fff", fontSize: "56px", marginBottom: "20px" }}>
+                  <h1
+                    className="title"
+                    style={{
+                      color: "#fff",
+                      fontSize: "56px",
+                      marginBottom: "20px",
+                    }}
+                  >
                     {slide.title || "Power your home with clean solar energy"}
                   </h1>
-                  <p className="subtitle" style={{ color: "#e8f5e9", fontSize: "20px" }}>
+                  <p
+                    className="subtitle"
+                    style={{ color: "#e8f5e9", fontSize: "20px" }}
+                  >
                     {slide.subtitle ||
                       "Premium solar panels, expert installation, and reliable maintenance services tailored to your needs."}
                   </p>
@@ -312,10 +337,16 @@ function HomePageContent() {
                       flexWrap: "wrap",
                     }}
                   >
-                    <Link className="button is-light is-large" href={slide.ctaHref || "/products"}>
+                    <Link
+                      className="button is-light is-large"
+                      href={slide.ctaHref || "/products"}
+                    >
                       {slide.ctaText || "Explore Products"}
                     </Link>
-                    <button className="button is-success is-large" onClick={openQuote}>
+                    <button
+                      className="button is-success is-large"
+                      onClick={openQuote}
+                    >
                       Get a Quote
                     </button>
                   </div>
@@ -358,7 +389,8 @@ function HomePageContent() {
                     height: 12,
                     borderRadius: "50%",
                     border: "none",
-                    background: activeSlide === i ? "#fff" : "rgba(255,255,255,0.5)",
+                    background:
+                      activeSlide === i ? "#fff" : "rgba(255,255,255,0.5)",
                     cursor: "pointer",
                   }}
                 />
@@ -400,7 +432,8 @@ function HomePageContent() {
                   marginBottom: "30px",
                 }}
               >
-                Go Green, Save Green - Easy, Efficient, and Affordable Solar Energy for Your Home
+                Go Green, Save Green - Easy, Efficient, and Affordable Solar
+                Energy for Your Home
               </p>
               <div
                 style={{
@@ -427,7 +460,7 @@ function HomePageContent() {
                   className="button is-large is-outlined"
                   style={{
                     borderColor: "#fff",
-                    color: "#fff",
+                    color: "#000",
                     fontWeight: "bold",
                     fontSize: "18px",
                   }}
@@ -438,6 +471,8 @@ function HomePageContent() {
                 <button
                   className="button is-large is-light"
                   style={{
+                    borderColor: "#fff",
+                    color: "#000",
                     fontWeight: "bold",
                     fontSize: "18px",
                   }}
@@ -638,17 +673,17 @@ function HomePageContent() {
             {[
               {
                 power: "3kW",
-                price: "₹198,000",
+                price: "৳198,000",
                 items: ["8 x 400W Panels", "3kW Inverter", "Installation"],
               },
               {
                 power: "5kW",
-                price: "₹385,000",
+                price: "৳385,000",
                 items: ["13 x 400W Panels", "5kW Inverter", "Installation"],
               },
               {
                 power: "10kW",
-                price: "₹850,000",
+                price: "৳850,000",
                 items: ["20 x 550W Panels", "10kW Inverter", "10kWh Battery"],
               },
               {
@@ -871,7 +906,11 @@ function HomePageContent() {
         <div className="modal-card" style={{ width: "640px" }}>
           <header className="modal-card-head">
             <p className="modal-card-title">Request a Quote</p>
-            <button className="delete" aria-label="close" onClick={closeQuote}></button>
+            <button
+              className="delete"
+              aria-label="close"
+              onClick={closeQuote}
+            ></button>
           </header>
           <section className="modal-card-body">
             <form onSubmit={submitQuote}>
@@ -880,7 +919,9 @@ function HomePageContent() {
                 <input
                   className="input"
                   value={quoteForm.name}
-                  onChange={(e) => setQuoteForm({ ...quoteForm, name: e.target.value })}
+                  onChange={(e) =>
+                    setQuoteForm({ ...quoteForm, name: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -892,7 +933,9 @@ function HomePageContent() {
                       className="input"
                       type="email"
                       value={quoteForm.email}
-                      onChange={(e) => setQuoteForm({ ...quoteForm, email: e.target.value })}
+                      onChange={(e) =>
+                        setQuoteForm({ ...quoteForm, email: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -901,7 +944,9 @@ function HomePageContent() {
                     <input
                       className="input"
                       value={quoteForm.phone}
-                      onChange={(e) => setQuoteForm({ ...quoteForm, phone: e.target.value })}
+                      onChange={(e) =>
+                        setQuoteForm({ ...quoteForm, phone: e.target.value })
+                      }
                     />
                   </div>
                 </div>
@@ -911,7 +956,9 @@ function HomePageContent() {
                 <div className="select is-fullwidth">
                   <select
                     value={quoteForm.systemSize}
-                    onChange={(e) => setQuoteForm({ ...quoteForm, systemSize: e.target.value })}
+                    onChange={(e) =>
+                      setQuoteForm({ ...quoteForm, systemSize: e.target.value })
+                    }
                   >
                     <option value="">Select size</option>
                     <option value="6.6">6.6 kW</option>
@@ -926,10 +973,15 @@ function HomePageContent() {
                 <input
                   className="input"
                   value={quoteForm.address}
-                  onChange={(e) => setQuoteForm({ ...quoteForm, address: e.target.value })}
+                  onChange={(e) =>
+                    setQuoteForm({ ...quoteForm, address: e.target.value })
+                  }
                 />
               </div>
-              <button className={`button is-success ${loading ? "is-loading" : ""}`} type="submit">
+              <button
+                className={`button is-success ${loading ? "is-loading" : ""}`}
+                type="submit"
+              >
                 Submit Quote
               </button>
             </form>

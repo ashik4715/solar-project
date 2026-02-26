@@ -28,6 +28,7 @@ const MODULES: { key: string; label: string }[] = [
 export default function RolesPage() {
   const [roles, setRoles] = useState<Role[]>([]);
   const [loading, setLoading] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState<Role>({
     name: "",
     description: "",
@@ -66,8 +67,10 @@ export default function RolesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const res = await fetch("/api/roles", {
-      method: "POST",
+    const method = editingId ? "PATCH" : "POST";
+    const url = editingId ? `/api/roles/${editingId}` : "/api/roles";
+    const res = await fetch(url, {
+      method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
@@ -77,7 +80,8 @@ export default function RolesPage() {
       return;
     }
     setForm({ name: "", description: "", permissions: {} });
-    loadRoles();
+    setEditingId(null);
+    await loadRoles();
   };
 
   const deleteRole = async (id?: string) => {
@@ -85,6 +89,47 @@ export default function RolesPage() {
     if (!confirm("Delete this role?")) return;
     const res = await fetch(`/api/roles/${id}`, { method: "DELETE" });
     if (res.ok) loadRoles();
+  };
+
+  const editRole = (role: Role) => {
+    setEditingId(role._id || null);
+    setForm({
+      name: role.name,
+      description: role.description || "",
+      permissions: role.permissions || {},
+    });
+  };
+
+  const toggleAllForAction = (action: Action, value: boolean) => {
+    setForm((prev) => {
+      const nextPerms = { ...prev.permissions };
+      MODULES.forEach((m) => {
+        const base =
+          nextPerms[m.key] || {
+            create: false,
+            read: false,
+            update: false,
+            delete: false,
+          };
+        nextPerms[m.key] = { ...base, [action]: value };
+      });
+      return { ...prev, permissions: nextPerms };
+    });
+  };
+
+  const toggleAllForModule = (module: string, value: boolean) => {
+    setForm((prev) => ({
+      ...prev,
+      permissions: {
+        ...prev.permissions,
+        [module]: {
+          create: value,
+          read: value,
+          update: value,
+          delete: value,
+        },
+      },
+    }));
   };
 
   return (
@@ -118,6 +163,43 @@ export default function RolesPage() {
                 </div>
                 <div className="field">
                   <label className="label">Permissions</label>
+                  <div className="buttons" style={{ marginBottom: "8px" }}>
+                    <button
+                      className="button is-small"
+                      type="button"
+                      onClick={() => toggleAllForAction("create", true)}
+                    >
+                      Check all create
+                    </button>
+                    <button
+                      className="button is-small"
+                      type="button"
+                      onClick={() => toggleAllForAction("read", true)}
+                    >
+                      Check all read
+                    </button>
+                    <button
+                      className="button is-small"
+                      type="button"
+                      onClick={() => toggleAllForAction("update", true)}
+                    >
+                      Check all update
+                    </button>
+                    <button
+                      className="button is-small"
+                      type="button"
+                      onClick={() => toggleAllForAction("delete", true)}
+                    >
+                      Check all delete
+                    </button>
+                    <button
+                      className="button is-light is-small"
+                      type="button"
+                      onClick={() => setForm({ ...form, permissions: {} })}
+                    >
+                      Clear all
+                    </button>
+                  </div>
                   <div className="table-container">
                     <table className="table is-striped is-fullwidth">
                       <thead>
@@ -135,7 +217,24 @@ export default function RolesPage() {
                       <tbody>
                         {MODULES.map((module) => (
                           <tr key={module.key}>
-                            <td>{module.label}</td>
+                            <td>
+                              <span>{module.label}</span>
+                              <button
+                                className="button is-text is-small"
+                                type="button"
+                                onClick={() => toggleAllForModule(module.key, true)}
+                                style={{ marginLeft: "6px" }}
+                              >
+                                all
+                              </button>
+                              <button
+                                className="button is-text is-small"
+                                type="button"
+                                onClick={() => toggleAllForModule(module.key, false)}
+                              >
+                                none
+                              </button>
+                            </td>
                             {(["create", "read", "update", "delete"] as Action[]).map(
                               (act) => (
                                 <td key={act}>
@@ -185,6 +284,12 @@ export default function RolesPage() {
                       <td>{role.name}</td>
                       <td>{role.description || "—"}</td>
                       <td className="buttons">
+                        <button
+                          className="button is-small is-info is-light"
+                          onClick={() => editRole(role)}
+                        >
+                          Edit
+                        </button>
                         <button
                           className="button is-small is-danger is-light"
                           onClick={() => deleteRole(role._id)}
