@@ -84,29 +84,38 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { customerId, items, name, email, phone, address, systemSize } = body;
 
-    if ((!customerId && !email) || (!items || items.length === 0)) {
-      const defaultItems =
-        items && items.length > 0
-          ? items
-          : [
-              {
-                product: null,
-                quantity: 1,
-                price: 0,
-                description: "Custom quote",
-              },
-            ];
-      // Create lightweight customer if not provided
-      const cust = await Customer.create({
+    // Always ensure we have a customer to attach the quote to
+    let targetCustomerId = customerId;
+    if (!targetCustomerId) {
+      const customer = await Customer.create({
         name: name || "Guest",
         email: email || "unknown@example.com",
         phone: phone || "",
         address: address || "",
       });
-      return createQuoteForCustomer(cust._id, defaultItems, { address, systemSize });
+      targetCustomerId = customer._id.toString();
     }
 
-    return createQuoteForCustomer(customerId, items, { address, systemSize });
+    // Normalise items: allow empty submissions from public forms
+    const itemsWithDefaults =
+      Array.isArray(items) && items.length > 0
+        ? items.map((item: any) => ({
+            product: item.product || item.productId || null,
+            quantity: item.quantity || 1,
+            price: item.price || 0,
+            description: item.description || item.name || "Custom quote",
+            discount: item.discount || 0,
+          }))
+        : [
+            {
+              product: null,
+              quantity: 1,
+              price: 0,
+              description: "Custom quote",
+            },
+          ];
+
+    return createQuoteForCustomer(targetCustomerId, itemsWithDefaults, { address, systemSize });
   } catch (error) {
     console.error("Create quote error:", error);
     return NextResponse.json(

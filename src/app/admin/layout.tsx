@@ -88,7 +88,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   const handleLogout = async () => {
     await fetch("/api/auth/logout", { method: "POST" });
-    router.push("/admin/login");
+    router.push("/");
   };
 
   const toggleTheme = () => {
@@ -98,7 +98,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     document.documentElement.style.colorScheme = newTheme ? "dark" : "light";
   };
 
-  const sidebarBg = isDarkMode ? "#1a1a1a" : "#2d5016";
   const textColor = isDarkMode ? "#e0e0e0" : "#fff";
   const contentBg = isDarkMode ? "#2d2d2d" : "#f5f5f5";
   const sidebarWidth = sidebarMinimized ? 80 : 250;
@@ -114,6 +113,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       <AdminSidebar
         minimized={sidebarMinimized}
         onToggle={() => setSidebarMinimized((p) => !p)}
+        user={currentUser}
+        onLogout={handleLogout}
+        isDarkMode={isDarkMode}
+        onToggleTheme={toggleTheme}
       />
 
       {/* Main Content */}
@@ -128,31 +131,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           transition: "margin-left 0.3s ease-in-out",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            gap: "8px",
-            marginBottom: "12px",
-          }}
-        >
-          <button
-            className="button is-small"
-            onClick={toggleTheme}
-            style={{
-              backgroundColor: "transparent",
-              border: `1px solid ${textColor}`,
-              color: textColor,
-              cursor: "pointer",
-            }}
-            title={isDarkMode ? "Light mode" : "Dark mode"}
-          >
-            {isDarkMode ? "☀️" : "🌙"}
-          </button>
-          <button className="button is-small" onClick={handleLogout}>
-            🚪 Logout
-          </button>
-        </div>
         {children}
       </main>
       <style jsx>{`

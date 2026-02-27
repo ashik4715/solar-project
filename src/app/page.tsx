@@ -24,6 +24,7 @@ function HomePageContent() {
   const [loading, setLoading] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
   const [quoteForm, setQuoteForm] = useState({
     name: "",
     email: "",
@@ -86,6 +87,7 @@ function HomePageContent() {
     const newTheme = !isDarkMode;
     setIsDarkMode(newTheme);
     localStorage.setItem("theme", newTheme ? "dark" : "light");
+    document.documentElement.style.colorScheme = newTheme ? "dark" : "light";
   };
 
   const openQuote = () => setShowQuoteModal(true);
@@ -94,26 +96,55 @@ function HomePageContent() {
     const params = new URLSearchParams(window.location.search);
     params.delete("openQuote");
     router.replace(`/?${params.toString()}`);
+    setNavOpen(false);
   };
 
   const submitQuote = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await fetch("/api/quotes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(quoteForm),
-    }).catch(() => {});
-    setLoading(false);
-    alert("Quote submitted! We'll reach out soon.");
-    setQuoteForm({
-      name: "",
-      email: "",
-      phone: "",
-      systemSize: "",
-      address: "",
-    });
-    closeQuote();
+
+    try {
+      const response = await fetch("/api/quotes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: quoteForm.name,
+          email: quoteForm.email,
+          phone: quoteForm.phone,
+          address: quoteForm.address,
+          systemSize: quoteForm.systemSize,
+          // pass at least one line item so backend validation passes
+          items: [
+            {
+              product: null,
+              quantity: 1,
+              price: 0,
+              description: `Lead from homepage hero (${quoteForm.systemSize || "size tbd"})`,
+            },
+          ],
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        alert(data.message || "Failed to submit quote. Please try again.");
+        return;
+      }
+
+      alert("Quote submitted! We'll reach out soon.");
+      setQuoteForm({
+        name: "",
+        email: "",
+        phone: "",
+        systemSize: "",
+        address: "",
+      });
+      closeQuote();
+    } catch (error) {
+      alert("Failed to submit quote. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleContactSubmit = async (e: React.FormEvent) => {
@@ -167,9 +198,34 @@ function HomePageContent() {
           >
             ☀️ Solar Store
           </Link>
+          <a
+            role="button"
+            className={`navbar-burger ${navOpen ? "is-active" : ""}`}
+            aria-label="menu"
+            aria-expanded={navOpen}
+            onClick={() => setNavOpen((p) => !p)}
+            style={{ color: "#fff" }}
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
-        <div className="navbar-menu">
+        <div className={`navbar-menu ${navOpen ? "is-active" : ""}`}>
           <div className="navbar-end" style={{ alignItems: "center" }}>
+            <div className="navbar-item">
+              <Link
+                href="/admin/dashboard"
+                style={{
+                  color: "#fff",
+                  textDecoration: "none",
+                  marginRight: "15px",
+                }}
+                onClick={() => setNavOpen(false)}
+              >
+                🔐 Admin
+              </Link>
+            </div>
             <div className="navbar-item">
               <Link
                 href="/"
@@ -178,6 +234,7 @@ function HomePageContent() {
                   textDecoration: "none",
                   marginRight: "15px",
                 }}
+                onClick={() => setNavOpen(false)}
               >
                 🏠 Home
               </Link>
@@ -190,6 +247,7 @@ function HomePageContent() {
                   textDecoration: "none",
                   marginRight: "15px",
                 }}
+                onClick={() => setNavOpen(false)}
               >
                 📦 Products
               </Link>
@@ -202,6 +260,7 @@ function HomePageContent() {
                   textDecoration: "none",
                   marginRight: "15px",
                 }}
+                onClick={() => setNavOpen(false)}
               >
                 📰 Blogs
               </Link>
@@ -214,6 +273,7 @@ function HomePageContent() {
                   textDecoration: "none",
                   marginRight: "15px",
                 }}
+                onClick={() => setNavOpen(false)}
               >
                 🔧 Support
               </Link>
@@ -228,6 +288,7 @@ function HomePageContent() {
                   fontWeight: "bold",
                 }}
                 className="is-medium"
+                onClick={() => setNavOpen(false)}
               >
                 👤 Login
               </Link>
@@ -241,6 +302,7 @@ function HomePageContent() {
                   marginRight: "15px",
                   fontWeight: "bold",
                 }}
+                onClick={() => setNavOpen(false)}
               >
                 ✍️ Register
               </Link>
@@ -248,7 +310,10 @@ function HomePageContent() {
             <div className="navbar-item">
               <button
                 className="button is-small is-rounded"
-                onClick={toggleTheme}
+                onClick={() => {
+                  toggleTheme();
+                  setNavOpen(false);
+                }}
                 style={{
                   backgroundColor: isDarkMode ? "#7b0000" : "#b221e7",
                   color: textColor,
@@ -269,6 +334,7 @@ function HomePageContent() {
                   color: "#e8f5e9",
                   marginLeft: "10px",
                 }}
+                onClick={() => setNavOpen(false)}
               >
                 🔐 Admin
               </Link>

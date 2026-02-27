@@ -180,7 +180,7 @@ export default function AdminLoginPage() {
                     Email: <code>admin@solarstore.com</code>
                   </p>
                   <p className="is-size-7" style={{ color: "#666" }}>
-                    Password: <code>ChangeMe123!</code>
+                    Password: <code>someMe123</code>
                   </p>
                 </div>
 
