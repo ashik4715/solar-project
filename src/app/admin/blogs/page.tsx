@@ -362,6 +362,7 @@ export default function BlogsPage() {
           </table>
         </div>
       )}
+      <AppFooter isDarkMode={isDarkMode} />
     </div>
   );
 }

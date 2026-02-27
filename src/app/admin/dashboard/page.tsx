@@ -90,6 +90,15 @@ export default function AdminDashboard() {
               on the public FAQs page.
             </li>
             <li>
+              📝 Blogs: Create and manage blog posts with categories and tags; published blogs appear on the public blog page.
+            </li>
+            <li>
+              💬 Quotes: Add inspirational or product quotes; display quotes on various pages.
+            </li>
+            <li>
+              🏷️ SEO Tags: Manage meta tags, keywords, and descriptions for better search engine optimization across pages.
+            </li>
+            <li>
               🖼️ Media: Carousel images/videos with optional audio; sync to S3
               if keys are set.
             </li>

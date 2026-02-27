@@ -96,14 +96,6 @@ export function AppFooter({ isDarkMode }: { isDarkMode: boolean }) {
               </li>
               <li style={{ marginBottom: "8px" }}>
                 <Link
-                  href="/user-settings"
-                  style={{ color: "#4CAF50", textDecoration: "none" }}
-                >
-                  Settings
-                </Link>
-              </li>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
                   href="/admin/login"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
@@ -135,15 +127,15 @@ export function AppFooter({ isDarkMode }: { isDarkMode: boolean }) {
               </li>
               <li style={{ marginBottom: "8px" }}>
                 <a
-                  href="#"
+                  href="/blogs"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
-                  API Reference
+                  Blogs
                 </a>
               </li>
               <li style={{ marginBottom: "8px" }}>
                 <a
-                  href="#"
+                  href="/faqs"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   FAQ
