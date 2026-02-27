@@ -99,12 +99,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8536,
+                      "duration": 6059,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:31:52.349Z",
+                      "startTime": "2026-02-26T23:43:41.321Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -133,12 +133,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7457,
+                      "duration": 5563,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:04.292Z",
+                      "startTime": "2026-02-26T23:43:48.488Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -167,12 +167,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7076,
+                      "duration": 5832,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:11.772Z",
+                      "startTime": "2026-02-26T23:43:54.065Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -211,12 +211,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 834,
+                      "duration": 173,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:18.877Z",
+                      "startTime": "2026-02-26T23:43:59.910Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -265,12 +265,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 241,
+                      "duration": 106,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:19.749Z",
+                      "startTime": "2026-02-26T23:44:00.094Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -319,12 +319,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 209,
+                      "duration": 136,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.024Z",
+                      "startTime": "2026-02-26T23:44:00.212Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -373,12 +373,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 159,
+                      "duration": 126,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.274Z",
+                      "startTime": "2026-02-26T23:44:00.362Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -427,12 +427,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 160,
+                      "duration": 408,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.456Z",
+                      "startTime": "2026-02-26T23:44:00.500Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -481,12 +481,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 200,
+                      "duration": 654,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.642Z",
+                      "startTime": "2026-02-26T23:44:00.962Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -557,7 +557,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.873Z",
+                      "startTime": "2026-02-26T23:44:01.654Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -611,7 +611,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.874Z",
+                      "startTime": "2026-02-26T23:44:01.655Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -665,7 +665,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.874Z",
+                      "startTime": "2026-02-26T23:44:01.655Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -719,7 +719,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.874Z",
+                      "startTime": "2026-02-26T23:44:01.655Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -773,7 +773,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.874Z",
+                      "startTime": "2026-02-26T23:44:01.655Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -827,7 +827,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.874Z",
+                      "startTime": "2026-02-26T23:44:01.655Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -881,7 +881,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.875Z",
+                      "startTime": "2026-02-26T23:44:01.655Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -935,7 +935,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.875Z",
+                      "startTime": "2026-02-26T23:44:01.655Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -989,7 +989,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.875Z",
+                      "startTime": "2026-02-26T23:44:01.655Z",
                       "annotations": [
                         {
                           "type": "skip",
@@ -1045,12 +1045,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4195,
+                      "duration": 2248,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:20.895Z",
+                      "startTime": "2026-02-26T23:44:01.665Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1079,12 +1079,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 460,
+                      "duration": 247,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:25.123Z",
+                      "startTime": "2026-02-26T23:44:03.925Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1113,12 +1113,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1355,
+                      "duration": 584,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:25.623Z",
+                      "startTime": "2026-02-26T23:44:04.180Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1147,12 +1147,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 842,
+                      "duration": 49,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:27.004Z",
+                      "startTime": "2026-02-26T23:44:04.776Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1181,12 +1181,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 802,
+                      "duration": 63,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:27.885Z",
+                      "startTime": "2026-02-26T23:44:04.841Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1215,12 +1215,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 973,
+                      "duration": 1014,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:28.723Z",
+                      "startTime": "2026-02-26T23:44:04.917Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1249,12 +1249,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8024,
+                      "duration": 3280,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:29.732Z",
+                      "startTime": "2026-02-26T23:44:05.942Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1283,12 +1283,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 821,
+                      "duration": 64,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:37.801Z",
+                      "startTime": "2026-02-26T23:44:09.232Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1317,12 +1317,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2164,
+                      "duration": 245,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:38.701Z",
+                      "startTime": "2026-02-26T23:44:09.305Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1351,12 +1351,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5605,
+                      "duration": 734,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:40.925Z",
+                      "startTime": "2026-02-26T23:44:09.559Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1385,12 +1385,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2914,
+                      "duration": 1521,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:46.562Z",
+                      "startTime": "2026-02-26T23:44:10.307Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1419,12 +1419,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 82,
+                      "duration": 113,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:49.631Z",
+                      "startTime": "2026-02-26T23:44:11.848Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1453,12 +1453,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 749,
+                      "duration": 527,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:49.760Z",
+                      "startTime": "2026-02-26T23:44:11.995Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1487,12 +1487,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 217,
+                      "duration": 141,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.556Z",
+                      "startTime": "2026-02-26T23:44:12.544Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1519,8 +1519,8 @@
         {
           "title": "CRUD Operations Tests",
           "file": "crud-operations.spec.ts",
-          "line": 15,
-          "column": 6,
+          "line": 16,
+          "column": 12,
           "specs": [
             {
               "title": "should create a new category",
@@ -1535,8 +1535,8 @@
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
                         "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 16,
-                        "column": 8
+                        "line": 17,
+                        "column": 14
                       }
                     }
                   ],
@@ -1553,15 +1553,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.817Z",
+                      "startTime": "2026-02-26T23:44:12.693Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
                             "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 16,
-                            "column": 8
+                            "line": 17,
+                            "column": 14
                           }
                         }
                       ],
@@ -1573,8 +1573,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-02491c98d6b9829bc5ed",
               "file": "crud-operations.spec.ts",
-              "line": 20,
-              "column": 7
+              "line": 18,
+              "column": 18
             },
             {
               "title": "should read categories list",
@@ -1589,8 +1589,8 @@
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
                         "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 16,
-                        "column": 8
+                        "line": 17,
+                        "column": 14
                       }
                     }
                   ],
@@ -1607,15 +1607,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.823Z",
+                      "startTime": "2026-02-26T23:44:12.694Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
                             "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 16,
-                            "column": 8
+                            "line": 17,
+                            "column": 14
                           }
                         }
                       ],
@@ -1627,8 +1627,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-27b646656c81f64c2b35",
               "file": "crud-operations.spec.ts",
-              "line": 65,
-              "column": 7
+              "line": 53,
+              "column": 18
             },
             {
               "title": "should create a new product",
@@ -1643,8 +1643,8 @@
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
                         "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 16,
-                        "column": 8
+                        "line": 17,
+                        "column": 14
                       }
                     }
                   ],
@@ -1661,15 +1661,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.824Z",
+                      "startTime": "2026-02-26T23:44:12.694Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
                             "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 16,
-                            "column": 8
+                            "line": 17,
+                            "column": 14
                           }
                         }
                       ],
@@ -1681,8 +1681,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-9d294cd7aa7a84f1c69e",
               "file": "crud-operations.spec.ts",
-              "line": 79,
-              "column": 7
+              "line": 68,
+              "column": 18
             },
             {
               "title": "should read products list",
@@ -1697,8 +1697,8 @@
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
                         "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 16,
-                        "column": 8
+                        "line": 17,
+                        "column": 14
                       }
                     }
                   ],
@@ -1715,15 +1715,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.825Z",
+                      "startTime": "2026-02-26T23:44:12.694Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
                             "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 16,
-                            "column": 8
+                            "line": 17,
+                            "column": 14
                           }
                         }
                       ],
@@ -1735,8 +1735,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-5ed240229cbb4815099d",
               "file": "crud-operations.spec.ts",
-              "line": 122,
-              "column": 7
+              "line": 104,
+              "column": 18
             },
             {
               "title": "should list customers",
@@ -1751,8 +1751,8 @@
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
                         "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 16,
-                        "column": 8
+                        "line": 17,
+                        "column": 14
                       }
                     }
                   ],
@@ -1769,15 +1769,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.829Z",
+                      "startTime": "2026-02-26T23:44:12.694Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
                             "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 16,
-                            "column": 8
+                            "line": 17,
+                            "column": 14
                           }
                         }
                       ],
@@ -1789,8 +1789,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-0031857adf46c0167db5",
               "file": "crud-operations.spec.ts",
-              "line": 134,
-              "column": 7
+              "line": 115,
+              "column": 18
             },
             {
               "title": "should handle API error on invalid create",
@@ -1805,8 +1805,8 @@
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
                         "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 16,
-                        "column": 8
+                        "line": 17,
+                        "column": 14
                       }
                     }
                   ],
@@ -1823,15 +1823,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.830Z",
+                      "startTime": "2026-02-26T23:44:12.695Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
                             "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 16,
-                            "column": 8
+                            "line": 17,
+                            "column": 14
                           }
                         }
                       ],
@@ -1843,8 +1843,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-ad38601984fb60dce42a",
               "file": "crud-operations.spec.ts",
-              "line": 146,
-              "column": 7
+              "line": 126,
+              "column": 18
             },
             {
               "title": "should handle duplicate category creation gracefully",
@@ -1859,8 +1859,8 @@
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
                         "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 16,
-                        "column": 8
+                        "line": 17,
+                        "column": 14
                       }
                     }
                   ],
@@ -1877,15 +1877,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.830Z",
+                      "startTime": "2026-02-26T23:44:12.695Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
                             "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 16,
-                            "column": 8
+                            "line": 17,
+                            "column": 14
                           }
                         }
                       ],
@@ -1897,8 +1897,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-8a8aa1b2f23e41303f66",
               "file": "crud-operations.spec.ts",
-              "line": 165,
-              "column": 7
+              "line": 145,
+              "column": 18
             },
             {
               "title": "should validate required fields",
@@ -1913,8 +1913,8 @@
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
                         "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 16,
-                        "column": 8
+                        "line": 17,
+                        "column": 14
                       }
                     }
                   ],
@@ -1931,15 +1931,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.830Z",
+                      "startTime": "2026-02-26T23:44:12.695Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
                             "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 16,
-                            "column": 8
+                            "line": 17,
+                            "column": 14
                           }
                         }
                       ],
@@ -1951,8 +1951,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-d4df9f1bfab92016319b",
               "file": "crud-operations.spec.ts",
-              "line": 204,
-              "column": 7
+              "line": 177,
+              "column": 18
             }
           ]
         }
@@ -1987,12 +1987,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3699,
+                      "duration": 1940,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:50.872Z",
+                      "startTime": "2026-02-26T23:44:12.699Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2021,12 +2021,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2306,
+                      "duration": 967,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:54.601Z",
+                      "startTime": "2026-02-26T23:44:14.684Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2055,12 +2055,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1599,
+                      "duration": 557,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:56.944Z",
+                      "startTime": "2026-02-26T23:44:15.681Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2089,12 +2089,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 931,
+                      "duration": 782,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:58.636Z",
+                      "startTime": "2026-02-26T23:44:16.250Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2123,12 +2123,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1609,
+                      "duration": 599,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:32:59.596Z",
+                      "startTime": "2026-02-26T23:44:17.045Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2157,12 +2157,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1303,
+                      "duration": 733,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:33:01.233Z",
+                      "startTime": "2026-02-26T23:44:17.656Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2191,12 +2191,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5634,
+                      "duration": 5530,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:33:02.560Z",
+                      "startTime": "2026-02-26T23:44:18.399Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2225,12 +2225,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2208,
+                      "duration": 993,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:33:08.214Z",
+                      "startTime": "2026-02-26T23:44:23.939Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2259,12 +2259,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 969,
+                      "duration": 403,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:33:10.441Z",
+                      "startTime": "2026-02-26T23:44:24.942Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2293,12 +2293,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1491,
+                      "duration": 1144,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:33:11.430Z",
+                      "startTime": "2026-02-26T23:44:25.355Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2327,12 +2327,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1924,
+                      "duration": 599,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-26T20:33:12.949Z",
+                      "startTime": "2026-02-26T23:44:26.518Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2352,8 +2352,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-26T20:31:48.914Z",
-    "duration": 87102.197,
+    "startTime": "2026-02-26T23:43:38.444Z",
+    "duration": 48952.598,
     "expected": 28,
     "skipped": 23,
     "unexpected": 0,

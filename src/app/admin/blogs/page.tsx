@@ -29,15 +29,20 @@ export default function BlogsPage() {
     media: [],
   });
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [tinymceKey, setTinymceKey] = useState<string>("no-api-key");
+  const [tinymceKey, setTinymceKey] = useState<string>("");
+  const [showCreateForm, setShowCreateForm] = useState<boolean>(false);
+  const [settingsLoading, setSettingsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetch("/api/settings")
       .then((r) => r.json())
       .then((data) => {
-        if (data.data?.tinymceApiKey) setTinymceKey(data.data.tinymceApiKey);
+        if (data.data?.tinymceApiKey) {
+          setTinymceKey(data.data.tinymceApiKey);
+        }
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setSettingsLoading(false));
   }, []);
 
   const loadPosts = async () => {
@@ -76,6 +81,7 @@ export default function BlogsPage() {
       media: [],
     });
     setEditingId(null);
+    setShowCreateForm(false);
     loadPosts();
   };
 
@@ -114,175 +120,248 @@ export default function BlogsPage() {
 
   return (
     <div>
-      <h1 className="title">Blogs</h1>
-      <div className="columns">
-        <div className="column is-6">
-          <div className="card">
-            <div className="card-content">
-              <h3 className="subtitle">{editingId ? "Edit" : "Create"} Blog</h3>
-              <div className="field">
-                <label className="label">Title</label>
-                <input
-                  className="input"
-                  value={form.title}
-                  onChange={(e) => setForm({ ...form, title: e.target.value })}
-                />
-              </div>
-              <div className="field">
-                <label className="label">Slug</label>
-                <input
-                  className="input"
-                  value={form.slug}
-                  onChange={(e) => setForm({ ...form, slug: e.target.value })}
-                />
-              </div>
-              <div className="field">
-                <label className="label">Summary</label>
-                <textarea
-                  className="textarea"
-                  value={form.summary}
-                  onChange={(e) =>
-                    setForm({ ...form, summary: e.target.value })
-                  }
-                />
-              </div>
-              <div className="field">
-                <label className="label">Category</label>
-                <input
-                  className="input"
-                  value={form.category}
-                  onChange={(e) =>
-                    setForm({ ...form, category: e.target.value || "general" })
-                  }
-                />
-              </div>
-              <div className="field">
-                <label className="label">Status</label>
-                <button
-                  type="button"
-                  className={`button is-small ${form.isPublished ? "is-success" : "is-light"}`}
-                  onClick={() =>
-                    setForm((prev) => ({ ...prev, isPublished: !prev.isPublished }))
-                  }
-                >
-                  {form.isPublished ? "Published" : "Draft"}
-                </button>
-              </div>
-              <div className="field">
-                <label className="label">Content</label>
-                <Editor
-                  apiKey={tinymceKey || "no-api-key"}
-                  init={{
-                    height: 240,
-                    menubar: false,
-                    plugins: ["link", "lists", "code"],
-                    toolbar:
-                      "undo redo | bold italic | bullist numlist | link | code",
-                  }}
-                  value={form.content}
-                  onEditorChange={(v) => setForm({ ...form, content: v })}
-                />
-              </div>
-              <div className="field">
-                <label className="label">Media</label>
-                <div className="buttons">
-                  <label className="button is-small">
-                    Upload Image
-                    <input
-                      type="file"
-                      accept="image/*"
-                      style={{ display: "none" }}
-                      onChange={(e) =>
-                        e.target.files?.[0] &&
-                        handleMediaUpload(e.target.files[0], "image")
-                      }
-                    />
-                  </label>
-                  <label className="button is-small">
-                    Upload Video
-                    <input
-                      type="file"
-                      accept="video/*"
-                      style={{ display: "none" }}
-                      onChange={(e) =>
-                        e.target.files?.[0] &&
-                        handleMediaUpload(e.target.files[0], "video")
-                      }
-                    />
-                  </label>
-                </div>
-                <div className="tags">
-                  {form.media.map((m, i) => (
-                    <span key={i} className="tag is-light">
-                      {m.type} {i + 1}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <button className="button is-primary" onClick={savePost} disabled={loading}>
-                {editingId ? "Update" : "Create"}
-              </button>
-            </div>
-          </div>
+      <div className="level">
+        <div className="level-left">
+          <h1 className="title">Blogs</h1>
         </div>
-        <div className="column is-6">
-          <h3 className="subtitle">All Blogs</h3>
-          {loading ? (
-            <p>Loading...</p>
-          ) : posts.length === 0 ? (
-            <p className="has-text-grey">No posts yet.</p>
-          ) : (
-            <div className="table-container">
-              <table className="table is-fullwidth is-striped">
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {posts.map((p) => (
-                    <tr key={p._id}>
-                      <td>{p.title}</td>
-                      <td>
-                        <span className={`tag ${p.isPublished ? "is-success" : ""}`}>
-                          {p.isPublished ? "Published" : "Draft"}
-                        </span>
-                      </td>
-                      <td className="buttons">
-                        <button
-                          className="button is-small is-info is-light"
-                          onClick={() => {
-                            setEditingId(p._id || null);
-                            setForm({
-                              title: p.title,
-                              slug: p.slug,
-                              summary: p.summary,
-                              content: p.content,
-                              category: p.category,
-                              isPublished: p.isPublished,
-                              media: p.media || [],
-                            });
-                          }}
-                        >
-                          Edit
-                        </button>
-                        <button
-                          className="button is-small is-danger is-light"
-                          onClick={() => deletePost(p._id)}
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+        <div className="level-right">
+          {!showCreateForm && (
+            <button
+              className="button is-primary"
+              onClick={() => {
+                setShowCreateForm(true);
+                setEditingId(null);
+                setForm({
+                  title: "",
+                  slug: "",
+                  summary: "",
+                  content: "",
+                  category: "general",
+                  isPublished: false,
+                  media: [],
+                });
+              }}
+            >
+              + Create New Blog
+            </button>
           )}
         </div>
       </div>
+
+      {showCreateForm && (
+        <div className="columns">
+          <div className="column is-6">
+            <div className="card">
+              <div className="card-content">
+                <div className="level">
+                  <div className="level-left">
+                    <h3 className="subtitle">
+                      {editingId ? "Edit" : "Create"} Blog
+                    </h3>
+                  </div>
+                  <div className="level-right">
+                    <button
+                      className="button is-small is-light"
+                      onClick={() => {
+                        setShowCreateForm(false);
+                        setEditingId(null);
+                      }}
+                    >
+                      ✕ Close
+                    </button>
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Title</label>
+                  <input
+                    className="input"
+                    value={form.title}
+                    onChange={(e) =>
+                      setForm({ ...form, title: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Slug</label>
+                  <input
+                    className="input"
+                    value={form.slug}
+                    onChange={(e) => setForm({ ...form, slug: e.target.value })}
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Summary</label>
+                  <textarea
+                    className="textarea"
+                    value={form.summary}
+                    onChange={(e) =>
+                      setForm({ ...form, summary: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Category</label>
+                  <input
+                    className="input"
+                    value={form.category}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        category: e.target.value || "general",
+                      })
+                    }
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Status</label>
+                  <button
+                    type="button"
+                    className={`button is-small ${
+                      form.isPublished ? "is-success" : "is-light"
+                    }`}
+                    onClick={() =>
+                      setForm((prev) => ({
+                        ...prev,
+                        isPublished: !prev.isPublished,
+                      }))
+                    }
+                  >
+                    {form.isPublished ? "Published" : "Draft"}
+                  </button>
+                </div>
+                <div className="field">
+                  <label className="label">Content</label>
+                  {settingsLoading ? (
+                    <p className="has-text-grey">Loading TinyMCE editor...</p>
+                  ) : !tinymceKey ? (
+                    <div className="notification is-warning">
+                      <p>
+                        TinyMCE API key not configured. Please add it in{" "}
+                        <a href="/admin/settings">Settings</a>.
+                      </p>
+                    </div>
+                  ) : (
+                    <Editor
+                      apiKey={tinymceKey}
+                      init={{
+                        height: 240,
+                        menubar: false,
+                        plugins: ["link", "lists", "code"],
+                        toolbar:
+                          "undo redo | bold italic | bullist numlist | link | code",
+                      }}
+                      value={form.content}
+                      onEditorChange={(v) => setForm({ ...form, content: v })}
+                    />
+                  )}
+                </div>
+                <div className="field">
+                  <label className="label">Media</label>
+                  <div className="buttons">
+                    <label className="button is-small">
+                      Upload Image
+                      <input
+                        type="file"
+                        accept="image/*"
+                        style={{ display: "none" }}
+                        onChange={(e) =>
+                          e.target.files?.[0] &&
+                          handleMediaUpload(e.target.files[0], "image")
+                        }
+                      />
+                    </label>
+                    <label className="button is-small">
+                      Upload Video
+                      <input
+                        type="file"
+                        accept="video/*"
+                        style={{ display: "none" }}
+                        onChange={(e) =>
+                          e.target.files?.[0] &&
+                          handleMediaUpload(e.target.files[0], "video")
+                        }
+                      />
+                    </label>
+                  </div>
+                  <div className="tags">
+                    {form.media.map((m, i) => (
+                      <span key={i} className="tag is-light">
+                        {m.type} {i + 1}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <button
+                  className="button is-primary"
+                  onClick={savePost}
+                  disabled={loading}
+                >
+                  {editingId ? "Update" : "Create"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <h3 className="subtitle">All Blogs</h3>
+      {loading ? (
+        <p>Loading...</p>
+      ) : posts.length === 0 ? (
+        <p className="has-text-grey">No posts yet.</p>
+      ) : (
+        <div className="table-container">
+          <table className="table is-fullwidth is-striped">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {posts.map((p) => (
+                <tr key={p._id}>
+                  <td>{p.title}</td>
+                  <td>
+                    <span
+                      className={`tag ${p.isPublished ? "is-success" : ""}`}
+                    >
+                      {p.isPublished ? "Published" : "Draft"}
+                    </span>
+                  </td>
+                  <td className="buttons">
+                    <button
+                      className="button is-small is-info is-light"
+                      onClick={() => {
+                        setEditingId(p._id || null);
+                        setForm({
+                          title: p.title,
+                          slug: p.slug,
+                          summary: p.summary,
+                          content: p.content,
+                          category: p.category,
+                          isPublished: p.isPublished,
+                          media: p.media || [],
+                        });
+                        setShowCreateForm(true);
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="button is-small is-danger is-light"
+                      onClick={() => deletePost(p._id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
