@@ -49,3 +49,40 @@ details summary:hover {
 details[open] {
   background-color: #f0f8f0;
 }
+
+/* Navbar readability tweaks */
+.navbar-burger {
+  color: inherit;
+}
+
+.navbar-burger span {
+  background-color: currentColor;
+}
+
+.navbar-menu {
+  background-color: inherit;
+  color: inherit;
+}
+
+.navbar-menu .navbar-item,
+.navbar-menu .navbar-link {
+  color: inherit;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    padding: 8px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  }
+
+  .navbar-menu .navbar-item,
+  .navbar-menu .navbar-link {
+    justify-content: center;
+    padding: 10px 18px;
+  }
+}

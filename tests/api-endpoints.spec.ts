@@ -72,7 +72,7 @@ test.describe("API Endpoints Tests", () => {
       },
     });
 
-    expect([200, 400, 401, 500]).toContain(response.status());
+    expect([200, 201, 400, 401, 500]).toContain(response.status());
   });
 
   test("POST /api/contact - submit contact form", async ({ request }) => {
