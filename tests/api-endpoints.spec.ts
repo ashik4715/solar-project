@@ -67,6 +67,7 @@ test.describe("API Endpoints Tests", () => {
       data: {
         customerName: "Test Customer",
         customerEmail: "test@example.com",
+        phone: "1234567890",
         items: [],
       },
     });

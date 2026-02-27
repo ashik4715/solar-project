@@ -44,7 +44,7 @@ export function AdminSidebar({
   const pathname = usePathname();
 
   const bg = isDarkMode ? "#1e1e1e" : "#2d5016";
-  const fg = "#fff";
+  const fg = "#ffffff";
   const divider = isDarkMode ? "#3a3a3a" : "#ffffff";
 
   const renderItems = (items: typeof managementItems) => (
@@ -63,21 +63,34 @@ export function AdminSidebar({
                 alignItems: "center",
                 gap: "10px",
                 textDecoration: "none",
-                backgroundColor: isActive ? "rgba(255,255,255,0.12)" : "transparent",
+                backgroundColor: isActive
+                  ? "rgba(255,255,255,0.12)"
+                  : "transparent",
                 transition: "background-color 0.2s ease",
                 whiteSpace: "nowrap",
               }}
               onMouseEnter={(e) => {
-                if (!isActive) e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)";
+                if (!isActive)
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(255,255,255,0.08)";
               }}
               onMouseLeave={(e) => {
-                if (!isActive) e.currentTarget.style.backgroundColor = "transparent";
+                if (!isActive)
+                  e.currentTarget.style.backgroundColor = "transparent";
               }}
             >
-              <span style={{ fontSize: "1.1rem", minWidth: "22px", textAlign: "center" }}>
+              <span
+                style={{
+                  fontSize: "1.1rem",
+                  minWidth: "22px",
+                  textAlign: "center",
+                }}
+              >
                 {item.icon}
               </span>
-              {!minimized && <span style={{ fontSize: "0.95rem" }}>{item.label}</span>}
+              {!minimized && (
+                <span style={{ fontSize: "0.95rem" }}>{item.label}</span>
+              )}
             </Link>
           </li>
         );
@@ -144,7 +157,7 @@ export function AdminSidebar({
                 minWidth: "36px",
               }}
             >
-              {minimized ? "➕" : "➖"}
+              {minimized ? "+" : "-"}
             </button>
           </div>
         </div>
