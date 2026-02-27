@@ -65,18 +65,20 @@ const highlights = [
 
 async function getBlogs(): Promise<BlogCard[]> {
   await connectDB();
-  const posts = await Blog.find({ isPublished: true })
+  const posts = (await Blog.find({ isPublished: true })
     .sort({ createdAt: -1 })
-    .lean();
+    .lean()) as any[];
 
   return posts.map((post) => ({
-    id: post._id.toString(),
+    id: String(post._id),
     title: post.title,
     slug: post.slug,
     summary: post.summary || "",
     category: post.category || "general",
     tags: Array.isArray(post.tags) ? post.tags : [],
-    createdAt: post.createdAt?.toISOString(),
+    createdAt: post.createdAt
+      ? new Date(post.createdAt as unknown as string).toISOString()
+      : undefined,
     media: post.media as BlogMedia[],
   }));
 }

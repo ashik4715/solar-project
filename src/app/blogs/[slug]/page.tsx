@@ -21,8 +21,10 @@ type BlogDetail = {
 
 async function getBlog(slug: string): Promise<BlogDetail | null> {
   await connectDB();
-  const doc = await Blog.findOne({ slug }).lean();
-  if (!doc || !doc.isPublished) return null;
+  const doc = (await Blog.findOne({ slug, isPublished: true }).lean()) as
+    | (BlogDetail & { _id: string })
+    | null;
+  if (!doc) return null;
 
   return {
     title: doc.title,
@@ -32,16 +34,18 @@ async function getBlog(slug: string): Promise<BlogDetail | null> {
     category: doc.category || "general",
     tags: Array.isArray(doc.tags) ? doc.tags : [],
     media: doc.media as BlogDetail["media"],
-    createdAt: doc.createdAt?.toISOString(),
+    createdAt: doc.createdAt
+      ? new Date(doc.createdAt as unknown as string).toISOString()
+      : undefined,
   };
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const blog = await getBlog(slug);
   if (!blog) {
     return { title: "Blog not found - Solar Store" };
@@ -55,9 +59,9 @@ export async function generateMetadata({
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const blog = await getBlog(slug);
 
   if (!blog) return notFound();

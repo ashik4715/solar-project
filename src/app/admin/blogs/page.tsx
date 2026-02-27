@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import Swal from "sweetalert2";
 import "bulma/css/bulma.css";
+import { AppFooter } from "@/components/AppFooter";
 
 interface Blog {
   _id?: string;
@@ -19,6 +20,7 @@ interface Blog {
 export default function BlogsPage() {
   const [posts, setPosts] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(false);
+  const [isDarkMode] = useState(false);
   const [form, setForm] = useState<Blog>({
     title: "",
     slug: "",

@@ -10,12 +10,12 @@ export const dynamic = "force-dynamic";
 
 async function getFaqs(): Promise<FaqItem[]> {
   await connectDB();
-  const docs = await FAQ.find({ isPublished: true })
+  const docs = (await FAQ.find({ isPublished: true })
     .sort({ displayOrder: 1, createdAt: -1 })
-    .lean();
+    .lean()) as any[];
 
   return docs.map((doc) => ({
-    id: doc._id.toString(),
+    id: String(doc._id),
     question: doc.question,
     answer: doc.answer,
     category: doc.category || "general",
