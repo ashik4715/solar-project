@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import "bulma/css/bulma.css";
+import { AdminSidebar } from "@/components/AdminSidebar";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +15,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [sidebarMinimized, setSidebarMinimized] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -100,6 +101,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   const sidebarBg = isDarkMode ? "#1a1a1a" : "#2d5016";
   const textColor = isDarkMode ? "#e0e0e0" : "#fff";
   const contentBg = isDarkMode ? "#2d2d2d" : "#f5f5f5";
+  const sidebarWidth = sidebarMinimized ? 80 : 250;
 
   return (
     <div
@@ -109,31 +111,31 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         backgroundColor: contentBg,
       }}
     >
-      {/* Sidebar */}
-      <aside
-        className="menu"
+      <AdminSidebar
+        minimized={sidebarMinimized}
+        onToggle={() => setSidebarMinimized((p) => !p)}
+      />
+
+      {/* Main Content */}
+      <main
         style={{
-          width: "250px",
-          backgroundColor: sidebarBg,
-          padding: "20px",
+          flex: 1,
+          padding: "30px",
+          backgroundColor: contentBg,
           color: textColor,
           overflowY: "auto",
+          marginLeft: `${sidebarWidth}px`,
+          transition: "margin-left 0.3s ease-in-out",
         }}
       >
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "20px",
+            justifyContent: "flex-end",
+            gap: "8px",
+            marginBottom: "12px",
           }}
         >
-          <p
-            className="menu-label"
-            style={{ color: textColor, marginBottom: 0 }}
-          >
-            ☀️ Admin Panel
-          </p>
           <button
             className="button is-small"
             onClick={toggleTheme}
@@ -147,131 +149,20 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           >
             {isDarkMode ? "☀️" : "🌙"}
           </button>
+          <button className="button is-small" onClick={handleLogout}>
+            🚪 Logout
+          </button>
         </div>
-
-        <div
-          style={{
-            marginBottom: "20px",
-            paddingBottom: "20px",
-            borderBottom: `1px solid ${isDarkMode ? "#444" : "#fff"}`,
-          }}
-        >
-          <p style={{ fontSize: "14px", color: textColor }}>
-            {currentUser?.name || currentUser?.email}
-          </p>
-          <p style={{ fontSize: "12px", color: isDarkMode ? "#999" : "#ddd" }}>
-            {currentUser?.role === "admin" ? "Administrator" : "User"}
-          </p>
-        </div>
-
-        <p className="menu-label" style={{ color: textColor }}>
-          Management
-        </p>
-        <ul className="menu-list">
-          <li>
-            <Link href="/admin/dashboard" style={{ color: textColor }}>
-              📊 Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/products" style={{ color: textColor }}>
-              📦 Products
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/categories" style={{ color: textColor }}>
-              🏷️ Categories
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/customers" style={{ color: textColor }}>
-              👥 Customers
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/quotes" style={{ color: textColor }}>
-              💬 Quotes
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/orders" style={{ color: textColor }}>
-              🛒 Orders
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/blogs" style={{ color: textColor }}>
-              📰 Blogs
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/users" style={{ color: textColor }}>
-              👤 Users
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/roles" style={{ color: textColor }}>
-              🔑 Roles
-            </Link>
-          </li>
-        </ul>
-
-        <p className="menu-label" style={{ color: textColor }}>
-          Settings
-        </p>
-        <ul className="menu-list">
-          <li>
-            <Link href="/admin/user-settings" style={{ color: textColor }}>
-              👤 User Settings
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/settings" style={{ color: textColor }}>
-              ⚙️ Site Settings
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/seo" style={{ color: textColor }}>
-              🔍 SEO Tags
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/media" style={{ color: textColor }}>
-              🖼️ Carousel Media
-            </Link>
-          </li>
-          <li>
-            <Link href="/admin/faqs" style={{ color: textColor }}>
-              ❓ FAQs
-            </Link>
-          </li>
-        </ul>
-
-        <button
-          className="button is-fullwidth"
-          onClick={handleLogout}
-          style={{
-            marginTop: "20px",
-            backgroundColor: isDarkMode ? "#444" : "#fff",
-            color: isDarkMode ? "#e0e0e0" : "#2d5016",
-            fontWeight: "bold",
-          }}
-        >
-          🚪 Logout
-        </button>
-      </aside>
-
-      {/* Main Content */}
-      <main
-        style={{
-          flex: 1,
-          padding: "30px",
-          backgroundColor: contentBg,
-          color: textColor,
-          overflowY: "auto",
-        }}
-      >
         {children}
       </main>
+      <style jsx>{`
+        @media screen and (max-width: 768px) {
+          main {
+            margin-left: 65px !important;
+            padding: 16px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

@@ -196,11 +196,14 @@ function HomePageContent() {
             </div>
             <div className="navbar-item">
               <Link
-                href="/quote"
-                className="button is-light is-medium"
-                style={{ marginRight: "15px" }}
+                href="/blogs"
+                style={{
+                  color: "#fff",
+                  textDecoration: "none",
+                  marginRight: "15px",
+                }}
               >
-                💬 Quotes
+                📰 Blogs
               </Link>
             </div>
             <div className="navbar-item">
@@ -232,10 +235,9 @@ function HomePageContent() {
             <div className="navbar-item">
               <Link
                 href="/register"
-                className="button is-light has-text-weight-semibold is-medium"
                 style={{
-                  backgroundColor: "#e8f5e9",
-                  color: isDarkMode ? "#183013" : "#2d5016",
+                  color: "#e8f5e9",
+                  textDecoration: "none",
                   marginRight: "15px",
                   fontWeight: "bold",
                 }}
@@ -245,10 +247,10 @@ function HomePageContent() {
             </div>
             <div className="navbar-item">
               <button
-                className="button is-small"
+                className="button is-small is-rounded"
                 onClick={toggleTheme}
                 style={{
-                  backgroundColor: isDarkMode ? "#444" : "#ddd",
+                  backgroundColor: isDarkMode ? "#7b0000" : "#b221e7",
                   color: textColor,
                   border: "none",
                   cursor: "pointer",
@@ -256,13 +258,12 @@ function HomePageContent() {
                 }}
                 title={isDarkMode ? "Light mode" : "Dark mode"}
               >
-                {isDarkMode ? "☀️ Light" : "🌙 Dark"}
+                {isDarkMode ? "☀️ " : "🌙 "}
               </button>
             </div>
             <div className="navbar-item">
               <Link
                 href="/admin/login"
-                className="button is-outlined is-light"
                 style={{
                   borderColor: "#e8f5e9",
                   color: "#e8f5e9",
