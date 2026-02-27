@@ -126,20 +126,20 @@ export function AppFooter({ isDarkMode }: { isDarkMode: boolean }) {
                 </a>
               </li>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/blogs"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   Blogs
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: "8px" }}>
-                <a
+                <Link
                   href="/faqs"
                   style={{ color: "#4CAF50", textDecoration: "none" }}
                 >
                   FAQ
-                </a>
+                </Link>
               </li>
               <li style={{ marginBottom: "8px" }}>
                 <a
