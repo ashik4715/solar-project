@@ -38,14 +38,25 @@ export function PublicNav() {
             FAQs
           </Link>
           <Link
-            href="/?openQuote=1"
-            className="navbar-item button is-light is-small"
+            href="/quote"
+            className="navbar-item button is-light is-medium"
             style={{ margin: "8px" }}
           >
             💬 Get a Quote
           </Link>
-          <Link href="/login" className="navbar-item" style={linkStyle}>
+          <Link
+            href="/login"
+            className="navbar-item button is-ghost is-medium"
+            style={{ color: "#fff" }}
+          >
             Login
+          </Link>
+          <Link
+            href="/register"
+            className="navbar-item button is-success is-medium"
+            style={{ marginLeft: "6px" }}
+          >
+            Register
           </Link>
         </div>
       </div>

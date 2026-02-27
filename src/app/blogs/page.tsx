@@ -4,6 +4,7 @@ import { PublicNav } from "@/components/PublicNav";
 import { AppFooter } from "@/components/AppFooter";
 import { connectDB } from "@/lib/mongodb";
 import Blog from "@/models/Blog";
+import { fetchSeoForPath } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -81,6 +82,16 @@ async function getBlogs(): Promise<BlogCard[]> {
       : undefined,
     media: post.media as BlogMedia[],
   }));
+}
+
+export async function generateMetadata() {
+  const seo = await fetchSeoForPath("/blogs");
+  return (
+    seo || {
+      title: "Blogs - Solar Store",
+      description: "Product updates, solar tips, and customer stories.",
+    }
+  );
 }
 
 const formatDate = (value?: string) =>

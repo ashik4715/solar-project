@@ -196,8 +196,8 @@ function HomePageContent() {
             </div>
             <div className="navbar-item">
               <Link
-                href="/?openQuote=1"
-                className="button is-light is-small"
+                href="/quote"
+                className="button is-light is-medium"
                 style={{ marginRight: "15px" }}
               >
                 💬 Quotes
@@ -224,6 +224,7 @@ function HomePageContent() {
                   marginRight: "15px",
                   fontWeight: "bold",
                 }}
+                className="is-medium"
               >
                 👤 Login
               </Link>
@@ -231,7 +232,7 @@ function HomePageContent() {
             <div className="navbar-item">
               <Link
                 href="/register"
-                className="button is-light has-text-weight-semibold"
+                className="button is-light has-text-weight-semibold is-medium"
                 style={{
                   backgroundColor: "#e8f5e9",
                   color: isDarkMode ? "#183013" : "#2d5016",

@@ -5,8 +5,19 @@ import { AppFooter } from "@/components/AppFooter";
 import { connectDB } from "@/lib/mongodb";
 import FAQ from "@/models/FAQ";
 import { FaqAccordion, type FaqItem } from "@/components/FaqAccordion";
+import { fetchSeoForPath } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata() {
+  const seo = await fetchSeoForPath("/faqs");
+  return (
+    seo || {
+      title: "FAQs - Solar Store",
+      description: "Answers to common questions about Solar Store.",
+    }
+  );
+}
 
 async function getFaqs(): Promise<FaqItem[]> {
   await connectDB();

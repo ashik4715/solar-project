@@ -5,6 +5,7 @@ import { PublicNav } from "@/components/PublicNav";
 import { AppFooter } from "@/components/AppFooter";
 import { connectDB } from "@/lib/mongodb";
 import Blog from "@/models/Blog";
+import { fetchSeoForPath } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -46,13 +47,30 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const seo = await fetchSeoForPath(`/blogs/${slug}`);
   const blog = await getBlog(slug);
-  if (!blog) {
+  if (!blog && !seo) {
     return { title: "Blog not found - Solar Store" };
   }
+  if (seo) return seo;
   return {
-    title: `${blog.title} | Solar Store Blog`,
-    description: blog.summary?.slice(0, 140) || "Solar Store article",
+    title: `${blog?.title} | Solar Store Blog`,
+    description: blog?.summary?.slice(0, 140) || "Solar Store article",
+    openGraph: {
+      title: `${blog?.title} | Solar Store Blog`,
+      description: blog?.summary?.slice(0, 140) || undefined,
+      images:
+        blog?.media?.find((m) => m.type === "image")?.url ||
+        blog?.media?.[0]?.url
+          ? [
+              {
+                url:
+                  blog?.media?.find((m) => m.type === "image")?.url ||
+                  blog?.media?.[0]?.url,
+              },
+            ]
+          : undefined,
+    },
   };
 }
 

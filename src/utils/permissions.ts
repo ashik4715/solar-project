@@ -12,6 +12,7 @@ export type Resource =
   | "carousel"
   | "quotes"
   | "blogs"
+  | "seo"
   | "roles"
   | "users";
 
@@ -26,6 +27,7 @@ const roleMatrix: Record<string, Partial<Record<Resource, Action[]>>> = {
     carousel: ["create", "read", "update", "delete"],
     quotes: ["create", "read", "update", "delete"],
     blogs: ["create", "read", "update", "delete"],
+    seo: ["create", "read", "update", "delete"],
     roles: ["create", "read", "update", "delete"],
     users: ["create", "read", "update", "delete"],
   },
@@ -39,6 +41,7 @@ const roleMatrix: Record<string, Partial<Record<Resource, Action[]>>> = {
     carousel: ["create", "read", "update"],
     quotes: ["create", "read", "update"],
     blogs: ["create", "read", "update"],
+    seo: ["read", "update"],
     roles: ["read"],
     users: ["read", "update"],
   },
@@ -52,6 +55,7 @@ const roleMatrix: Record<string, Partial<Record<Resource, Action[]>>> = {
     carousel: ["read"],
     quotes: ["read"],
     blogs: ["read"],
+    seo: ["read"],
     roles: ["read"],
     users: ["read"],
   },
