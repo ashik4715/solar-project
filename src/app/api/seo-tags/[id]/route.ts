@@ -28,10 +28,11 @@ export async function PATCH(
   await connectDB();
   const { id } = await params;
   const body = await request.json();
+  const metaTitle = body.metaTitle ?? body.metaTitile;
   const updated = await SeoTag.findByIdAndUpdate(
     id,
     {
-      metaTitle: body.metaTitle,
+      metaTitle,
       metaDescription: body.metaDescription,
       metaImage: body.metaImage,
       path: body.path,

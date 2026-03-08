@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { fetchSeoForPath } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "Solar Store",
   description: "Your trusted solar energy solutions provider.",
   keywords: [
@@ -11,6 +12,9 @@ export const metadata: Metadata = {
     "installation",
   ],
   authors: [{ name: "Solar Store Team" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Solar Store",
     description: "Your trusted solar energy solutions provider.",
@@ -24,32 +28,37 @@ export const metadata: Metadata = {
   },
 };
 
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await fetchSeoForPath("/");
+  if (!seo) return baseMetadata;
+
+  return {
+    ...baseMetadata,
+    ...seo,
+    openGraph: {
+      ...baseMetadata.openGraph,
+      ...seo.openGraph,
+    },
+    twitter: {
+      ...baseMetadata.twitter,
+      ...seo.twitter,
+    },
+  };
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <style>{`
-          body {
-            transition: opacity ease-in 0.2s;
-          }
-          body[unresolved] {
-            opacity: 0;
-            display: block;
-            overflow: hidden;
-            position: relative;
-          }
-        `}</style>
-      </head>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

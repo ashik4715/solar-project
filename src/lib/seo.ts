@@ -3,18 +3,35 @@ import { connectDB } from "@/lib/mongodb";
 import SeoTag from "@/models/SEOTag";
 
 export async function fetchSeoForPath(path: string): Promise<Metadata | null> {
-  await connectDB();
-  const tag = (await SeoTag.findOne({ path }).lean()) as any;
-  if (!tag) return null;
+  try {
+    await connectDB();
+    const tag = (await SeoTag.findOne({ path }).lean()) as any;
+    if (!tag) return null;
 
-  const meta: Metadata = {
-    title: tag.metaTitle || undefined,
-    description: tag.metaDescription || undefined,
-    openGraph: {
-      title: tag.metaTitle || undefined,
-      description: tag.metaDescription || undefined,
-      images: tag.metaImage ? [{ url: tag.metaImage }] : undefined,
-    },
-  };
-  return meta;
+    // Keep a fallback for typoed records where metaTitile was used.
+    const title = (tag.metaTitle || tag.metaTitile || "").trim() || undefined;
+    const description = (tag.metaDescription || "").trim() || undefined;
+    const image = (tag.metaImage || "").trim() || undefined;
+
+    const meta: Metadata = {
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        type: "website",
+        locale: "en_US",
+        images: image ? [{ url: image }] : undefined,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: image ? [image] : undefined,
+      },
+    };
+    return meta;
+  } catch {
+    return null;
+  }
 }

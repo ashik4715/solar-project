@@ -40,6 +40,7 @@ export async function POST(request: NextRequest) {
 
   await connectDB();
   const body = await request.json();
+  const metaTitle = body.metaTitle ?? body.metaTitile ?? "";
   if (!body.path) {
     return NextResponse.json(
       APIResponse.error("Path is required").toJSON(),
@@ -48,7 +49,7 @@ export async function POST(request: NextRequest) {
   }
   const created = await SeoTag.create({
     path: body.path,
-    metaTitle: body.metaTitle || "",
+    metaTitle,
     metaDescription: body.metaDescription || "",
     metaImage: body.metaImage || "",
   });
