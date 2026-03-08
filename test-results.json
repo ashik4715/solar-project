@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "/Users/mdashikurrahman/Downloads/wegro/solar-store/playwright.config.ts",
-    "rootDir": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests",
+    "configFile": "D:\\Websites\\solar-project\\playwright.config.ts",
+    "rootDir": "D:/Websites/solar-project/tests",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -16,7 +16,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/Users/mdashikurrahman/Downloads/wegro/solar-store/test-results",
+        "outputDir": "D:/Websites/solar-project/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -24,7 +24,7 @@
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests",
+        "testDir": "D:/Websites/solar-project/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -99,12 +99,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5669,
+                      "duration": 6099,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:05.995Z",
+                      "startTime": "2026-03-08T12:43:48.360Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -133,12 +133,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5409,
+                      "duration": 6026,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:12.981Z",
+                      "startTime": "2026-03-08T12:43:55.608Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -167,12 +167,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5415,
+                      "duration": 5926,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:18.399Z",
+                      "startTime": "2026-03-08T12:44:01.658Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -197,7 +197,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                         "line": 41,
                         "column": 10
                       }
@@ -211,18 +211,18 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 101,
+                      "duration": 168,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:23.821Z",
+                      "startTime": "2026-03-08T12:44:07.626Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                             "line": 41,
                             "column": 10
                           }
@@ -251,7 +251,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                         "line": 61,
                         "column": 10
                       }
@@ -265,18 +265,18 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 99,
+                      "duration": 172,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:23.930Z",
+                      "startTime": "2026-03-08T12:44:07.823Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                             "line": 61,
                             "column": 10
                           }
@@ -305,7 +305,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                         "line": 94,
                         "column": 10
                       }
@@ -319,18 +319,18 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 93,
+                      "duration": 160,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.046Z",
+                      "startTime": "2026-03-08T12:44:08.021Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                             "line": 94,
                             "column": 10
                           }
@@ -359,7 +359,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                         "line": 127,
                         "column": 10
                       }
@@ -373,18 +373,18 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 93,
+                      "duration": 161,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.146Z",
+                      "startTime": "2026-03-08T12:44:08.207Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                             "line": 127,
                             "column": 10
                           }
@@ -413,7 +413,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                         "line": 160,
                         "column": 10
                       }
@@ -427,18 +427,18 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 93,
+                      "duration": 174,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.245Z",
+                      "startTime": "2026-03-08T12:44:08.390Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                             "line": 160,
                             "column": 10
                           }
@@ -467,7 +467,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                         "line": 191,
                         "column": 10
                       }
@@ -481,18 +481,18 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 109,
+                      "duration": 178,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.346Z",
+                      "startTime": "2026-03-08T12:44:08.591Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-access-control.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-access-control.spec.ts",
                             "line": 191,
                             "column": 10
                           }
@@ -538,7 +538,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -557,13 +557,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.466Z",
+                      "startTime": "2026-03-08T12:44:08.803Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -592,7 +592,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -611,13 +611,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.470Z",
+                      "startTime": "2026-03-08T12:44:08.803Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -646,7 +646,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -665,13 +665,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.474Z",
+                      "startTime": "2026-03-08T12:44:08.803Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -700,7 +700,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -719,13 +719,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.477Z",
+                      "startTime": "2026-03-08T12:44:08.803Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -754,7 +754,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -773,13 +773,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.481Z",
+                      "startTime": "2026-03-08T12:44:08.803Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -808,7 +808,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -827,13 +827,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.485Z",
+                      "startTime": "2026-03-08T12:44:08.804Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -862,7 +862,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -881,13 +881,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.489Z",
+                      "startTime": "2026-03-08T12:44:08.804Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -916,7 +916,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -935,13 +935,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.493Z",
+                      "startTime": "2026-03-08T12:44:08.804Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -970,7 +970,7 @@
                       "type": "skip",
                       "description": "Admin auth tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                        "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                         "line": 11,
                         "column": 8
                       }
@@ -989,13 +989,13 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.496Z",
+                      "startTime": "2026-03-08T12:44:08.804Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "Admin auth tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/admin-login.spec.ts",
+                            "file": "D:\\Websites\\solar-project\\tests\\admin-login.spec.ts",
                             "line": 11,
                             "column": 8
                           }
@@ -1045,12 +1045,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 416,
+                      "duration": 236,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.505Z",
+                      "startTime": "2026-03-08T12:44:08.813Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1079,12 +1079,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 289,
+                      "duration": 131,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:24.929Z",
+                      "startTime": "2026-03-08T12:44:09.075Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1113,12 +1113,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 190,
+                      "duration": 30,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:25.225Z",
+                      "startTime": "2026-03-08T12:44:09.223Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1147,12 +1147,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 35,
+                      "duration": 33,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:25.422Z",
+                      "startTime": "2026-03-08T12:44:09.271Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1181,12 +1181,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 38,
+                      "duration": 30,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:25.465Z",
+                      "startTime": "2026-03-08T12:44:09.323Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1201,7 +1201,7 @@
             },
             {
               "title": "POST /api/quotes - should handle quote creation",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -1214,42 +1214,18 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 558,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m201\u001b[39m\nReceived array: \u001b[31m[200, 400, 401, 500]\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m201\u001b[39m\nReceived array: \u001b[31m[200, 400, 401, 500]\u001b[39m\n    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts:75:34",
-                        "location": {
-                          "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                          "column": 34,
-                          "line": 75
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 73 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m     expect([\u001b[35m200\u001b[39m\u001b[33m,\u001b[39m \u001b[35m400\u001b[39m\u001b[33m,\u001b[39m \u001b[35m401\u001b[39m\u001b[33m,\u001b[39m \u001b[35m500\u001b[39m])\u001b[33m.\u001b[39mtoContain(response\u001b[33m.\u001b[39mstatus())\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 77 |\u001b[39m\n \u001b[90m 78 |\u001b[39m   test(\u001b[32m\"POST /api/contact - submit contact form\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                            "column": 34,
-                            "line": 75
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected value: \u001b[32m201\u001b[39m\nReceived array: \u001b[31m[200, 400, 401, 500]\u001b[39m\n\n\u001b[0m \u001b[90m 73 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m     expect([\u001b[35m200\u001b[39m\u001b[33m,\u001b[39m \u001b[35m400\u001b[39m\u001b[33m,\u001b[39m \u001b[35m401\u001b[39m\u001b[33m,\u001b[39m \u001b[35m500\u001b[39m])\u001b[33m.\u001b[39mtoContain(response\u001b[33m.\u001b[39mstatus())\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 77 |\u001b[39m\n \u001b[90m 78 |\u001b[39m   test(\u001b[32m\"POST /api/contact - submit contact form\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts:75:34\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 30,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:25.510Z",
+                      "startTime": "2026-03-08T12:44:09.371Z",
                       "annotations": [],
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/api-endpoints.spec.ts",
-                        "column": 34,
-                        "line": 75
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
               "id": "1283ac53084b38fceb2d-d9b064242617af4ade79",
@@ -1270,15 +1246,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3708,
+                      "duration": 3301,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:26.944Z",
+                      "startTime": "2026-03-08T12:44:09.418Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1304,15 +1280,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 44,
+                      "duration": 37,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:30.667Z",
+                      "startTime": "2026-03-08T12:44:12.745Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1338,15 +1314,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 200,
+                      "duration": 24,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:30.720Z",
+                      "startTime": "2026-03-08T12:44:12.802Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1372,15 +1348,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 527,
+                      "duration": 201,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:30.927Z",
+                      "startTime": "2026-03-08T12:44:12.858Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1406,15 +1382,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 956,
+                      "duration": 42,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:31.463Z",
+                      "startTime": "2026-03-08T12:44:13.076Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1440,15 +1416,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8,
+                      "duration": 23,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.428Z",
+                      "startTime": "2026-03-08T12:44:13.138Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1474,15 +1450,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 167,
+                      "duration": 121,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.449Z",
+                      "startTime": "2026-03-08T12:44:13.178Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1508,15 +1484,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 149,
+                      "duration": 28,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.624Z",
+                      "startTime": "2026-03-08T12:44:13.318Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1543,8 +1519,8 @@
         {
           "title": "CRUD Operations Tests",
           "file": "crud-operations.spec.ts",
-          "line": 16,
-          "column": 12,
+          "line": 15,
+          "column": 6,
           "specs": [
             {
               "title": "should create a new category",
@@ -1558,9 +1534,9 @@
                       "type": "skip",
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 17,
-                        "column": 14
+                        "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
                       }
                     }
                   ],
@@ -1577,15 +1553,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.792Z",
+                      "startTime": "2026-03-08T12:44:13.363Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 17,
-                            "column": 14
+                            "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
                           }
                         }
                       ],
@@ -1597,8 +1573,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-02491c98d6b9829bc5ed",
               "file": "crud-operations.spec.ts",
-              "line": 18,
-              "column": 18
+              "line": 20,
+              "column": 7
             },
             {
               "title": "should read categories list",
@@ -1612,9 +1588,9 @@
                       "type": "skip",
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 17,
-                        "column": 14
+                        "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
                       }
                     }
                   ],
@@ -1631,15 +1607,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.797Z",
+                      "startTime": "2026-03-08T12:44:13.363Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 17,
-                            "column": 14
+                            "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
                           }
                         }
                       ],
@@ -1651,8 +1627,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-27b646656c81f64c2b35",
               "file": "crud-operations.spec.ts",
-              "line": 53,
-              "column": 18
+              "line": 65,
+              "column": 7
             },
             {
               "title": "should create a new product",
@@ -1666,9 +1642,9 @@
                       "type": "skip",
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 17,
-                        "column": 14
+                        "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
                       }
                     }
                   ],
@@ -1685,15 +1661,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.802Z",
+                      "startTime": "2026-03-08T12:44:13.363Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 17,
-                            "column": 14
+                            "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
                           }
                         }
                       ],
@@ -1705,8 +1681,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-9d294cd7aa7a84f1c69e",
               "file": "crud-operations.spec.ts",
-              "line": 68,
-              "column": 18
+              "line": 79,
+              "column": 7
             },
             {
               "title": "should read products list",
@@ -1720,9 +1696,9 @@
                       "type": "skip",
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 17,
-                        "column": 14
+                        "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
                       }
                     }
                   ],
@@ -1739,15 +1715,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.806Z",
+                      "startTime": "2026-03-08T12:44:13.363Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 17,
-                            "column": 14
+                            "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
                           }
                         }
                       ],
@@ -1759,8 +1735,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-5ed240229cbb4815099d",
               "file": "crud-operations.spec.ts",
-              "line": 104,
-              "column": 18
+              "line": 122,
+              "column": 7
             },
             {
               "title": "should list customers",
@@ -1774,9 +1750,9 @@
                       "type": "skip",
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 17,
-                        "column": 14
+                        "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
                       }
                     }
                   ],
@@ -1793,15 +1769,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.810Z",
+                      "startTime": "2026-03-08T12:44:13.363Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 17,
-                            "column": 14
+                            "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
                           }
                         }
                       ],
@@ -1813,8 +1789,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-0031857adf46c0167db5",
               "file": "crud-operations.spec.ts",
-              "line": 115,
-              "column": 18
+              "line": 134,
+              "column": 7
             },
             {
               "title": "should handle API error on invalid create",
@@ -1828,9 +1804,9 @@
                       "type": "skip",
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 17,
-                        "column": 14
+                        "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
                       }
                     }
                   ],
@@ -1847,15 +1823,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.814Z",
+                      "startTime": "2026-03-08T12:44:13.363Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 17,
-                            "column": 14
+                            "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
                           }
                         }
                       ],
@@ -1867,8 +1843,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-ad38601984fb60dce42a",
               "file": "crud-operations.spec.ts",
-              "line": 126,
-              "column": 18
+              "line": 146,
+              "column": 7
             },
             {
               "title": "should handle duplicate category creation gracefully",
@@ -1882,9 +1858,9 @@
                       "type": "skip",
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 17,
-                        "column": 14
+                        "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
                       }
                     }
                   ],
@@ -1901,15 +1877,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.818Z",
+                      "startTime": "2026-03-08T12:44:13.363Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 17,
-                            "column": 14
+                            "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
                           }
                         }
                       ],
@@ -1921,8 +1897,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-8a8aa1b2f23e41303f66",
               "file": "crud-operations.spec.ts",
-              "line": 145,
-              "column": 18
+              "line": 165,
+              "column": 7
             },
             {
               "title": "should validate required fields",
@@ -1936,9 +1912,9 @@
                       "type": "skip",
                       "description": "CRUD UI tests are skipped when database is not configured.",
                       "location": {
-                        "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                        "line": 17,
-                        "column": 14
+                        "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                        "line": 16,
+                        "column": 8
                       }
                     }
                   ],
@@ -1955,15 +1931,15 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.822Z",
+                      "startTime": "2026-03-08T12:44:13.363Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "description": "CRUD UI tests are skipped when database is not configured.",
                           "location": {
-                            "file": "/Users/mdashikurrahman/Downloads/wegro/solar-store/tests/crud-operations.spec.ts",
-                            "line": 17,
-                            "column": 14
+                            "file": "D:\\Websites\\solar-project\\tests\\crud-operations.spec.ts",
+                            "line": 16,
+                            "column": 8
                           }
                         }
                       ],
@@ -1975,8 +1951,8 @@
               ],
               "id": "2e91bbc03bf84fb7468e-d4df9f1bfab92016319b",
               "file": "crud-operations.spec.ts",
-              "line": 177,
-              "column": 18
+              "line": 204,
+              "column": 7
             }
           ]
         }
@@ -2008,15 +1984,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1078,
+                      "duration": 1790,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:32.830Z",
+                      "startTime": "2026-03-08T12:44:13.371Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2042,15 +2018,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 391,
+                      "duration": 1180,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:34.692Z",
+                      "startTime": "2026-03-08T12:44:15.181Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2076,15 +2052,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 387,
+                      "duration": 901,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:35.091Z",
+                      "startTime": "2026-03-08T12:44:16.380Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2110,15 +2086,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 480,
+                      "duration": 826,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:35.486Z",
+                      "startTime": "2026-03-08T12:44:17.303Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2144,15 +2120,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 360,
+                      "duration": 1075,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:35.974Z",
+                      "startTime": "2026-03-08T12:44:18.150Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2178,15 +2154,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 331,
+                      "duration": 1059,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:36.342Z",
+                      "startTime": "2026-03-08T12:44:19.248Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2212,15 +2188,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5324,
+                      "duration": 5553,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:36.681Z",
+                      "startTime": "2026-03-08T12:44:20.327Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2246,15 +2222,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 862,
+                      "duration": 1456,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:42.013Z",
+                      "startTime": "2026-03-08T12:44:25.902Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2280,15 +2256,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 341,
+                      "duration": 862,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:42.883Z",
+                      "startTime": "2026-03-08T12:44:27.377Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2314,15 +2290,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 627,
+                      "duration": 1321,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:43.231Z",
+                      "startTime": "2026-03-08T12:44:28.259Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2348,15 +2324,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 499,
+                      "duration": 953,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-02-27T12:57:43.866Z",
+                      "startTime": "2026-03-08T12:44:29.602Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -2376,11 +2352,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-27T12:57:05.117Z",
-    "duration": 39317.420000000006,
-    "expected": 27,
+    "startTime": "2026-03-08T12:43:46.157Z",
+    "duration": 44570.556,
+    "expected": 28,
     "skipped": 23,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

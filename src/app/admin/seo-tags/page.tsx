@@ -1,8 +1,8 @@
 "use client";
 
 import "bulma/css/bulma.css";
-import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import React, { useEffect, useMemo, useState } from "react";
 import Swal from "sweetalert2";
 
 type SeoTag = {
@@ -165,77 +165,7 @@ export default function SEOTagsPage() {
       <section className="section" style={{ paddingTop: 28 }}>
         <div className="container" style={{ maxWidth: "1120px" }}>
           <div className="columns">
-            <div className="column is-5">
-              <div
-                className="card"
-                style={{ border: "1px solid #e0eadc", borderRadius: "12px" }}
-              >
-                <div className="card-content">
-                  <h3 className="title is-5" style={{ color: "#2d5016" }}>
-                    Create SEO entry
-                  </h3>
-                  <p className="subtitle is-6">
-                    Add metadata for a route like <code>/blogs</code> or{" "}
-                    <code>/blogs/my-post</code>.
-                  </p>
-                  <form onSubmit={saveTag}>
-                    <div className="field">
-                      <label className="label">Path</label>
-                      <input
-                        className="input"
-                        placeholder="/blogs"
-                        value={form.path}
-                        onChange={(e) => setForm({ ...form, path: e.target.value })}
-                        required
-                      />
-                    </div>
-                    <div className="field">
-                      <label className="label">Meta title</label>
-                      <input
-                        className="input"
-                        value={form.metaTitle}
-                        onChange={(e) =>
-                          setForm({ ...form, metaTitle: e.target.value })
-                        }
-                        placeholder="Solar Store blog updates"
-                      />
-                    </div>
-                    <div className="field">
-                      <label className="label">Meta description</label>
-                      <textarea
-                        className="textarea"
-                        rows={4}
-                        value={form.metaDescription}
-                        onChange={(e) =>
-                          setForm({ ...form, metaDescription: e.target.value })
-                        }
-                        placeholder="Fresh solar articles and product updates."
-                      />
-                    </div>
-                    <div className="field">
-                      <label className="label">Meta image URL</label>
-                      <input
-                        className="input"
-                        value={form.metaImage}
-                        onChange={(e) =>
-                          setForm({ ...form, metaImage: e.target.value })
-                        }
-                        placeholder="https://example.com/og-cover.jpg"
-                      />
-                    </div>
-                    <button
-                      className={`button is-success is-fullwidth ${saving ? "is-loading" : ""}`}
-                      type="submit"
-                      disabled={saving}
-                    >
-                      Save entry
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div className="column is-7">
+            <div className="column is-12">
               <div
                 className="card"
                 style={{ border: "1px solid #e0eadc", borderRadius: "12px" }}
@@ -411,6 +341,78 @@ export default function SEOTagsPage() {
                       </table>
                     </div>
                   )}
+                </div>
+              </div>
+            </div>           
+          </div>
+          <div className="columns">
+            
+            <div className="column is-12">
+              <div
+                className="card"
+                style={{ border: "1px solid #e0eadc", borderRadius: "12px" }}
+              >
+                <div className="card-content">
+                  <h3 className="title is-5" style={{ color: "#2d5016" }}>
+                    Create SEO entry
+                  </h3>
+                  <p className="subtitle is-6">
+                    Add metadata for a route like <code>/blogs</code> or{" "}
+                    <code>/blogs/my-post</code>.
+                  </p>
+                  <form onSubmit={saveTag}>
+                    <div className="field">
+                      <label className="label">Path</label>
+                      <input
+                        className="input"
+                        placeholder="/blogs"
+                        value={form.path}
+                        onChange={(e) => setForm({ ...form, path: e.target.value })}
+                        required
+                      />
+                    </div>
+                    <div className="field">
+                      <label className="label">Meta title</label>
+                      <input
+                        className="input"
+                        value={form.metaTitle}
+                        onChange={(e) =>
+                          setForm({ ...form, metaTitle: e.target.value })
+                        }
+                        placeholder="Solar Store blog updates"
+                      />
+                    </div>
+                    <div className="field">
+                      <label className="label">Meta description</label>
+                      <textarea
+                        className="textarea"
+                        rows={4}
+                        value={form.metaDescription}
+                        onChange={(e) =>
+                          setForm({ ...form, metaDescription: e.target.value })
+                        }
+                        placeholder="Fresh solar articles and product updates."
+                      />
+                    </div>
+                    <div className="field">
+                      <label className="label">Meta image URL</label>
+                      <input
+                        className="input"
+                        value={form.metaImage}
+                        onChange={(e) =>
+                          setForm({ ...form, metaImage: e.target.value })
+                        }
+                        placeholder="https://example.com/og-cover.jpg"
+                      />
+                    </div>
+                    <button
+                      className={`button is-success is-fullwidth ${saving ? "is-loading" : ""}`}
+                      type="submit"
+                      disabled={saving}
+                    >
+                      Save entry
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
